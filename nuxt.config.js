@@ -13,12 +13,12 @@ module.exports = {
       { name: 'og:description', content: 'Full-stack developer and third year student at HETIC looking for a 5-month internship from July to November 2019.' },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: 'https://wwww.alain-caovantruong.fr/' },
-      { name: 'og:image', content: 'avt@max.png' },
+      { name: 'og:image', content: 'avt.png' },
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:site', content: '@AlainCVT' },
       { name: 'twitter:title', content: 'Alain CAO VAN TRUONG | Full-Stack developer' },
       { name: 'twitter:description', content: 'Full-stack developer and third year student at HETIC looking for a 5-month internship from July to November 2019.' },
-      { name: 'twitter:image', content: 'acvt@min.png' },
+      { name: 'twitter:image', content: 'acvt.png' },
       { name: 'twitter:image:alt', content: 'Alain CAO VAN TRUONG' }
     ],
     link: [
