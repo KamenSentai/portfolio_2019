@@ -1,7 +1,18 @@
+html,
+body
+  full-size()
+
+
 html
   font-size 62.5%
-  background-color dark
+  background-color $black
 
 body
   position relative
-  font-family morganite
+  font-family $morganite
+
+  > *
+    full-size()
+
+    > *
+      full-size()
