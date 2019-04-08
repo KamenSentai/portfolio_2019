@@ -1,2 +1,23 @@
+@keyframes scale-bar
+  from
+    transform scaleY(0)
+  to
+    transform scaleY(1)
+
 .page
+  position relative
   full-size()
+
+  &::after
+    content ''
+    position absolute
+    left 50%
+    top 0
+    width 1px
+    height 100%
+    background-color $white
+    opacity .25
+    transform-origin 50% 0
+    transform scaleY(0)
+    animation scale-bar .25s $cubic forwards 1.25s
+    pointer-events none

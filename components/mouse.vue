@@ -1,7 +1,9 @@
 <template lang="pug">
 .mouse
   .mouse_pointer(ref="pointer")
+    .mouse_pointer_shape
   .mouse_frame(ref="frame")
+    .mouse_frame_shape
 </template>
 
 <script>
@@ -15,9 +17,12 @@ export default {
     const rateFrame = .1875
 
     const windowSize = { w: window.innerWidth, h: window.innerHeight }
-    const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
-    const positionPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
-    const positionFrame = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+    const mouse = { x: windowSize.w / 2, y: windowSize.h / 4 }
+    const positionPointer = { x: mouse.x, y: mouse.y }
+    const positionFrame = { x: mouse.x, y: mouse.y }
+
+    _pointerMouse.style.transform = `translate(${positionPointer.x - windowSize.w / 2}px, ${positionPointer.y - windowSize.h / 2}px)`
+    _frameMouse.style.transform = `translate(${positionFrame.x - windowSize.w / 2}px, ${positionFrame.y - windowSize.h / 2}px)`
 
     window.addEventListener('mousemove', event => {
       mouse.x = event.clientX - _body.getBoundingClientRect().left
@@ -35,8 +40,8 @@ export default {
       positionFrame.x += (mouse.x - positionFrame.x) * rateFrame
       positionFrame.y += (mouse.y - positionFrame.y) * rateFrame
 
-      _pointerMouse.style.transform = `translate(${(positionPointer.x - windowSize.w / 2) * 4 / 3}px, ${positionPointer.y - windowSize.h / 2}px)`
-      _frameMouse.style.transform = `translate(${(positionFrame.x - windowSize.w / 2) * 4 / 3}px, ${positionFrame.y - windowSize.h / 2}px)`
+      _pointerMouse.style.transform = `translate(${positionPointer.x - windowSize.w / 2}px, ${positionPointer.y - windowSize.h / 2}px)`
+      _frameMouse.style.transform = `translate(${positionFrame.x - windowSize.w / 2}px, ${positionFrame.y - windowSize.h / 2}px)`
 
       window.requestAnimationFrame(animateMouse)
     }
@@ -45,48 +50,53 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import '~assets/styles/tools/app'
 
-$cursorSize =  20px
+$frameSize =  20px
 $pointerSize =  5px
 
 .mouse
   position absolute
-  left "calc(50vw - %s / 2)" % $cursorSize
-  top "calc(50vh - %s / 2)" % $cursorSize
+  left 50%
+  top 50%
   z-index 10000
   display flex
   justify-content center
   align-items center
-  width $cursorSize
-  height $cursorSize
   pointer-events none
-  transform scaleX(.75)
 
   &_frame,
   &_pointer
     position absolute
     will-change transform
+    transform translateY(-25vh)
 
-    &::before
-      content ''
-      position absolute
-      left 0
-      top 0
+    &_shape
       full-size()
-      transform rotateZ(45deg)
+      transform scaleX(.75)
+
+      &::before
+        content ''
+        position absolute
+        left 0
+        top 0
+        full-size()
+        transform rotateZ(45deg)
 
   &_frame
-    full-size()
+    width $frameSize
+    height $frameSize
 
-    &::before
-      border 1px solid $main
+    &_shape
+      &::before
+        border 1px solid $red
 
   &_pointer
     width $pointerSize
     height $pointerSize
 
-    &::before
-      background-color $main
+    &_shape
+      &::before
+        background-color $red
 </style>

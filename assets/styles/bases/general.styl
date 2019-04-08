@@ -2,7 +2,6 @@ html,
 body
   full-size()
 
-
 html
   font-size 62.5%
   background-color $black
@@ -10,9 +9,14 @@ html
 body
   position relative
   font-family $morganite
+  overflow hidden
 
   > *
     full-size()
 
     > *
       full-size()
+
+*::selection
+  color $white
+  background-color $red
