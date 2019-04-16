@@ -1,7 +1,7 @@
 import projects from './projects';
-import lab from './lab';
+import works from './works';
 
 export default {
 	projects,
-	lab
+	works
 }
