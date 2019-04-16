@@ -5,20 +5,15 @@ div
 
 <script>
 export default {
-  data() {
-    return {
-      project: {}
-    }
-  },
   created() {
-    const project = this.projects.find(project => project.slug === this.$route.params.slug)
-
-    if (project && project !== null) this.project = project
-    else this.$nuxt.error({ statusCode: 404, message: 'Project not found' })
+    if (Object.keys(this.project).length === 0) this.$nuxt.error({ statusCode: 404, message: 'Project not found' })
   },
   computed: {
     projects() {
-      return this.$store.state.projects
+      return this.$store.state.projects.list
+    },
+    project() {
+      return this.projects.find(project => project.slug === this.$route.params.slug) || {}
     }
   }
 }
