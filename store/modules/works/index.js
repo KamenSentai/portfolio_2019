@@ -9,10 +9,11 @@ const state = () => {
         tools: [
           'HTML',
           'CSS',
-          'JavaScript'
+          'JavaScript',
+          'Mathjax.js'
         ],
-        demo: "",
-        code: ""
+        code: "https://github.com/KamenSentai/Animation_Science",
+        demo: "https://kamensentai.github.io/Animation_Science/"
       },
       {
         name: "Clock",
@@ -24,8 +25,8 @@ const state = () => {
           'CSS',
           'JavaScript'
         ],
-        demo: "",
-        code: ""
+        code: "https://github.com/KamenSentai/Clock",
+        demo: "https://kamensentai.github.io/Clock/"
       },
       {
         name: "Canvas Piano",
@@ -37,8 +38,8 @@ const state = () => {
           'CSS',
           'ES6 JavaScript'
         ],
-        demo: "",
-        code: ""
+        code: "https://github.com/KamenSentai/Canvas_Piano",
+        demo: "https://kamensentai.github.io/Canvas_Piano/"
       },
       {
         name: "Raining molecules",
@@ -50,8 +51,8 @@ const state = () => {
           'CSS',
           'ES6 JavaScript'
         ],
-        demo: "",
-        code: ""
+        code: "https://github.com/KamenSentai/Raining_Molecules",
+        demo: "https://kamensentai.github.io/Raining_Molecules/app/index.html"
       },
       {
         name: "Todo list",
@@ -63,8 +64,8 @@ const state = () => {
           'Stylus',
           'ES6 JavaScript'
         ],
-        demo: "",
-        code: ""
+        code: "https://github.com/KamenSentai/Todo_List",
+        demo: "https://alain-caovantruong.000webhostapp.com/todo_list/",
       },
       {
         name: "Loyalty",
@@ -74,8 +75,8 @@ const state = () => {
         tools: [
           'Swift'
         ],
-        demo: "",
-        code: ""
+        code: "https://github.com/KamenSentai/Loyalty",
+        demo: ""
       }
     ]
   }
