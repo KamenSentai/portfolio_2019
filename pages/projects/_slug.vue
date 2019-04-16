@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  h1 Salut
+  h1 {{ project.name }}
 </template>
 
 <script>
