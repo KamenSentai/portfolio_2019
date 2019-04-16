@@ -40,6 +40,17 @@ module.exports = {
     '~/assets/styles/app.styl'
   ],
 
+  generate: {
+    routes: [
+      '/projects/mars-journey',
+      '/projects/pokedex',
+      '/projects/green-tips',
+      '/projects/chat-mean',
+      '/projects/gaetan-lefebvre',
+      '/projects/scaneat'
+    ]
+  },
+
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
