@@ -1,7 +1,6 @@
 <template lang="pug">
 div
-  h1 Hey
-  nuxt-link(v-for="(project, index) in projects" :to="`/projects/${project.slug}`" :key="index") {{ project.name }}
+  nuxt-child
 </template>
 
 <script>
@@ -13,14 +12,6 @@ export default {
         { hid: 'description', name: 'description', content: 'Discover my main projects since I have started web and mobile development.' }
       ]
     }
-  },
-  computed: {
-    projects() {
-      return this.$store.state.projects
-    }
-  },
-  mounted() {
-    console.log(this.projects)
   }
 }
 </script>
