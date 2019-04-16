@@ -4,7 +4,7 @@
 
 <script>
 export default {
-head() {
+  head() {
     return {
       title: 'Alain Cao Van Truong | Projects',
       meta: [
