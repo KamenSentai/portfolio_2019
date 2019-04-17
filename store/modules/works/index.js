@@ -13,7 +13,7 @@ const state = () => {
           'Mathjax.js'
         ],
         code: "https://github.com/KamenSentai/Animation_Science",
-        demo: "https://kamensentai.github.io/Animation_Science/"
+        demo: "https://animation-science.alain-caovantruong.fr/"
       },
       {
         name: "Clock",
@@ -26,7 +26,7 @@ const state = () => {
           'JavaScript'
         ],
         code: "https://github.com/KamenSentai/Clock",
-        demo: "https://kamensentai.github.io/Clock/"
+        demo: "https://clock.alain-caovantruong.fr/"
       },
       {
         name: "Canvas Piano",
@@ -39,7 +39,7 @@ const state = () => {
           'ES6 JavaScript'
         ],
         code: "https://github.com/KamenSentai/Canvas_Piano",
-        demo: "https://kamensentai.github.io/Canvas_Piano/"
+        demo: "https://canvas-piano.alain-caovantruong.fr/"
       },
       {
         name: "Raining molecules",
@@ -52,7 +52,7 @@ const state = () => {
           'ES6 JavaScript'
         ],
         code: "https://github.com/KamenSentai/Raining_Molecules",
-        demo: "https://kamensentai.github.io/Raining_Molecules/app/index.html"
+        demo: "https://raining-molecules.alain-caovantruong.fr/"
       },
       {
         name: "Todo list",
@@ -65,7 +65,7 @@ const state = () => {
           'ES6 JavaScript'
         ],
         code: "https://github.com/KamenSentai/Todo_List",
-        demo: "https://alain-caovantruong.000webhostapp.com/todo_list/",
+        demo: "https://todolist-alaincaovantruong.000webhostapp.com/",
       },
       {
         name: "Loyalty",

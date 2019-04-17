@@ -19,7 +19,7 @@ const state = () => {
         ],
         description: "I worked on this project for a 5-days front-end development project. Our team decided to expalin how a space trip works on this website.",
         code: "https://github.com/KamenSentai/Mars_Journey",
-        demo: "https://kamensentai.github.io/Mars_Journey/dist/",
+        demo: "https://mars-journey.alain-caovantruong.fr/",
         mentions: [],
         released: true
       },
@@ -36,7 +36,7 @@ const state = () => {
         ],
         description: "For a school homework, I had to develop a Pokedex website using Slim Framework. I decided to build a Pokemon game that the player can catch pokemons and save them in a database. Only caught pokemons are unlocked in the Pokedex.",
         code: "https://github.com/KamenSentai/Pokedex",
-        demo: "",
+        demo: "https://pokedex-alaincaovantruong.000webhostapp.com/",
         mentions: [],
         released: true
       },
@@ -60,7 +60,6 @@ const state = () => {
         description: "This is a school project on WordPress about environment. Our team had the idea to develop a blog dedicated to tips for the environment. In particular, they are tweet-like post for quick tips, and standard articles for more specific tips.",
         code: "https://github.com/KamenSentai/Green-Tips",
         demo: "http://green-tips.floriandurand.com/",
-        demo: "",
         mentions: [],
         released: true
       },
