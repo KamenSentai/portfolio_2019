@@ -17,6 +17,19 @@ const state = () => {
           'Stylus',
           'ES6 JavaScript'
         ],
+        images: [
+          '0.png',
+          '1.png',
+          '2.png',
+          '3.png',
+          '4.png',
+          '5.png',
+          '6.png',
+          '7.png',
+          '8.png',
+          '9.png',
+          '10.png'
+        ],
         description: "I worked on this project for a 5-days front-end development project. Our team decided to expalin how a space trip works on this website.",
         code: "https://github.com/KamenSentai/Mars_Journey",
         demo: "https://mars-journey.alain-caovantruong.fr/",
@@ -33,6 +46,15 @@ const state = () => {
           'PHP Slim',
           'Stylus',
           'ES6 JavaScript'
+        ],
+        images: [
+          '0.png',
+          '1.png',
+          '2.png',
+          '3.png',
+          '4.png',
+          '5.png',
+          '6.png'
         ],
         description: "For a school homework, I had to develop a Pokedex website using Slim Framework. I decided to build a Pokemon game that the player can catch pokemons and save them in a database. Only caught pokemons are unlocked in the Pokedex.",
         code: "https://github.com/KamenSentai/Pokedex",
@@ -57,6 +79,13 @@ const state = () => {
           'SCSS',
           'ES6 JavaScript'
         ],
+        images: [
+          '0.png',
+          '1.png',
+          '2.png',
+          '3.png',
+          '4.png'
+        ],
         description: "This is a school project on WordPress about environment. Our team had the idea to develop a blog dedicated to tips for the environment. In particular, they are tweet-like post for quick tips, and standard articles for more specific tips.",
         code: "https://github.com/KamenSentai/Green-Tips",
         demo: "http://green-tips.floriandurand.com/",
@@ -80,6 +109,12 @@ const state = () => {
           'Express.js',
           'Node.js'
         ],
+        images: [
+          '0.png',
+          '1.png',
+          '2.png',
+          '3.png'
+        ],
         description: "In class, we learned how to build a Stack MEAN boilerplate, then we had to use it to build a chat. We had the right to use other frameworks, but the project was a real opportunity to test all the four technologies of the Stack MEAN ecosystem.",
         code: "https://github.com/KamenSentai/ChatMEAN",
         mentions: [],
@@ -96,6 +131,20 @@ const state = () => {
         tools: [
           'Nuxt.js',
           'GSAP'
+        ],
+        images: [
+          '0.png',
+          '1.png',
+          '2.png',
+          '3.png',
+          '4.png',
+          '5.png',
+          '6.png',
+          '7.png',
+          '8.png',
+          '9.png',
+          '10.png',
+          '11.png'
         ],
         description: "Gaëtan Lefebvre is a 4-year student at HÉTIC while I am a 3-third student. He was looking for a developer for his portfolio and I accepted to help him. I started to use Vue.js, but I quickly migrated to Nuxt.js framework for SEO reasons. This portfolio is awarded with a Honorable Mention and a Mobile Excellence : https://www.awwwards.com/sites/gaetan-lefebvre-portfolio.",
         code: "https://github.com/KamenSentai/Gaetan-Lefebvre_portfolio",
@@ -121,6 +170,10 @@ const state = () => {
           'Swift',
           'Firebase'
         ],
+        images: [
+          '0.png',
+          '1.png'
+        ],
         description: "At school, we had a 5-days project about mobile : we had to design a mobile application, develop it and build its business model. There was one rule : use Open Food Fact API. One member of our team has food constraints in their way of life. So, we imagined an application which helps people to easily detect which product is appropriate for a user by scanning it.",
         code: "https://github.com/KamenSentai/ScanEat",
         demo: "",
@@ -133,7 +186,10 @@ const state = () => {
         date: new Date('June 2019'),
         role: "Front-end developer",
         team: [
-          { name: "", role: "" }
+          { name: "Paul Agostini", role: "Project manager & UX/UI designer" },
+          { name: "Victor Block", role: "UX/UI designer & graphic designer" },
+          { name: "Yoan Halm", role: "UX/UI designer & marketing" },
+          { name: "Charles Bassignot", role: "Back-end developer" }
         ],
         tools: [
           'WordPress',
@@ -141,6 +197,7 @@ const state = () => {
           'Timber',
           'Vue.js'
         ],
+        images: [],
         description: "Our third year at HÉTIC is lead by a 6-month project with a client. Victor Mertz is the founder of Offit, a BtoB coaching service, and he needs us to develop a website for his company and a webapp to manage his clients' activities.",
         code: "",
         demo: "",

@@ -12,6 +12,10 @@ const state = () => {
           'JavaScript',
           'Mathjax.js'
         ],
+        images: [
+          '0.png',
+          '1.png'
+        ],
         code: "https://github.com/KamenSentai/Animation_Science",
         demo: "https://animation-science.alain-caovantruong.fr/"
       },
@@ -24,6 +28,9 @@ const state = () => {
           'HTML',
           'CSS',
           'JavaScript'
+        ],
+        images: [
+          '0.png'
         ],
         code: "https://github.com/KamenSentai/Clock",
         demo: "https://clock.alain-caovantruong.fr/"
@@ -38,6 +45,13 @@ const state = () => {
           'CSS',
           'ES6 JavaScript'
         ],
+        images: [
+          '0.png',
+          '1.png',
+          '2.png',
+          '3.png',
+          '4.png'
+        ],
         code: "https://github.com/KamenSentai/Canvas_Piano",
         demo: "https://canvas-piano.alain-caovantruong.fr/"
       },
@@ -50,6 +64,9 @@ const state = () => {
           'HTML',
           'CSS',
           'ES6 JavaScript'
+        ],
+        images: [
+          '0.png'
         ],
         code: "https://github.com/KamenSentai/Raining_Molecules",
         demo: "https://raining-molecules.alain-caovantruong.fr/"
@@ -64,8 +81,15 @@ const state = () => {
           'Stylus',
           'ES6 JavaScript'
         ],
+        images: [
+          '0.png',
+          '1.png',
+          '2.png',
+          '3.png',
+          '4.png'
+        ],
         code: "https://github.com/KamenSentai/Todo_List",
-        demo: "https://todolist-alaincaovantruong.000webhostapp.com/",
+        demo: "https://todolist-alaincaovantruong.000webhostapp.com/"
       },
       {
         name: "Loyalty",
@@ -74,6 +98,10 @@ const state = () => {
         role: "Mobile developer",
         tools: [
           'Swift'
+        ],
+        images: [
+          '0.png',
+          '1.png'
         ],
         code: "https://github.com/KamenSentai/Loyalty",
         demo: ""
