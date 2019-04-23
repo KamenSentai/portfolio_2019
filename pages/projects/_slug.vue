@@ -10,7 +10,7 @@ export default {
   },
   computed: {
     projects() {
-      return this.$store.state.projects.list
+      return this.$store.state.projects
     },
     project() {
       return this.projects.find(project => project.slug === this.$route.params.slug) || {}
