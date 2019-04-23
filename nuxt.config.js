@@ -36,6 +36,12 @@ module.exports = {
     background: '#EE1111'
   },
 
+  router: {
+    middleware: [
+      'route-visit'
+    ]
+  },
+
   plugins: [
     { src: '~/plugins/vue-analytics.js', ssr: false }
   ],

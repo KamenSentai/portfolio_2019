@@ -1,4 +1,4 @@
-const state = () => new Object([
+const state = () => ([
   {
     name: "Mars Journey",
     slug: "mars-journey",
