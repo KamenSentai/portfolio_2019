@@ -1,23 +1,10 @@
-# portfolio_2019
+# Portfolio 2019
 
-> Nuxt.js project
+> [Alain Cao Van Truong](https://www.alain-caovantruong.fr)'s portfolio for 2019
 
-## Build Setup
+## Tools
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+- [Nuxt.js docs](https://github.com/nuxt/nuxt.js)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
+## Credits
+- [Gaëtan Lefebvre](https://gaetanlefebvre.fr/) : UX/UI design
