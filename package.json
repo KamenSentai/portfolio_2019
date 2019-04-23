@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "gsap": "^2.1.2",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-analytics": "^5.16.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

@@ -36,6 +36,10 @@ module.exports = {
     background: '#EE1111'
   },
 
+  plugins: [
+    { src: '~/plugins/vue-analytics.js', ssr: false }
+  ],
+
 	css: [
     '~/assets/styles/app.styl'
   ],
