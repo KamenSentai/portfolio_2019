@@ -13,16 +13,13 @@ export default {
     const _pointerMouse = this.$refs.pointer
     const _frameMouse = this.$refs.frame
 
-    const ratePointer = .25
-    const rateFrame = .1875
+    const RATE_POINTER = .25
+    const RATE_FRAME = .1875
 
     const windowSize = { w: window.innerWidth, h: window.innerHeight }
     const mouse = { x: windowSize.w / 2, y: windowSize.h / 4 }
     const positionPointer = { x: mouse.x, y: mouse.y }
     const positionFrame = { x: mouse.x, y: mouse.y }
-
-    _pointerMouse.style.transform = `translate(${positionPointer.x - windowSize.w / 2}px, ${positionPointer.y - windowSize.h / 2}px)`
-    _frameMouse.style.transform = `translate(${positionFrame.x - windowSize.w / 2}px, ${positionFrame.y - windowSize.h / 2}px)`
 
     window.addEventListener('mousemove', event => {
       mouse.x = event.clientX - _body.getBoundingClientRect().left
@@ -35,10 +32,10 @@ export default {
     })
 
     const animateMouse = () => {
-      positionPointer.x += (mouse.x - positionPointer.x) * ratePointer
-      positionPointer.y += (mouse.y - positionPointer.y) * ratePointer
-      positionFrame.x += (mouse.x - positionFrame.x) * rateFrame
-      positionFrame.y += (mouse.y - positionFrame.y) * rateFrame
+      positionPointer.x += (mouse.x - positionPointer.x) * RATE_POINTER
+      positionPointer.y += (mouse.y - positionPointer.y) * RATE_POINTER
+      positionFrame.x += (mouse.x - positionFrame.x) * RATE_FRAME
+      positionFrame.y += (mouse.y - positionFrame.y) * RATE_FRAME
 
       _pointerMouse.style.transform = `translate(${positionPointer.x - windowSize.w / 2}px, ${positionPointer.y - windowSize.h / 2}px)`
       _frameMouse.style.transform = `translate(${positionFrame.x - windowSize.w / 2}px, ${positionFrame.y - windowSize.h / 2}px)`
