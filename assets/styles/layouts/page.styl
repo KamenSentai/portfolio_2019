@@ -2,3 +2,22 @@
   position relative
   full-size()
   font-size 10rem
+
+  &::before
+    content ''
+    position absolute
+    left calc(50% - 1px)
+    top 0
+    width 2px
+    height 100%
+    background-color rgba($white, .25)
+    transform scaleY(0)
+    transform-origin 50% 0
+    will-change transform
+    animation scale-bar .5s $cubic .25s forwards
+
+  @keyframes scale-bar
+    from
+      transform scaleY(0)
+    to
+      transform scaleY(1)

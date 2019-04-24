@@ -17,7 +17,7 @@ export default {
     const RATE_FRAME = .1875
 
     const windowSize = { w: window.innerWidth, h: window.innerHeight }
-    const mouse = { x: windowSize.w / 2, y: windowSize.h / 4 }
+    const mouse = { x: windowSize.w / 2, y: windowSize.h * 3 / 4 }
     const positionPointer = { x: mouse.x, y: mouse.y }
     const positionFrame = { x: mouse.x, y: mouse.y }
 
@@ -42,7 +42,7 @@ export default {
 
       window.requestAnimationFrame(animateMouse)
     }
-    animateMouse()
+    setTimeout(animateMouse, 2500)
   }
 }
 </script>
@@ -67,7 +67,7 @@ $pointerSize =  5px
   &_pointer
     position absolute
     will-change transform
-    transform translateY(-25vh)
+    transform translateY(25vh)
 
     &_shape
       full-size()
@@ -79,7 +79,15 @@ $pointerSize =  5px
         left 0
         top 0
         full-size()
-        transform rotateZ(45deg)
+        transform rotateZ(45deg) scale(0)
+        will-change transform
+        animation scale-cursor .25s $cubic forwards
+
+      @keyframes scale-cursor
+        from
+          transform rotateZ(45deg) scale(0)
+        to
+          transform rotateZ(45deg) scale(1)
 
   &_frame
     width $frameSize
@@ -88,6 +96,7 @@ $pointerSize =  5px
     &_shape
       &::before
         border 1px solid $red
+        animation-delay 1.25s
 
   &_pointer
     width $pointerSize
@@ -96,4 +105,5 @@ $pointerSize =  5px
     &_shape
       &::before
         background-color $red
+        animation-delay 1s
 </style>

@@ -1,5 +1,6 @@
 <template lang="pug">
 .page
+  .ok
   mouse
   nuxt
 </template>
