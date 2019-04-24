@@ -16,17 +16,17 @@ export const state = () => ([
       'ES6 JavaScript'
     ],
     images: [
-      '0.png',
-      '1.png',
-      '2.png',
-      '3.png',
-      '4.png',
-      '5.png',
-      '6.png',
-      '7.png',
-      '8.png',
-      '9.png',
-      '10.png'
+      { src: '0.png', alt: 'Welcome to Mars Journey' },
+      { src: '1.png', alt: 'Take off - boarding' },
+      { src: '2.png', alt: 'Take off - spaceship' },
+      { src: '3.png', alt: 'On board - view' },
+      { src: '4.png', alt: 'On board - inside' },
+      { src: '5.png', alt: 'The journey - instructions' },
+      { src: '6.png', alt: 'The journey - food' },
+      { src: '7.png', alt: 'The risks - accident' },
+      { src: '8.png', alt: 'The risks - gravity  ' },
+      { src: '9.png', alt: 'Welcome to Mars - landing' },
+      { src: '10.png', alt: 'Welcome to Mars - colonizartion' }
     ],
     description: "I worked on this project for a 5-days front-end development project. Our team decided to expalin how a space trip works on this website.",
     code: "https://github.com/KamenSentai/Mars_Journey",
@@ -46,13 +46,13 @@ export const state = () => ([
       'ES6 JavaScript'
     ],
     images: [
-      '0.png',
-      '1.png',
-      '2.png',
-      '3.png',
-      '4.png',
-      '5.png',
-      '6.png'
+      { src: '0.png', alt: 'Pokedex' },
+      { src: '1.png', alt: 'Map game' },
+      { src: '2.png', alt: 'Catch a Pokemon' },
+      { src: '3.png', alt: 'Pokemon page' },
+      { src: '4.png', alt: 'Unknown Pokemon' },
+      { src: '5.png', alt: 'Types of Pokemons' },
+      { src: '6.png', alt: '404 page' }
     ],
     description: "For a school homework, I had to develop a Pokedex website using Slim Framework. I decided to build a Pokemon game that the player can catch pokemons and save them in a database. Only caught pokemons are unlocked in the Pokedex.",
     code: "https://github.com/KamenSentai/Pokedex",
@@ -78,11 +78,11 @@ export const state = () => ([
       'ES6 JavaScript'
     ],
     images: [
-      '0.png',
-      '1.png',
-      '2.png',
-      '3.png',
-      '4.png'
+      { src: '0.png', alt: 'Article' },
+      { src: '1.png', alt: 'Home page' },
+      { src: '2.png', alt: 'Suggestions' },
+      { src: '3.png', alt: 'List of tips' },
+      { src: '4.png', alt: 'List of articles' }
     ],
     description: "This is a school project on WordPress about environment. Our team had the idea to develop a blog dedicated to tips for the environment. In particular, they are tweet-like post for quick tips, and standard articles for more specific tips.",
     code: "https://github.com/KamenSentai/Green-Tips",
@@ -108,10 +108,10 @@ export const state = () => ([
       'Node.js'
     ],
     images: [
-      '0.png',
-      '1.png',
-      '2.png',
-      '3.png'
+      { src: '0.png', alt: 'Home page' },
+      { src: '1.png', alt: 'Sign in' },
+      { src: '2.png', alt: 'Sign up' },
+      { src: '3.png', alt: 'Dashboard' }
     ],
     description: "In class, we learned how to build a Stack MEAN boilerplate, then we had to use it to build a chat. We had the right to use other frameworks, but the project was a real opportunity to test all the four technologies of the Stack MEAN ecosystem.",
     code: "https://github.com/KamenSentai/ChatMEAN",
@@ -131,18 +131,18 @@ export const state = () => ([
       'GSAP'
     ],
     images: [
-      '0.png',
-      '1.png',
-      '2.png',
-      '3.png',
-      '4.png',
-      '5.png',
-      '6.png',
-      '7.png',
-      '8.png',
-      '9.png',
-      '10.png',
-      '11.png'
+      { src: '0.png', alt: 'Home page - green version' },
+      { src: '1.png', alt: 'Home page - blue version' },
+      { src: '2.png', alt: 'Home page - red version' },
+      { src: '3.png', alt: 'Home page - yellow version' },
+      { src: '4.png', alt: 'About page - green version' },
+      { src: '5.png', alt: 'About page - blue version' },
+      { src: '6.png', alt: 'About page - red version' },
+      { src: '7.png', alt: 'About page - yellow version' },
+      { src: '8.png', alt: 'Projects page - green version' },
+      { src: '9.png', alt: 'Projects page - blue version' },
+      { src: '10.png', alt: 'Projects page - red version' },
+      { src: '11.png', alt: 'Projects page - yellow version' }
     ],
     description: "Gaëtan Lefebvre is a 4-year student at HÉTIC while I am a 3-third student. He was looking for a developer for his portfolio and I accepted to help him. I started to use Vue.js, but I quickly migrated to Nuxt.js framework for SEO reasons. This portfolio is awarded with a Honorable Mention and a Mobile Excellence : https://www.awwwards.com/sites/gaetan-lefebvre-portfolio.",
     code: "https://github.com/KamenSentai/Gaetan-Lefebvre_portfolio",
@@ -169,8 +169,8 @@ export const state = () => ([
       'Firebase'
     ],
     images: [
-      '0.png',
-      '1.png'
+      { src: '0.png', alt: 'Sign in, sign up & selection' },
+      { src: '1.png', alt: 'History, scanner & suggestions' }
     ],
     description: "At school, we had a 5-days project about mobile : we had to design a mobile application, develop it and build its business model. There was one rule : use Open Food Fact API. One member of our team has food constraints in their way of life. So, we imagined an application which helps people to easily detect which product is appropriate for a user by scanning it.",
     code: "https://github.com/KamenSentai/ScanEat",
