@@ -43,7 +43,8 @@ module.exports = {
   },
 
   plugins: [
-    { src: '~/plugins/vue-analytics.js', ssr: false }
+    { src: '~/plugins/vue-analytics.js', ssr: false },
+    { src: '~/plugins/vue-lazyload.js', ssr: false }
   ],
 
 	css: [
