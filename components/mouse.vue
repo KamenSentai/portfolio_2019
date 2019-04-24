@@ -50,8 +50,8 @@ export default {
 <style lang="stylus">
 @import '~assets/styles/tools/app'
 
-$frameSize =  20px
-$pointerSize =  5px
+$frameSize = 20px
+$pointerSize = 5px
 
 .mouse
   position absolute

@@ -22,7 +22,6 @@ export default {
 
   h1,
   h2
-    letter-spacing (1/16 * 1em)
     opacity 0
     transform translateY(12.5%)
     will-change opacity, transform
