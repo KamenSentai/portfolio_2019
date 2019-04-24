@@ -5,16 +5,25 @@
     .navigation_border.navigation_border-center
     .navigation_border.navigation_border-bottom
     .navigation_branch.navigation_branch-left
-      nuxt-link.navigation_link(to="/projects") Projects
+      nuxt-link.navigation_link.button(data-mouse="is-reduced" :data-text="projects.title" :to="projects.href")
+        span.button_text(data-mouse="is-reduced") {{ projects.title }}
     .navigation_branch.navigation_branch-center
-      nuxt-link.navigation_link(to="/about") About
+      nuxt-link.navigation_link.button(data-mouse="is-reduced" :data-text="about.title" :to="about.href")
+        span.button_text(data-mouse="is-reduced") {{ about.title }}
     .navigation_branch.navigation_branch-right
-      nuxt-link.navigation_link(to="/works") Works
+      nuxt-link.navigation_link.button(data-mouse="is-reduced" :data-text="works.title" :to="works.href")
+        span.button_text(data-mouse="is-reduced") {{ works.title }}
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      about: { title: 'About', href: '/projects' },
+      projects: { title: 'Projects', href: '/about' },
+      works: { title: 'Works', href: '/works' }
+    }
+  }
 }
 </script>
 
@@ -23,6 +32,7 @@ export default {
 
 $shapeSize = 50px
 $borderSize = 2px
+$linkGap = .5em
 
 .navigation
   display flex
@@ -123,8 +133,8 @@ $borderSize = 2px
 
       & ^[-2]_link
         /* Exception due to font */
-        // transform rotateZ(120deg) translate(-112.5%, 100%)
-        transform rotateZ(120deg) translate(-107.5%, 100%)
+        // transform rotateZ(120deg) translate(-100%, 100%) translateX(- $linkGap)
+        transform rotateZ(120deg) translate(-95%, 100%) translateX(- $linkGap)
         transform-origin 0 100%
         animation apperance-left .5s $cubic 2.25s forwards
 
@@ -137,8 +147,8 @@ $borderSize = 2px
 
       & ^[-2]_link
         /* Exception due to font */
-        // transform translate(-50%, 0)
-        transform translate(-45%, 0)
+        // transform translate(-50%, - $linkGap)
+        transform translate(-45%, - $linkGap)
         animation apperance-center .5s $cubic 2s forwards
 
     &-right
@@ -150,8 +160,8 @@ $borderSize = 2px
 
       & ^[-2]_link
         /* Exception due to font */
-        // transform rotateZ(-120deg) translate(12.5%, 100%)
-        transform rotateZ(-120deg) translate(0, 105%)
+        // transform rotateZ(-120deg) translate($linkGap, 100%)
+        transform rotateZ(-120deg) translate($linkGap, 105%)
         transform-origin 0 100%
         animation apperance-right .5s $cubic 2.25s forwards
 
@@ -197,8 +207,8 @@ $borderSize = 2px
     from
       opacity 0
       /* Exception due to font */
-      // transform rotateZ(120deg) translate(-112.5%, 100%)
-      transform rotateZ(120deg) translate(-107.5%, 100%)
+      // transform rotateZ(120deg) translate(-100%, 100%) translateX(- $linkGap)
+      transform rotateZ(120deg) translate(-95%, 100%) translateX(- $linkGap)
     to
       opacity 1
       /* Exception due to font */
@@ -209,8 +219,8 @@ $borderSize = 2px
     from
       opacity 0
       /* Exception due to font */
-      // transform translate(-50%, -12.5%)
-      transform translate(-45%, -12.5%)
+      // transform translate(-50%, - $linkGap)
+      transform translate(-45%, - $linkGap)
     to
       opacity 1
       /* Exception due to font */
@@ -221,8 +231,8 @@ $borderSize = 2px
     from
       opacity 0
       /* Exception due to font */
-      // transform rotateZ(-120deg) translate(12.5%, 100%)
-      transform rotateZ(-120deg) translate(12.5%, 105%)
+      // transform rotateZ(-120deg) translate($linkGap, 100%)
+      transform rotateZ(-120deg) translate($linkGap, 105%)
     to
       opacity 1
       /* Exception due to font */

@@ -20,10 +20,15 @@ export default {
     const mouse = { x: windowSize.w / 2, y: windowSize.h * 3 / 4 }
     const positionPointer = { x: mouse.x, y: mouse.y }
     const positionFrame = { x: mouse.x, y: mouse.y }
+    const mouseClasses = []
+
+    let mouseState = ''
 
     window.addEventListener('mousemove', event => {
       mouse.x = event.clientX - _body.getBoundingClientRect().left
       mouse.y = event.clientY - _body.getBoundingClientRect().top
+
+      mouseState = event.target.dataset.mouse
     })
 
     window.addEventListener('resize', () => {
@@ -39,6 +44,11 @@ export default {
 
       _pointerMouse.style.transform = `translate(${positionPointer.x - windowSize.w / 2}px, ${positionPointer.y - windowSize.h / 2}px)`
       _frameMouse.style.transform = `translate(${positionFrame.x - windowSize.w / 2}px, ${positionFrame.y - windowSize.h / 2}px)`
+
+      if (mouseState && mouseState !== null) {
+        this.$el.classList.add(mouseState)
+        if (mouseClasses.indexOf(mouseState) === -1) mouseClasses.push(mouseState)
+      } else for (const mouseClass of mouseClasses) this.$el.classList.remove(mouseClass)
 
       window.requestAnimationFrame(animateMouse)
     }
@@ -72,6 +82,8 @@ $pointerSize = 5px
     &_shape
       full-size()
       transform scaleX(.75)
+      transition transform .5s $cubic
+      will-change transform
 
       &::before
         content ''
@@ -93,6 +105,10 @@ $pointerSize = 5px
     width $frameSize
     height $frameSize
 
+    ^[0].is-reduced &
+      &_shape
+        transform scale(0)
+
     &_shape
       &::before
         border 1px solid $red
@@ -102,7 +118,12 @@ $pointerSize = 5px
     width $pointerSize
     height $pointerSize
 
+    ^[0].is-reduced &
+      &_shape
+        transform scale(0)
+
     &_shape
+      transition-delay .25s
       &::before
         background-color $red
         animation-delay 1s

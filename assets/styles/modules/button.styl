@@ -1,0 +1,23 @@
+.button
+  position relative
+  overflow hidden
+
+  &::before
+    content attr(data-text)
+    position absolute
+    left 0
+    top 0
+    transform translate3d(0, 150%, 0)
+    transition transform .5s $cubic
+
+  &:hover
+    &::before
+      transform translate3d(0, 0, 0)
+
+    & ^[-1]_text
+      transform translate3d(0, -150%, 0)
+
+  &_text
+    display block
+    transform translate3d(0, 0, 0)
+    transition transform .5s $cubic
