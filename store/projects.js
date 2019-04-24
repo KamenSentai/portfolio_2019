@@ -1,4 +1,4 @@
-const state = () => ([
+export const state = () => ([
   {
     name: "Mars Journey",
     slug: "mars-journey",
@@ -203,7 +203,3 @@ const state = () => ([
     released: false
   }
 ])
-
-export default {
-	state
-}

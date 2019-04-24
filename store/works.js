@@ -1,4 +1,4 @@
-const state = () => ([
+export const state = () => ([
   {
     name: "Animation Science",
     slug: "animation-science",
@@ -105,7 +105,3 @@ const state = () => ([
     demo: ""
   }
 ])
-
-export default {
-	state
-}
