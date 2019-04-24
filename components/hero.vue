@@ -1,7 +1,9 @@
 <template lang="pug">
 .hero
-  h1 Alain Cao Van Truong
-  h2 Full-stack developer
+  h1.hero_title
+    span.hero_text Alain Cao Van Truong
+  h2.hero_subtitle
+    span.hero_text Full-stack developer
 </template>
 
 <script>
@@ -20,8 +22,8 @@ export default {
   align-items center
   flex 1
 
-  h1,
-  h2
+  &_title,
+  &_subtitle
     opacity 0
     transform translateY(12.5%)
     will-change opacity, transform
@@ -35,12 +37,15 @@ export default {
       opacity 1
       transform translateY(0)
 
-  h1
+  &_title
     font-size 10rem
     text-transform uppercase
     animation-delay .25s
 
-  h2
+  &_subtitle
     font-size 7.5rem
     animation-delay .5s
+
+  &_text
+    display block
 </style>

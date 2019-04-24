@@ -19,8 +19,8 @@
 export default {
   data() {
     return {
-      about: { title: 'About', href: '/projects' },
-      projects: { title: 'Projects', href: '/about' },
+      about: { title: 'About', href: '/about' },
+      projects: { title: 'Projects', href: '/projects' },
       works: { title: 'Works', href: '/works' }
     }
   }
