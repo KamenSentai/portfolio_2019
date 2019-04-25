@@ -3,6 +3,9 @@
   flex-direction column
   full-size()
 
+  > *
+    z-index 0
+
   &_section,
   &_page
     display flex
@@ -17,5 +20,10 @@
     padding 50px 0
 
   &_title
-    z-index 0
     text-transform uppercase
+
+  &_text
+    margin 50px 0
+    width 480px
+    font-size 5rem
+    text-align center

@@ -1,5 +1,4 @@
-html,
-body
+html
   full-size()
 
 html
@@ -11,11 +10,13 @@ body
   font-family $morganite
 
   &.is-scrollable
+    width 100%
+    height auto
     overflow auto
 
   &.is-unscrollable
+    full-size()
     overflow hidden
-
 
   > *
     full-size()

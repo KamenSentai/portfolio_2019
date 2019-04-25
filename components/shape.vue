@@ -51,7 +51,7 @@ $linkGap = .5em
   position relative
   width base-equilateral($shapeSize) * 2
   height $shapeSize
-  margin $shapeSize * 2
+  margin $shapeSize * 2.5
 
   &_border
     position absolute

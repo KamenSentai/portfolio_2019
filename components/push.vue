@@ -17,6 +17,7 @@ export default {
 
 .push
   position relative
+  display inline-block
   overflow hidden
 
   &::before

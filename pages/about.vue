@@ -13,6 +13,7 @@
       center="developer"
       right="stack"
     )
+    p.container_text My name is Alain Cao Van Truong.
 </template>
 
 <script>
