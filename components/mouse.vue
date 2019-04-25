@@ -52,7 +52,8 @@ export default {
 
       window.requestAnimationFrame(animateMouse)
     }
-    setTimeout(animateMouse, 2500)
+    if (this.$route.path === '/') setTimeout(animateMouse, 2500)
+    else animateMouse()
   }
 }
 </script>

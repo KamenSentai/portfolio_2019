@@ -4,10 +4,20 @@
     :left="{ title: 'Projects', href: '/projects' }"
     :right="{ title: 'Works', href: '/works' }"
   )
+  .container_page
+    h1.container_title About
+    shape(
+      :isPushing="false"
+      :isReversed="true"
+      left="Full"
+      center="developer"
+      right="stack"
+    )
 </template>
 
 <script>
 import Navigation from '@/components/navigation'
+import Shape from '@/components/shape'
 
 import { TimelineMax } from 'gsap'
 
@@ -21,7 +31,8 @@ export default {
     }
   },
   components: {
-    'navigation': Navigation
+    'navigation': Navigation,
+    'shape': Shape
   },
   transition: {
     mode: 'out-in',

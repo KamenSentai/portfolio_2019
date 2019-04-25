@@ -3,7 +3,13 @@
   .container_section
     hero
   .container_section
-    shape
+    shape(
+      :isPushing="true"
+      :isReversed="false"
+      :left="{ title: 'Projects', href: '/projects' }"
+      :center="{ title: 'About', href: '/about' }"
+      :right="{ title: 'Works', href: '/works' }"
+    )
 </template>
 
 <script>

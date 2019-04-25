@@ -36,7 +36,14 @@ export default {
 
   &_text
     display block
+    opacity 0
     transform translate3d(0, 0, 0)
     transition transform .5s $cubic
+    animation opacity-toggle .5s $cubic .5s forwards
 
+  @keyframes opacity-toggle
+    from
+      opacity 0
+    to
+      opacity 1
 </style>
