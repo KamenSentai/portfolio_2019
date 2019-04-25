@@ -4,6 +4,8 @@
     :left="{ title: 'About', href: '/about' }"
     :right="{ title: 'Projects', href: '/projects' }"
   )
+  .container_section
+    nuxt-child
 </template>
 
 <script>
@@ -12,17 +14,6 @@ import Navigation from '@/components/navigation'
 import { TimelineMax } from 'gsap'
 
 export default {
-  head() {
-    return {
-      title: 'Alain Cao Van Truong | Works',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Check out my little works and tests.' }
-      ],
-      bodyAttrs: {
-        class: 'is-unscrollable'
-      }
-    }
-  },
   components: {
     'navigation': Navigation
   },
