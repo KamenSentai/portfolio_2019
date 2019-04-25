@@ -6,9 +6,9 @@
 export default {
   head() {
     return {
-      title: 'Alain Cao Van Truong | Projects',
+      title: `Alain Cao Van Truong | ${this.project.name}`,
       meta: [
-        { hid: 'description', name: 'description', content: 'Discover my main projects since I have started web and mobile development.' }
+        { hid: 'description', name: 'description', content: `This is one of my projects named "${this.project.name}".` }
       ],
       bodyAttrs: {
         class: 'is-scrollable'
