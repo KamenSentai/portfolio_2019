@@ -11,6 +11,15 @@ export default {
         { hid: 'description', name: 'description', content: 'Take a look of my portrait, my education, my experiences, my skills and my interests.' }
       ]
     }
+  },
+  transition: {
+    mode: 'out-in',
+    enter(el, done) {
+      done()
+    },
+    leave(el, done) {
+      done()
+    }
   }
 }
 </script>

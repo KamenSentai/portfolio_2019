@@ -1,5 +1,5 @@
 <template lang="pug">
-.page
+.page(:data-theme="$store.state.theme.color")
   mouse
   nuxt
 </template>

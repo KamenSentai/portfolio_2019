@@ -3,19 +3,50 @@
   full-size()
   font-size 10rem
   letter-spacing (1/16 * 1em)
+  transition color 1s $cubic 1s
 
-  &::before
+  &::before,
+  &::after
     content ''
     position absolute
-    left calc(50% - 1px)
     top 0
-    width 2px
     height 100%
-    background-color rgba($white, .25)
+
+  &::before
+    left 0
+    width 100%
+    background-color $black
+    transition opacity 1s $cubic 1s
+    will-change opacity
+
+  &::after
+    left calc(50% - 1px)
+    width 2px
     transform scaleY(0)
     transform-origin 50% 0
+    transition background-color 1s $cubic 1s
     will-change transform
     animation scale-bar .5s $cubic .25s forwards
+
+  &[data-theme="black"]
+    color $white
+    background-color $black
+
+    &::before
+      opacity 1
+
+    &::after
+      background-color rgba($white, .25)
+
+  &[data-theme="white"]
+    color $black
+    background-color $white
+
+    &::before
+      opacity 0
+
+    &::after
+      background-color rgba($black, .25)
 
   @keyframes scale-bar
     from
