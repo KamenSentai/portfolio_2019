@@ -9,7 +9,13 @@ html
 body
   position relative
   font-family $morganite
-  overflow hidden
+
+  &.is-scrollable
+    overflow auto
+
+  &.is-unscrollable
+    overflow hidden
+
 
   > *
     full-size()
