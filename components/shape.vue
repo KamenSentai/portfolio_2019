@@ -1,18 +1,17 @@
 <template lang="pug">
-.navigation
-  .navigation_shape
-    .navigation_border.navigation_border-top
-    .navigation_border.navigation_border-center
-    .navigation_border.navigation_border-bottom
-    .navigation_branch.navigation_branch-left
-      nuxt-link.navigation_link.button(data-mouse="is-reduced" :data-text="projects.title" :to="projects.href")
-        span.button_text(data-mouse="is-reduced") {{ projects.title }}
-    .navigation_branch.navigation_branch-center
-      nuxt-link.navigation_link.button(data-mouse="is-reduced" :data-text="about.title" :to="about.href")
-        span.button_text(data-mouse="is-reduced") {{ about.title }}
-    .navigation_branch.navigation_branch-right
-      nuxt-link.navigation_link.button(data-mouse="is-reduced" :data-text="works.title" :to="works.href")
-        span.button_text(data-mouse="is-reduced") {{ works.title }}
+.shape
+  .shape_border.shape_border-top
+  .shape_border.shape_border-center
+  .shape_border.shape_border-bottom
+  .shape_branch.shape_branch-left
+    nuxt-link.shape_link.button(data-mouse="is-reduced" :data-text="projects.title" :to="projects.href")
+      span.button_text(data-mouse="is-reduced") {{ projects.title }}
+  .shape_branch.shape_branch-center
+    nuxt-link.shape_link.button(data-mouse="is-reduced" :data-text="about.title" :to="about.href")
+      span.button_text(data-mouse="is-reduced") {{ about.title }}
+  .shape_branch.shape_branch-right
+    nuxt-link.shape_link.button(data-mouse="is-reduced" :data-text="works.title" :to="works.href")
+      span.button_text(data-mouse="is-reduced") {{ works.title }}
 </template>
 
 <script>
@@ -34,16 +33,10 @@ $shapeSize = 50px
 $borderSize = 2px
 $linkGap = .5em
 
-.navigation
-  display flex
-  justify-content center
-  align-items center
-  flex 1
-
-  &_shape
-    position relative
-    width base-equilateral($shapeSize) * 2
-    height $shapeSize
+.shape
+  position relative
+  width base-equilateral($shapeSize) * 2
+  height $shapeSize
 
   &_border
     position absolute

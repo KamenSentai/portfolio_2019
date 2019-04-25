@@ -1,12 +1,14 @@
 <template lang="pug">
 .container
-  hero(ref="hero")
-  navigation(ref="navigation")
+  .container_section
+    hero
+  .container_section
+    shape
 </template>
 
 <script>
 import Hero from '@/components/hero'
-import Navigation from '@/components/navigation'
+import Shape from '@/components/shape'
 
 import { TimelineMax } from 'gsap'
 
@@ -21,7 +23,7 @@ export default {
   },
   components: {
     'hero': Hero,
-    'navigation': Navigation
+    'shape': Shape
   },
   transition: {
     mode: 'out-in',
@@ -34,7 +36,7 @@ export default {
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
       tl.to('.hero_subtitle span', 0.5, { opacity: 0, y: '12.5%' }, 0)
       tl.to('.hero_title span', 0.5, { opacity: 0, y: '12.5%' }, 0.25)
-      tl.to('.navigation', 0.5, { opacity: 0, y: '12.5%' }, .5)
+      tl.to('.shape', 0.5, { opacity: 0, y: '12.5%' }, .5)
     }
   }
 }

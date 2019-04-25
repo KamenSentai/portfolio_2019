@@ -16,11 +16,7 @@ export default {
 @import '~assets/styles/tools/app'
 
 .hero
-  display flex
-  flex-direction column
-  justify-content center
-  align-items center
-  flex 1
+  text-align center
 
   &_title,
   &_subtitle
