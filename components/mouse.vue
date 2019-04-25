@@ -17,6 +17,7 @@ export default {
     const RATE_FRAME = .1875
 
     const windowSize = { w: window.innerWidth, h: window.innerHeight }
+    const screen = { x: window.innerWidth / 2, y: window.innerHeight * 3 / 4 }
     const mouse = { x: windowSize.w / 2, y: windowSize.h * 3 / 4 }
     const positionPointer = { x: mouse.x, y: mouse.y }
     const positionFrame = { x: mouse.x, y: mouse.y }
@@ -25,15 +26,22 @@ export default {
     let mouseState = ''
 
     window.addEventListener('mousemove', event => {
-      mouse.x = event.clientX - _body.getBoundingClientRect().left
-      mouse.y = event.clientY - _body.getBoundingClientRect().top
+      screen.x = event.clientX
+      screen.y = event.clientY
+      mouse.x = screen.x - _body.getBoundingClientRect().left
+      mouse.y = screen.y - _body.getBoundingClientRect().top
 
       mouseState = event.target.dataset.mouse
     })
 
+    window.addEventListener('scroll', () => {
+      mouse.x = screen.x - _body.getBoundingClientRect().left
+      mouse.y = screen.y - _body.getBoundingClientRect().top
+    })
+
     window.addEventListener('resize', () => {
-      windowSize.w = window.innerWidth
-      windowSize.h = window.innerHeight
+      mouse.x = screen.x - _body.getBoundingClientRect().left
+      mouse.y = screen.y - _body.getBoundingClientRect().top
     })
 
     const animateMouse = () => {
@@ -66,8 +74,8 @@ $pointerSize = 5px
 
 .mouse
   position absolute
-  left 50%
-  top 50%
+  left 50vw
+  top 50vh
   z-index 10000
   display flex
   justify-content center
