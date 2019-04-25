@@ -4,24 +4,19 @@
   .shape_border.shape_border-center
   .shape_border.shape_border-bottom
   .shape_branch.shape_branch-left
-    nuxt-link.shape_link.button(data-mouse="is-reduced" :data-text="projects.title" :to="projects.href")
-      span.button_text(data-mouse="is-reduced") {{ projects.title }}
+    push.shape_link(title="Projects" href="/projects")
   .shape_branch.shape_branch-center
-    nuxt-link.shape_link.button(data-mouse="is-reduced" :data-text="about.title" :to="about.href")
-      span.button_text(data-mouse="is-reduced") {{ about.title }}
+    push.shape_link(title="About" href="/about")
   .shape_branch.shape_branch-right
-    nuxt-link.shape_link.button(data-mouse="is-reduced" :data-text="works.title" :to="works.href")
-      span.button_text(data-mouse="is-reduced") {{ works.title }}
+    push.shape_link(title="Works" href="/works")
 </template>
 
 <script>
+import Push from './push'
+
 export default {
-  data() {
-    return {
-      about: { title: 'About', href: '/about' },
-      projects: { title: 'Projects', href: '/projects' },
-      works: { title: 'Works', href: '/works' }
-    }
+  components: {
+    'push': Push
   }
 }
 </script>

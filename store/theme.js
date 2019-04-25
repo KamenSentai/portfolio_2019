@@ -1,5 +1,5 @@
 export const state = () => ({
-  color: 'black'
+  color: ''
 })
 
 export const mutations = {

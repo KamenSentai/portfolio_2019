@@ -1,6 +1,5 @@
 <template lang="pug">
-div
-  h1 {{ project.name }}
+
 </template>
 
 <script>

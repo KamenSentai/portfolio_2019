@@ -1,4 +1,21 @@
-.button
+<template lang="pug">
+nuxt-link.push(data-mouse="is-reduced" :data-text="title" :to="href")
+  span.push_text(data-mouse="is-reduced") {{ title }}
+</template>
+
+<script>
+export default {
+  props: [
+    'title',
+    'href'
+  ]
+}
+</script>
+
+<style lang="stylus" scoped>
+@import '~assets/styles/tools/app'
+
+.push
   position relative
   overflow hidden
 
@@ -21,3 +38,5 @@
     display block
     transform translate3d(0, 0, 0)
     transition transform .5s $cubic
+
+</style>
