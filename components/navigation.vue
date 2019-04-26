@@ -1,14 +1,31 @@
 <template lang="pug">
 .navigation(:data-theme="$store.state.theme.color")
   nuxt-link.navigation_main(data-mouse="is-reduced" to="/")
-    svg.navigation_logo(data-mouse="is-reduced" x="0px" y="0px" viewBox="0 0 125 162.5" xml:space="preserve" xmlns="http://www.w3.org/2000/svg")
+    svg.navigation_logo(
+      data-mouse="is-reduced"
+      x="0px"
+      y="0px"
+      viewBox="0 0 125 162.5"
+      xml:space="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+    )
       path.navigation_logo_top(d="M65,118.8V40h8.5l9,22.5h5L62.5,0l-25,62.5h5l9-22.5H60v78.8L42.5,75h-5l25,62.5l25-62.5h-5L65,118.8z M62.5,12.5l9,22.5 h-18L62.5,12.5z")
       path.navigation_logo_bottom(d="M98.1,48.6l-1.9,4.8C110.6,63.8,120,80.8,120,100c0,31.8-25.7,57.5-57.5,57.5S5,131.8,5,100c0-19.2,9.4-36.2,23.9-46.6 l-1.9-4.8C10.7,59.9,0,78.7,0,100c0,34.5,28,62.5,62.5,62.5s62.5-28,62.5-62.5C125,78.7,114.3,59.9,98.1,48.6z")
   .navigation_menu
     .navigation_stripe
     .navigation_stripe.navigation_stripe-middle
-      push.navigation_link.navigation_link-left.button(:isExternal="false" :isTexted="true" :title="left.title" :href="left.href")
-      push.navigation_link.navigation_link-right.button(:isExternal="false" :isTexted="true" :title="right.title" :href="right.href")
+      push.navigation_link.navigation_link-left.button(
+        :isExternal="false"
+        :isTexted="true"
+        :title="left.title"
+        :href="left.href"
+      )
+      push.navigation_link.navigation_link-right.button(
+        :isExternal="false"
+        :isTexted="true"
+        :title="right.title"
+        :href="right.href"
+      )
     .navigation_stripe
 </template>
 
