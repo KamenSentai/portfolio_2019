@@ -46,8 +46,14 @@ $linkGap = .5em
     z-index 0
     margin 25px
 
+    @media (max-height 500px)
+      margin 12.5px
+
   &_main
     display flex
+
+    @media (max-height 450px)
+      margin-top 0
 
   &_logo
     width auto
@@ -77,6 +83,9 @@ $linkGap = .5em
     display flex
     flex-direction column
     align-items center
+
+    @media (max-height 450px)
+      margin-bottom 0
 
   &_stripe
     width $stripeWidth

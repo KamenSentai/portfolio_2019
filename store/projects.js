@@ -15,6 +15,7 @@ export const state = () => ([
       'Stylus',
       'ES6 JavaScript'
     ],
+    cover: "mars-journey.png",
     images: [
       { src: '0.png', alt: 'Welcome to Mars Journey' },
       { src: '1.png', alt: 'Take off - boarding' },
@@ -45,6 +46,7 @@ export const state = () => ([
       'Stylus',
       'ES6 JavaScript'
     ],
+    cover: "pokedex.png",
     images: [
       { src: '0.png', alt: 'Pokedex' },
       { src: '1.png', alt: 'Map game' },
@@ -77,6 +79,7 @@ export const state = () => ([
       'SCSS',
       'ES6 JavaScript'
     ],
+    cover: "green-tips.png",
     images: [
       { src: '0.png', alt: 'Article' },
       { src: '1.png', alt: 'Home page' },
@@ -107,6 +110,7 @@ export const state = () => ([
       'Express.js',
       'Node.js'
     ],
+    cover: "chat-mean.png",
     images: [
       { src: '0.png', alt: 'Home page' },
       { src: '1.png', alt: 'Sign in' },
@@ -130,6 +134,7 @@ export const state = () => ([
       'Nuxt.js',
       'GSAP'
     ],
+    cover: "gaetan-lefebvre.png",
     images: [
       { src: '0.png', alt: 'Home page - green version' },
       { src: '1.png', alt: 'Home page - blue version' },
@@ -168,6 +173,7 @@ export const state = () => ([
       'Swift',
       'Firebase'
     ],
+    cover: "scaneat.png",
     images: [
       { src: '0.png', alt: 'Sign in, sign up & selection' },
       { src: '1.png', alt: 'History, scanner & suggestions' }
@@ -177,29 +183,30 @@ export const state = () => ([
     demo: "",
     mentions: [],
     released: true
-  },
-  {
-    name: "Offit",
-    slug: "offit",
-    date: new Date('June 2019'),
-    role: "Front-end developer",
-    team: [
-      { name: "Paul Agostini", role: "Project manager & UX/UI designer" },
-      { name: "Victor Block", role: "UX/UI designer & graphic designer" },
-      { name: "Yoan Halm", role: "UX/UI designer & marketing" },
-      { name: "Charles Bassignot", role: "Back-end developer" }
-    ],
-    tools: [
-      'WordPress',
-      'ACF',
-      'Timber',
-      'Vue.js'
-    ],
-    images: [],
-    description: "Our third year at HÉTIC is lead by a 6-month project with a client. Victor Mertz is the founder of Offit, a BtoB coaching service, and he needs us to develop a website for his company and a webapp to manage his clients' activities.",
-    code: "",
-    demo: "",
-    mentions: [],
-    released: false
   }
+  // {
+  //   name: "Offit",
+  //   slug: "offit",
+  //   date: new Date('June 2019'),
+  //   role: "Front-end developer",
+  //   team: [
+  //     { name: "Paul Agostini", role: "Project manager & UX/UI designer" },
+  //     { name: "Victor Block", role: "UX/UI designer & graphic designer" },
+  //     { name: "Yoan Halm", role: "UX/UI designer & marketing" },
+  //     { name: "Charles Bassignot", role: "Back-end developer" }
+  //   ],
+  //   tools: [
+  //     'WordPress',
+  //     'ACF',
+  //     'Timber',
+  //     'Vue.js'
+  //   ],
+  //   cover: "offit.png",
+  //   images: [],
+  //   description: "Our third year at HÉTIC is lead by a 6-month project with a client. Victor Mertz is the founder of Offit, a BtoB coaching service, and he needs us to develop a website for his company and a webapp to manage his clients' activities.",
+  //   code: "",
+  //   demo: "",
+  //   mentions: [],
+  //   released: false
+  // }
 ])

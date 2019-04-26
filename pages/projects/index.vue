@@ -1,6 +1,7 @@
 <template lang="pug">
 jumbotron(
   :isMain="true"
+  :url="$route.path"
   :cards="projects"
 )
 </template>

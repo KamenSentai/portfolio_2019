@@ -10,6 +10,7 @@
     content ''
     position absolute
     top 0
+    z-index -1
     height 100%
     pointer-events none
 
@@ -23,7 +24,6 @@
   &::after
     left calc(50% - 1px)
     width 2px
-    z-index -1
     transform scaleY(0)
     transform-origin 50% 0
     transition background-color 1s $cubic 1s
