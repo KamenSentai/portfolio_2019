@@ -45,18 +45,18 @@
           span.about_list_item Ruby on Rails
     .about_bloc
       p.about_text.about_text-framed(style="animation-delay: 4s")
-        push.text-bold(:isExternal="true" :isTexted="true" title="Download my CV here" href="/pdf/CV-Alain_Cao_Van_Truong.pdf")
+        push.text-bold(:isExternal="true" :isTexted="true" title="Download my CV here" href="/pdf/CV-Alain_Cao_Van_Truong.pdf" target="_blank")
     .about_section
       .about_card
         h2.about_subtitle(style="animation-delay: 4.5s") Contact
         .about_array(style="animation-delay: 5s")
-          push.about_link(:isExternal="true" :isTexted="false" title="linkedin.svg" href="https://www.hetic.net")
-          push.about_link(:isExternal="true" :isTexted="false" title="twitter.svg" href="https://www.hetic.net")
-          push.about_link(:isExternal="true" :isTexted="false" title="github.svg" href="https://www.hetic.net")
-          push.about_link(:isExternal="true" :isTexted="false" title="mail.svg" href="https://www.hetic.net")
+          push.about_link(:isExternal="true" :isTexted="false" title="linkedin.svg" href="https://linkedin.com/in/alain-cao-van-truong/" target="_blank" rel="noopener")
+          push.about_link(:isExternal="true" :isTexted="false" title="twitter.svg" href="https://twitter.com/AlainCVT" target="_blank" rel="noopener")
+          push.about_link(:isExternal="true" :isTexted="false" title="github.svg" href="https://github.com/KamenSentai" target="_blank" rel="noopener")
+          push.about_link(:isExternal="true" :isTexted="false" title="mail.svg" href="mailto:contact@alain-caovantruong.fr")
     .about_bloc
       p.about_text.about_text-credit(style="animation-delay: 5.5s")
-        push.text-bold(:isExternal="true" :isTexted="true" title="Designed by Gaëtan Lefebvre" href="http://gaetanlefebvre.fr")
+        push.text-bold(:isExternal="true" :isTexted="true" title="Designed by Gaëtan Lefebvre" href="http://gaetanlefebvre.fr" target="_blank" rel="noopener")
 </template>
 
 <script>

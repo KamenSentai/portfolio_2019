@@ -1,11 +1,11 @@
 <template lang="pug">
-a.push(v-if="isExternal" data-mouse="is-reduced" :data-display="isTexted ? 'text' : 'image'" :data-title="title" :href="href" target="_blank" rel="noopener")
-  img.push_text.push_text-image(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)")
-  img.push_text.push_text-sub(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)")
+a.push(v-if="isExternal" data-mouse="is-reduced" :data-display="isTexted ? 'text' : 'image'" :data-title="title" :title="title" :href="href")
+  img.push_text.push_text-image(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)" :alt="title")
+  img.push_text.push_text-sub(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)" :alt="title")
   span.push_text(v-else data-mouse="is-reduced") {{ title }}
-nuxt-link.push(v-else data-mouse="is-reduced" :data-display="isTexted ? 'text' : 'image'" :data-title="title" :to="href")
-  img.push_text.push_text-image(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)")
-  img.push_text.push_text-sub(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)")
+nuxt-link.push(v-else data-mouse="is-reduced" :data-display="isTexted ? 'text' : 'image'" :data-title="title" :title="title" :to="href")
+  img.push_text.push_text-image(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)" :alt="title")
+  img.push_text.push_text-sub(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)" :alt="title")
   span.push_text(v-else data-mouse="is-reduced") {{ title }}
 </template>
 
