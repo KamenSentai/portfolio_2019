@@ -7,8 +7,8 @@
   .navigation_menu
     .navigation_stripe
     .navigation_stripe.navigation_stripe-middle
-      push.navigation_link.navigation_link-left.button(:isExternal="false" :title="left.title" :href="left.href")
-      push.navigation_link.navigation_link-right.button(:isExternal="false" :title="right.title" :href="right.href")
+      push.navigation_link.navigation_link-left.button(:isExternal="false" :isTexted="true" :title="left.title" :href="left.href")
+      push.navigation_link.navigation_link-right.button(:isExternal="false" :isTexted="true" :title="right.title" :href="right.href")
     .navigation_stripe
 </template>
 

@@ -23,15 +23,7 @@ export default {
     opacity 0
     transform translateY(12.5%)
     will-change opacity, transform
-    animation intro-title 1s $cubic forwards
-
-  @keyframes intro-title
-    from
-      opacity 0
-      transform translateY(12.5%)
-    to
-      opacity 1
-      transform translateY(0)
+    animation intro-up 1s $cubic forwards
 
   &_title
     font-size 10rem

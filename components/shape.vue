@@ -4,22 +4,22 @@
   .shape_border.shape_border-center
   .shape_border.shape_border-bottom
   .shape_branch.shape_branch-topleft(v-if="isReversed")
-    push.shape_text(v-if="isPushing" :isExternal="false" :title="left.title" :href="left.href")
+    push.shape_text(v-if="isPushing" :isExternal="false" :isTexted="true" :title="left.title" :href="left.href")
     .shape_text(v-else) {{ left }}
   .shape_branch.shape_branch-bottomleft(v-else)
-    push.shape_text(v-if="isPushing" :isExternal="false" :title="left.title" :href="left.href")
+    push.shape_text(v-if="isPushing" :isExternal="false" :isTexted="true" :title="left.title" :href="left.href")
     .shape_text(v-else) {{ left }}
   .shape_branch.shape_branch-bottomcenter(v-if="isReversed")
-    push.shape_text(v-if="isPushing" :isExternal="false" :title="center.title" :href="center.href")
+    push.shape_text(v-if="isPushing" :isExternal="false" :isTexted="true" :title="center.title" :href="center.href")
     .shape_text(v-else) {{ center }}
   .shape_branch.shape_branch-topcenter(v-else)
-    push.shape_text(v-if="isPushing" :isExternal="false" :title="center.title" :href="center.href")
+    push.shape_text(v-if="isPushing" :isExternal="false" :isTexted="true" :title="center.title" :href="center.href")
     .shape_text(v-else) {{ center }}
   .shape_branch.shape_branch-topright(v-if="isReversed")
-    push.shape_text(v-if="isPushing" :isExternal="false" :title="right.title" :href="right.href")
+    push.shape_text(v-if="isPushing" :isExternal="false" :isTexted="true" :title="right.title" :href="right.href")
     .shape_text(v-else) {{ right }}
   .shape_branch.shape_branch-bottomright(v-else)
-    push.shape_text(v-if="isPushing" :isExternal="false" :title="right.title" :href="right.href")
+    push.shape_text(v-if="isPushing" :isExternal="false" :isTexted="true" :title="right.title" :href="right.href")
     .shape_text(v-else) {{ right }}
 </template>
 
