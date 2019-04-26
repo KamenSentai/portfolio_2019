@@ -4,7 +4,7 @@
     :left="{ title: 'Projects', href: '/projects' }"
     :right="{ title: 'Works', href: '/works' }"
   )
-  .container_page.about
+  .container_page.about(:data-theme="$store.state.theme.color")
     h1.about_title About
     shape(
       :isPushing="false"
@@ -86,7 +86,12 @@ export default {
   transition: {
     mode: 'out-in',
     enter(el, done) {
-      done()
+      const tl = new TimelineMax({ onComplete: done })
+
+      if (this.$store.state.prevRoute === '/') {
+        tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
+        tl.fromTo('.navigation_menu', 1, { scaleX: 0 }, { scaleX: 1 }, .5)
+      }
     },
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
@@ -171,7 +176,12 @@ export default {
 
     &-framed
       padding 1em
-      border 2px solid $black
+
+      ^[-2][data-theme="black"] &
+        border 2px solid $white
+
+      ^[-2][data-theme="white"] &
+        border 2px solid $black
 
     &-credit
       font-size 2.5rem
