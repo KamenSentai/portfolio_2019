@@ -143,11 +143,17 @@ export default {
     font-weight 700
     text-transform uppercase
 
+    @media (max-width 875px)
+      font-size 3.75rem
+
   &_bloc
-    margin 50px 0
-    max-width 600px
+    margin 50px
+    max-width 625px
     font-size 5rem
     text-align center
+
+    @media (max-width 625px)
+      font-size 3.75rem
 
   &_section
     display flex
@@ -156,12 +162,24 @@ export default {
     padding 0 100px
     width 100%
 
+    @media (max-width 1000px)
+      padding 0 50px
+
+    @media (max-width 875px)
+      padding 0 25px
+
+    @media (max-width 750px)
+      flex-direction column
+
   &_card
     display flex
     flex-direction column
     align-items center
     margin 0 25px
     flex 1
+
+    @media (max-width 750px)
+      margin 25px
 
   &_list
     display flex
@@ -221,7 +239,12 @@ export default {
   &_array
     display flex
 
+    @media (max-width 500px)
+      flex-direction column
+
   &_link
     margin 0 25px
-    font-size 3.75rem
+
+    @media (max-width 500px)
+      margin 25px
 </style>
