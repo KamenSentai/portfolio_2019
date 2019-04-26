@@ -1,8 +1,13 @@
 <template lang="pug">
-
+jumbotron(
+  :isMain="false"
+  :cards="works"
+)
 </template>
 
 <script>
+import Jumbotron from '@/components/jumbotron'
+
 export default {
   head() {
     return {
@@ -14,6 +19,9 @@ export default {
         class: 'is-unscrollable'
       }
     }
+  },
+  components: {
+    'jumbotron': Jumbotron
   },
   computed: {
     works() {
