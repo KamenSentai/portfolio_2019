@@ -1,13 +1,13 @@
 <template lang="pug">
 .jumbotron
-  .jumbotron_frame(ref="frame" data-mouse="is-reduced")
-    nuxt-link.jumbotron_link(v-if="isMain" v-for="(card, index) in cards" :key="index" :to="`${url}/${card.slug}`" :data-display="index === page ? 'flex' : 'none'")
+  .jumbotron_frame(ref="frame" v-if="isMain" data-mouse="is-reduced")
+    nuxt-link.jumbotron_link(v-for="(card, index) in cards" :key="index" :to="`${url}/${card.slug}`" :data-display="index === page ? 'flex' : 'none'")
       img.jumbotron_image(data-mouse="is-reduced" :src="require(`../assets/images/${card.cover}`)")
   .jumbotron_buttons
     button.jumbotron_button.jumbotron_button-up(data-mouse="is-reduced" @click="slideUp")
     button.jumbotron_button.jumbotron_button-down(data-mouse="is-reduced" @click="slideDown")
   .jumbotron_titles
-    h2.jumbotron_title(ref="subtitle" v-for="(card, index) in cards" :key="index" :data-display="index === page ? 'block' : 'none'") {{ card.name }}
+    h2.jumbotron_title(ref="subtitle" v-if="isMain" v-for="(card, index) in cards" :key="index" :data-display="index === page ? 'block' : 'none'") {{ card.name }}
 </template>
 
 <script>
