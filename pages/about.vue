@@ -45,7 +45,7 @@
           span.about_list_item Ruby on Rails
     .about_bloc
       p.about_text.about_text-framed(style="animation-delay: 4s")
-        push.text-bold(:isExternal="true" :isTexted="true" title="Download my CV here." href="/pdf/CV-Alain_Cao_Van_Truong.pdf")
+        push.text-bold(:isExternal="true" :isTexted="true" title="Download my CV here" href="/pdf/CV-Alain_Cao_Van_Truong.pdf")
     .about_section
       .about_card
         h2.about_subtitle(style="animation-delay: 4.5s") Contact
@@ -54,6 +54,9 @@
           push.about_link(:isExternal="true" :isTexted="false" title="twitter.svg" href="https://www.hetic.net")
           push.about_link(:isExternal="true" :isTexted="false" title="github.svg" href="https://www.hetic.net")
           push.about_link(:isExternal="true" :isTexted="false" title="mail.svg" href="https://www.hetic.net")
+    .about_bloc
+      p.about_text.about_text-credit(style="animation-delay: 5.5s")
+        push.text-bold(:isExternal="true" :isTexted="true" title="Designed by Gaëtan Lefebvre" href="http://gaetanlefebvre.fr")
 </template>
 
 <script>
@@ -169,6 +172,11 @@ export default {
     &-framed
       padding 1em
       border 2px solid $black
+
+    &-credit
+      font-size 2.5rem
+      font-weight 700
+      text-transform uppercase
 
   &_array
     display flex
