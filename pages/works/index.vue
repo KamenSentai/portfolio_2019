@@ -1,9 +1,12 @@
 <template lang="pug">
-
+grid(
+  :url="$route.path"
+  :cards="works"
+)
 </template>
 
 <script>
-import Jumbotron from '@/components/jumbotron'
+import Grid from '@/components/grid'
 
 export default {
   head() {
@@ -18,7 +21,7 @@ export default {
     }
   },
   components: {
-    'jumbotron': Jumbotron
+    'grid': Grid
   },
   computed: {
     works() {

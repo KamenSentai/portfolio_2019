@@ -13,6 +13,7 @@
       img.jumbotron_image(
         data-mouse="is-reduced"
         :src="require(`../assets/images/${card.cover}`)"
+        :alt="card.name"
       )
   .jumbotron_buttons
     button.jumbotron_button.jumbotron_button-up(

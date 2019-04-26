@@ -28,17 +28,28 @@ export default {
       }
 
       if (this.$store.state.nextRoute === '/works') {
-
+        tl.fromTo('.grid_mask-left', 1, { right: '50%' }, { right: '100%' }, 1)
+        tl.fromTo('.grid_mask-right', 1, { left: '50%' }, { left: '100%' }, 1)
+        tl.fromTo('.grid_mask-top', 1, { bottom: '50%' }, { bottom: '100%' }, 2)
+        tl.fromTo('.grid_mask-bottom', 1, { top: '50%' }, { top: '100%' }, 2)
       }
     },
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
 
+      scrollTo({
+        left: 0,
+        top: 0,
+        behavior: 'smooth'
+      })
 
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
 
       if (this.$store.state.prevRoute === '/works') {
-
+        tl.to('.grid_mask-top', 1, { bottom: '50%' }, 0)
+        tl.to('.grid_mask-bottom', 1, { top: '50%' }, 0)
+        tl.to('.grid_mask-left', 1, { right: '50%' }, 1)
+        tl.to('.grid_mask-right', 1, { left: '50%' }, 1)
       }
 
       if (this.$store.state.nextRoute === '/') {
