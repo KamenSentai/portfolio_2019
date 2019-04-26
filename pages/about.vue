@@ -13,11 +13,15 @@
       center="developer"
       right="stack"
     )
-    p.container_text My name is Alain Cao Van Truong.
+    .container_text
+      p.container_paragraph My name is Alain Cao Van Truong.
+      p.container_paragraph I am a third-year studend at <push class="text-bold" :isExternal="true" title="HÉTIC" href="https://www.hetic.net"/>
+      p.container_paragraph I experiment front-end, back-end and mobile development.
 </template>
 
 <script>
 import Navigation from '@/components/navigation'
+import Push from '@/components/push'
 import Shape from '@/components/shape'
 
 import { TimelineMax } from 'gsap'
@@ -36,6 +40,7 @@ export default {
   },
   components: {
     'navigation': Navigation,
+    'push': Push,
     'shape': Shape
   },
   transition: {

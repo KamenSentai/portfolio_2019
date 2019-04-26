@@ -1,11 +1,14 @@
 <template lang="pug">
-nuxt-link.push(data-mouse="is-reduced" :data-text="title" :to="href")
+a.push(v-if="isExternal" data-mouse="is-reduced" :data-text="title" :href="href" target="_blank" rel="noopener")
+  span.push_text(data-mouse="is-reduced") {{ title }}
+nuxt-link.push(v-else data-mouse="is-reduced" :data-text="title" :to="href")
   span.push_text(data-mouse="is-reduced") {{ title }}
 </template>
 
 <script>
 export default {
   props: [
+    'isExternal',
     'title',
     'href'
   ]
@@ -17,7 +20,7 @@ export default {
 
 .push
   position relative
-  display inline-block
+  display inline-flex
   overflow hidden
 
   &::before
