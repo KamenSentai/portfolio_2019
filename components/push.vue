@@ -3,7 +3,7 @@ a.push(v-if="isExternal" data-mouse="is-reduced" :data-display="isTexted ? 'text
   img.push_text.push_text-image(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)")
   img.push_text.push_text-sub(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)")
   span.push_text(v-else data-mouse="is-reduced") {{ title }}
-nuxt-link.push(v-else data-mouse="is-reduced" :data-title="title" :to="href")
+nuxt-link.push(v-else data-mouse="is-reduced" :data-display="isTexted ? 'text' : 'image'" :data-title="title" :to="href")
   img.push_text.push_text-image(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)")
   img.push_text.push_text-sub(v-if="!isTexted" data-mouse="is-reduced" :src="require(`../assets/images/${title}`)")
   span.push_text(v-else data-mouse="is-reduced") {{ title }}

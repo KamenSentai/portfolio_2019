@@ -19,7 +19,7 @@
       p.about_paragraph(style="animation-delay: 2.5s") I experiment front-end, back-end and mobile development.
     .about_section
       .about_card
-        h2.about_subtitle(style="animation-delay: 3s") <span>What I</span> <span>can do</span>
+        h2.about_subtitle(style="animation-delay: 3s") <span>What I wish</span> <span>to perfect</span>
         .about_list(style="animation-delay: 3.5s")
           span.about_list_item Vue.js
           span.about_list_item Nuxt.js
@@ -28,7 +28,7 @@
           span.about_list_item Three.js
           span.about_list_item Git
       .about_card
-        h2.about_subtitle(style="animation-delay: 3s") <span>What I</span> <span>need to improve</span>
+        h2.about_subtitle(style="animation-delay: 3s") <span>What I need</span> <span>to improve</span>
         .about_list(style="animation-delay: 3.5s")
           span.about_list_item React.js
           span.about_list_item AngularJS
@@ -37,7 +37,7 @@
           span.about_list_item Typescript
           span.about_list_item WordPress
       .about_card
-        h2.about_subtitle(style="animation-delay: 3s") <span>What I</span> <span>want to learn</span>
+        h2.about_subtitle(style="animation-delay: 3s") <span>What I want</span> <span>to learn</span>
         .about_list(style="animation-delay: 3.5s")
           span.about_list_item Symfony
           span.about_list_item React Native
@@ -96,6 +96,11 @@ export default {
 
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
       tl.to('.about', 1, { opacity: 0, y: 100 }, 1)
+
+      if (this.$store.state.nextRoute === '/') {
+        tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
+        tl.to('.navigation_main', 1, { y: - window.innerHeight / 4 }, .5)
+      }
     }
   }
 }
@@ -123,8 +128,8 @@ export default {
 
   &_subtitle
     display flex
-    margin-bottom 25px
     flex-direction column
+    margin-bottom 25px
     text-align center
     font-size 5rem
     font-weight 700
