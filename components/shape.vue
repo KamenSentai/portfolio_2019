@@ -53,6 +53,10 @@ $linkGap = .5em
   height $shapeSize
   margin $shapeSize * 2.5
 
+  @media (max-width 500px), (max-height 500px)
+    margin $shapeSize * 1.25
+    transform scale(.75)
+
   &_border
     position absolute
     left 0

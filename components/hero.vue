@@ -30,9 +30,27 @@ export default {
     text-transform uppercase
     animation-delay .25s
 
+    @media (max-width 650px), (max-height 550px)
+      font-size 7.5rem
+
+    @media (max-width 550px)
+      font-size 5rem
+
+    @media (max-width 450px)
+      font-size 3.75rem
+
   &_subtitle
     font-size 7.5rem
     animation-delay .5s
+
+    @media (max-width 650px), (max-height 550px)
+      font-size 5rem
+
+    @media (max-width 550px)
+      font-size 3.75rem
+
+    @media (max-width 450px)
+      font-size 2.5rem
 
   &_text
     display block
