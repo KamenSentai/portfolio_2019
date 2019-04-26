@@ -2,7 +2,6 @@
 .jumbotron
   .jumbotron_frame(
     ref="frame"
-    v-if="isMain"
     data-mouse="is-reduced"
   )
     nuxt-link.jumbotron_link(
@@ -27,7 +26,6 @@
   .jumbotron_titles
     h2.jumbotron_title(
       ref="subtitle"
-      v-if="isMain"
       v-for="(card, index) in cards"
       :key="index"
       :data-display="index === page ? 'block' : 'none'"
@@ -45,7 +43,6 @@ export default {
     }
   },
   props: [
-    'isMain',
     'url',
     'cards'
   ],

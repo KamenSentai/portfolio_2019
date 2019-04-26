@@ -1,9 +1,5 @@
 <template lang="pug">
-jumbotron(
-  :isMain="false"
-  :url="$route.path"
-  :cards="works"
-)
+
 </template>
 
 <script>
@@ -17,7 +13,7 @@ export default {
         { hid: 'description', name: 'description', content: 'Check out my little works and tests.' }
       ],
       bodyAttrs: {
-        class: 'is-unscrollable'
+        class: 'is-scrollable'
       }
     }
   },

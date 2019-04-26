@@ -28,9 +28,7 @@ export default {
       }
 
       if (this.$store.state.nextRoute === '/works') {
-        if (this.$store.state.prevRoute !== '/projects') {
-          tl.fromTo('.jumbotron_button', 1, { rotationX: '90deg' }, { rotationX: 0 }, 0)
-        }
+
       }
     },
     leave(el, done) {
@@ -40,10 +38,7 @@ export default {
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
 
       if (this.$store.state.prevRoute === '/works') {
-        if (this.$store.state.nextRoute !== '/projects') {
-          tl.to('.jumbotron_button', 1, { rotationX: '-90deg' }, 0)
-          tl.to('.jumbotron_buttons', 0, { opacity: 0 }, 1)
-        }
+
       }
 
       if (this.$store.state.nextRoute === '/') {
