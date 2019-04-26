@@ -175,13 +175,43 @@ export default {
     font-size 3.75rem
 
     &-framed
+      position relative
       padding 1em
 
+      &::before,
+      &::after
+        content ''
+        position absolute
+        left 0
+        top 0
+        width 100%
+        height 100%
+        pointer-events none
+        transform-origin 50% 50%
+
+      &::before
+        transform scaleY(0)
+        animation scale-vertical 1s $cubic 5.5s forwards
+
+      &::after
+        transform scaleX(0)
+        animation scale-horizontal 1s $cubic 5s forwards
+
       ^[-2][data-theme="black"] &
-        border 2px solid $white
+        &::before
+          border-left 2px solid $white
+          border-right 2px solid $white
+        &::after
+          border-top 2px solid $white
+          border-bottom 2px solid $white
 
       ^[-2][data-theme="white"] &
-        border 2px solid $black
+        &::before
+          border-left 2px solid $black
+          border-right 2px solid $black
+        &::after
+          border-top 2px solid $black
+          border-bottom 2px solid $black
 
     &-credit
       font-size 2.5rem

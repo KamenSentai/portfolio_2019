@@ -27,7 +27,7 @@
     transform-origin 50% 0
     transition background-color 1s $cubic 1s
     will-change transform
-    animation scale-bar .5s $cubic .25s forwards
+    animation scale-vertical .5s $cubic .25s forwards
 
   &[data-theme="black"]
     color $white
@@ -46,9 +46,3 @@
 
     &::after
       background-color rgba($black, .25)
-
-  @keyframes scale-bar
-    from
-      transform scaleY(0)
-    to
-      transform scaleY(1)
