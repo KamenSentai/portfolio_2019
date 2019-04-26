@@ -8,6 +8,13 @@
 import Mouse from '@/components/mouse'
 
 export default {
+  head() {
+    return {
+      htmlAttrs: {
+        'data-theme': this.$store.state.theme.color
+      }
+    }
+  },
   components: {
     'mouse': Mouse
   }

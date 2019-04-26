@@ -1,21 +1,25 @@
 html
   full-size()
-
-html
   font-size 62.5%
-  background-color $black
+  transition background-color 1s $cubic 1s
+
+  &[data-theme="black"]
+    background-color $black
+
+  &[data-theme="white"]
+    background-color $white
 
 body
   position relative
   font-family $morganite
+  full-size()
 
   &.is-scrollable
-    width 100%
     height auto
     overflow auto
 
   &.is-unscrollable
-    full-size()
+    height 100%
     overflow hidden
 
   > *
