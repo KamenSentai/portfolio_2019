@@ -1,6 +1,6 @@
 <template lang="pug">
 .shape(
-  :data-theme="$store.state.theme.color"
+  :data-theme="$store.state.color"
   :data-reversed="isReversed"
 )
   .shape_border.shape_border-top

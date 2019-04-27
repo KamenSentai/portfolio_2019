@@ -1,5 +1,5 @@
 <template lang="pug">
-.navigation(:data-theme="$store.state.theme.color")
+.navigation(:data-theme="$store.state.color")
   nuxt-link.navigation_main(data-mouse="is-reduced" to="/")
     svg.navigation_logo(
       data-mouse="is-reduced"

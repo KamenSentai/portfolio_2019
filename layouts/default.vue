@@ -1,5 +1,5 @@
 <template lang="pug">
-.page(:data-theme="$store.state.theme.color")
+.page(:data-theme="$store.state.color")
   mouse
   nuxt
 </template>
@@ -11,7 +11,7 @@ export default {
   head() {
     return {
       htmlAttrs: {
-        'data-theme': this.$store.state.theme.color
+        'data-theme': this.$store.state.color
       }
     }
   },

@@ -14,10 +14,10 @@
           :src="require(`../assets/images/${card.slug}/0.png`)"
           :alt="card.name"
         )
-      .grid_mask.grid_mask-top(:data-theme="$store.state.theme.color")
-      .grid_mask.grid_mask-bottom(:data-theme="$store.state.theme.color")
-      .grid_mask.grid_mask-left(:data-theme="$store.state.theme.color")
-      .grid_mask.grid_mask-right(:data-theme="$store.state.theme.color")
+      .grid_mask.grid_mask-top(:data-theme="$store.state.color")
+      .grid_mask.grid_mask-bottom(:data-theme="$store.state.color")
+      .grid_mask.grid_mask-left(:data-theme="$store.state.color")
+      .grid_mask.grid_mask-right(:data-theme="$store.state.color")
     h2.grid_title {{ card.name }}
     .grid_links
       push.grid_link(

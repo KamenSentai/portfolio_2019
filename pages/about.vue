@@ -4,7 +4,7 @@
     :left="{ title: 'Projects', href: '/projects' }"
     :right="{ title: 'Works', href: '/works' }"
   )
-  .container_page.about(:data-theme="$store.state.theme.color")
+  .container_page.about(:data-theme="$store.state.color")
     h1.about_title About
     shape(
       :isReversed="true"
