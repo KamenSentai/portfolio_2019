@@ -44,8 +44,8 @@
     .shape_text(v-else) {{ center.title }}
   .shape_branch.shape_branch-topright(v-if="isReversed")
     push.shape_text(
-      v-if="left.isPushing"
-      :isExternal="left.isExternal"
+      v-if="right.isPushing"
+      :isExternal="right.isExternal"
       :isTexted="true"
       :title="right.title"
       :href="right.href"
@@ -53,8 +53,8 @@
     .shape_text(v-else) {{ right.title }}
   .shape_branch.shape_branch-bottomright(v-else)
     push.shape_text(
-      v-if="left.isPushing"
-      :isExternal="left.isExternal"
+      v-if="right.isPushing"
+      :isExternal="right.isExternal"
       :isTexted="true"
       :title="right.title"
       :href="right.href"

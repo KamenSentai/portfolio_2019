@@ -37,8 +37,6 @@ export default {
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
 
-      tl.to('.container', 0, { pointerEvents: 'none' }, 0)
-
       if (this.$store.state.prevRoute === '/projects') {
         tl.to('.jumbotron_button', 1, { rotationX: '-90deg' }, 0)
         tl.to('.jumbotron_buttons', 0, { opacity: 0 }, 1)
@@ -46,6 +44,7 @@ export default {
         tl.to('.jumbotron_frame', 1, { scaleX: 0 }, 1)
 
         if (!this.$store.state.nextRoute.includes('/projects/')) {
+          tl.to('.container', 0, { pointerEvents: 'none' }, 0)
           tl.to('.jumbotron_titles', 1, { opacity: 0 }, 1)
         }
       }

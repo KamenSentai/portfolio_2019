@@ -3,10 +3,11 @@
   h1.project_title {{ project.name }}
   shape(
     :isReversed="false"
-    :left="{ isPushing: true, isExternal: true, title: 'View code', href: project.code }"
+    :left="{ isPushing: project.code !== '', isExternal: true, title: project.code !== '' ? 'View code' : 'Code unavailable', href: project.code }"
     :center="{ isPushing: false, title: projectDate }"
-    :right="{ isPushing: true, isExternal: true, title: 'View demo', href: project.demo }"
+    :right="{ isPushing: project.demo !== '', isExternal: true, title: project.demo !== '' ? 'View demo' : 'Demo unavailable', href: project.demo }"
   )
+  .project_description {{ project.description }}
 </template>
 
 <script>
@@ -42,6 +43,11 @@ export default {
     projectDate() {
       return moment(this.project.date).format('MMMM YYYY')
     }
+  },
+  methods: {
+    mod(n, m) {
+      return ((n % m) + m) % m
+    }
   }
 }
 </script>
@@ -73,5 +79,15 @@ export default {
       font-size 5rem
 
     @media (max-width 450px)
+      font-size 3.75rem
+
+  &_description
+    margin 50px
+    max-width 750px
+    font-size 3.75rem
+    text-align justify
+    text-align-last center
+
+    @media (max-width 625px)
       font-size 3.75rem
 </style>
