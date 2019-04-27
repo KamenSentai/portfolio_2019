@@ -1,5 +1,5 @@
 <template lang="pug">
-.jumbotron
+.jumbotron(@touchstart="touchStart" @touchmove="touchMove")
   .jumbotron_frame(
     ref="frame"
     data-mouse="is-reduced"
@@ -40,7 +40,9 @@ export default {
   data() {
     return {
       page: 0,
-      isSliding: false
+      isSliding: false,
+      initialX: null,
+      initialY: null
     }
   },
   props: [
@@ -107,10 +109,36 @@ export default {
         default:
           break
       }
-    }
+    },
+    wheel(event) {
+      if (event.deltaY < 0) this.slideUp()
+      else if (event.deltaY > 0) this.slideDown()
+    },
+    touchStart(event) {
+      this.initialX = event.touches[0].clientX
+      this.initialY = event.touches[0].clientY
+    },
+    touchMove(event) {
+      if (this.initialX === null || this.initialY === null) return
+
+      let currentX = event.touches[0].clientX
+      let currentY = event.touches[0].clientY
+
+      let diffX = this.initialX - currentX
+      let diffY = this.initialY - currentY
+
+      if (Math.abs(diffX) < Math.abs(diffY)) {
+        if (diffY < 0) this.slideUp()
+        else this.slideDown()
+      }
+
+      this.initialX = null
+      this.initialY = null
+    },
   },
   mounted() {
     window.addEventListener('keydown', this.keyPress)
+    window.addEventListener('wheel', this.wheel)
   }
 }
 </script>
@@ -132,6 +160,7 @@ $buttonSize = 50px
     padding-bottom ($buttonSize * 2 / 3)
 
   &_frame
+    position relative
     display flex
     justify-content center
     align-items center
@@ -159,6 +188,7 @@ $buttonSize = 50px
       display none
 
   &_image
+    position absolute
     opacity .5
     transform scale(1)
     transition all 1s $cubic
