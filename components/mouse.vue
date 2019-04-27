@@ -40,6 +40,9 @@ export default {
     })
 
     window.addEventListener('resize', () => {
+      windowSize.w = window.innerWidth
+      windowSize.h = window.innerHeight
+
       mouse.x = screen.x - _body.getBoundingClientRect().left
       mouse.y = screen.y - _body.getBoundingClientRect().top
     })
