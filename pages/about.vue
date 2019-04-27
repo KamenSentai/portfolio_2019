@@ -7,11 +7,10 @@
   .container_page.about(:data-theme="$store.state.theme.color")
     h1.about_title About
     shape(
-      :isPushing="false"
       :isReversed="true"
-      left="Full"
-      center="developer"
-      right="stack"
+      :left="{ isPushing: false, title: 'Full' }"
+      :center="{ isPushing: false, title: 'developer' }"
+      :right="{ isPushing: false, title: 'stack' }"
     )
     .about_bloc
       p.about_paragraph(style="animation-delay: 1.5s") My name is Alain Cao Van Truong.
@@ -50,7 +49,6 @@
           :isTexted="true"
           title="Download my CV here"
           href="/pdf/CV-Alain_Cao_Van_Truong.pdf"
-          target="_blank"
         )
     .about_section
       .about_card
@@ -61,7 +59,6 @@
             :isTexted="false"
             title="linkedin.svg"
             href="https://linkedin.com/in/alain-cao-van-truong/"
-            target="_blank"
             rel="noopener"
           )
           push.about_link(
@@ -69,7 +66,6 @@
             :isTexted="false"
             title="twitter.svg"
             href="https://twitter.com/AlainCVT"
-            target="_blank"
             rel="noopener"
           )
           push.about_link(
@@ -77,7 +73,6 @@
             :isTexted="false"
             title="github.svg"
             href="https://github.com/KamenSentai"
-            target="_blank"
             rel="noopener"
           )
           push.about_link(
@@ -92,7 +87,6 @@
           :isTexted="true"
           title="Designed by Gaëtan Lefebvre"
           href="http://gaetanlefebvre.fr"
-          target="_blank"
           rel="noopener"
         )
 </template>

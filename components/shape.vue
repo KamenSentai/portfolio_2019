@@ -8,58 +8,58 @@
   .shape_border.shape_border-bottom
   .shape_branch.shape_branch-topleft(v-if="isReversed")
     push.shape_text(
-      v-if="isPushing"
-      :isExternal="false"
+      v-if="left.isPushing"
+      :isExternal="left.isExternal"
       :isTexted="true"
       :title="left.title"
       :href="left.href"
     )
-    .shape_text(v-else) {{ left }}
+    .shape_text(v-else) {{ left.title }}
   .shape_branch.shape_branch-bottomleft(v-else)
     push.shape_text(
-      v-if="isPushing"
-      :isExternal="false"
+      v-if="left.isPushing"
+      :isExternal="left.isExternal"
       :isTexted="true"
       :title="left.title"
       :href="left.href"
     )
-    .shape_text(v-else) {{ left }}
+    .shape_text(v-else) {{ left.title }}
   .shape_branch.shape_branch-bottomcenter(v-if="isReversed")
     push.shape_text(
-      v-if="isPushing"
-      :isExternal="false"
+      v-if="center.isPushing"
+      :isExternal="center.isExternal"
       :isTexted="true"
       :title="center.title"
       :href="center.href"
     )
-    .shape_text(v-else) {{ center }}
+    .shape_text(v-else) {{ center.title }}
   .shape_branch.shape_branch-topcenter(v-else)
     push.shape_text(
-      v-if="isPushing"
-      :isExternal="false"
+      v-if="center.isPushing"
+      :isExternal="center.isExternal"
       :isTexted="true"
       :title="center.title"
       :href="center.href"
     )
-    .shape_text(v-else) {{ center }}
+    .shape_text(v-else) {{ center.title }}
   .shape_branch.shape_branch-topright(v-if="isReversed")
     push.shape_text(
-      v-if="isPushing"
-      :isExternal="false"
+      v-if="left.isPushing"
+      :isExternal="left.isExternal"
       :isTexted="true"
       :title="right.title"
       :href="right.href"
     )
-    .shape_text(v-else) {{ right }}
+    .shape_text(v-else) {{ right.title }}
   .shape_branch.shape_branch-bottomright(v-else)
     push.shape_text(
-      v-if="isPushing"
-      :isExternal="false"
+      v-if="left.isPushing"
+      :isExternal="left.isExternal"
       :isTexted="true"
       :title="right.title"
       :href="right.href"
     )
-    .shape_text(v-else) {{ right }}
+    .shape_text(v-else) {{ right.title }}
 </template>
 
 <script>
@@ -67,7 +67,6 @@ import Push from './push'
 
 export default {
   props: [
-    'isPushing',
     'isReversed',
     'left',
     'center',
@@ -396,6 +395,7 @@ $linkGap = .5em
     position absolute
     font-size 2.5rem
     text-transform uppercase
+    text-align center
     opacity 0
     will-change opacity, transform
 </style>

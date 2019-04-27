@@ -6,6 +6,7 @@ a.push(
   :data-title="title"
   :title="title"
   :href="href"
+  target="_blank"
 )
   img.push_text.push_text-image(
     v-if="!isTexted"

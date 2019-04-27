@@ -4,11 +4,10 @@
     hero
   .container_section
     shape(
-      :isPushing="true"
       :isReversed="false"
-      :left="{ title: 'Projects', href: '/projects' }"
-      :center="{ title: 'About', href: '/about' }"
-      :right="{ title: 'Works', href: '/works' }"
+      :left="{ isPushing: true, isExternal: false, title: 'Projects', href: '/projects' }"
+      :center="{ isPushing: true, isExternal: false, title: 'About', href: '/about' }"
+      :right="{ isPushing: true, isExternal: false, title: 'Works', href: '/works' }"
     )
 </template>
 

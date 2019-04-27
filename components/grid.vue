@@ -26,7 +26,6 @@
         :isTexted="true"
         title="View code"
         :href="card.code"
-        target="_blank"
       )
       push.grid_link(
         v-if="card.demo !== ''"
@@ -34,7 +33,6 @@
         :isTexted="true"
         title="View demo"
         :href="card.demo"
-        target="_blank"
       )
 </template>
 
