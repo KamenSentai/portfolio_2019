@@ -172,8 +172,7 @@ $buttonSize = 50px
     overflow hidden
 
     &:hover ^[-1]_image
-      transform scale(.75)
-      opacity 1
+      transform scale(.8125)
       filter blur(10px)
 
   &_link
@@ -190,7 +189,7 @@ $buttonSize = 50px
   &_image
     position absolute
     opacity .5
-    transform scale(1)
+    transform scale(.75)
     transition all 1s $cubic
     will-change transform
 

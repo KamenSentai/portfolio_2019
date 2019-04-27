@@ -53,6 +53,8 @@ export default {
 <style lang="stylus" scoped>
 @import '~assets/styles/tools/app'
 
+$marginSize = 100px
+
 .grid
   display flex
   justify-content space-between
@@ -64,12 +66,12 @@ export default {
     display flex
     flex-direction column
     align-items center
-    width calc(50% - 50px * 2)
-    margin 50px
+    width "calc(50% - %s * 2)" % $marginSize
+    margin $marginSize
     margin-bottom 100px
     overflow hidden
 
-    @media (max-width 750px)
+    @media (max-width $gridmedia8)
       width 100%
 
   &_frame
@@ -117,16 +119,20 @@ export default {
     will-change transform
 
     &:hover
-      transform scale(.875)
+      transform scale(.9375)
 
   &_title
     margin 50px 0
     font-size 7.5rem
     font-weight 700
     text-align center
+    text-transform uppercase
 
-    @media (max-width 500px)
+    @media (max-width $gridmedia10)
       font-size 5rem
+
+    @media (max-width $gridmedia4)
+      font-size 3.75rem
 
   &_links
     display flex
@@ -134,6 +140,9 @@ export default {
     width 100%
 
   &_link
-    font-size 3.75rem
+    font-size 2.5rem
     text-transform uppercase
+
+    @media (max-width $gridmedia4)
+      font-size 2rem
 </style>
