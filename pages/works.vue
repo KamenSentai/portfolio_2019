@@ -28,10 +28,13 @@ export default {
       }
 
       if (this.$store.state.nextRoute === '/works') {
-        tl.fromTo('.grid_mask-left', 1, { right: '50%' }, { right: '100%' }, 1)
-        tl.fromTo('.grid_mask-right', 1, { left: '50%' }, { left: '100%' }, 1)
-        tl.fromTo('.grid_mask-top', 1, { bottom: '50%' }, { bottom: '100%' }, 2)
-        tl.fromTo('.grid_mask-bottom', 1, { top: '50%' }, { top: '100%' }, 2)
+        tl.fromTo('.grid_title', 1, { yPercent: -12.5, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1)
+        tl.fromTo('.grid_links', 1, { yPercent: -12.5, opacity: 0 }, { yPercent: 0, opacity: 1 }, 2)
+        tl.fromTo('.grid_frame', 1, { opacity: 0 }, { opacity: 1 }, 2)
+        tl.fromTo('.grid_mask-left', 1, { right: '50%' }, { right: '100%' }, 2)
+        tl.fromTo('.grid_mask-right', 1, { left: '50%' }, { left: '100%' }, 2)
+        tl.fromTo('.grid_mask-top', 1, { bottom: '50%' }, { bottom: '100%' }, 3)
+        tl.fromTo('.grid_mask-bottom', 1, { top: '50%' }, { top: '100%' }, 3)
       }
     },
     leave(el, done) {
@@ -50,6 +53,9 @@ export default {
         tl.to('.grid_mask-bottom', 1, { top: '50%' }, 0)
         tl.to('.grid_mask-left', 1, { right: '50%' }, 1)
         tl.to('.grid_mask-right', 1, { left: '50%' }, 1)
+        tl.to('.grid_frame', 0, { opacity: 0 }, 2)
+        tl.to('.grid_title', 1, { yPercent: -12.5, opacity: 0 }, 1)
+        tl.to('.grid_links', 1, { yPercent: -12.5, opacity: 0 }, 1.5)
       }
 
       if (this.$store.state.nextRoute === '/') {
