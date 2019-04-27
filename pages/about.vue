@@ -13,7 +13,7 @@
       :right="{ isPushing: false, title: 'stack' }"
     )
     .about_section
-      p.about_paragraph(style="animation-delay: 1.5s") My name is Alain Cao Van Truong. I am a third-year studend at webschool <push class="text-bold" :isExternal="true" :isTexted="true" title="HÉTIC" href="https://www.hetic.net"/>. I mainly experiment front-end, back-end and mobile development. I am currently looking for a 5-month internship from late June to late November.
+      p.about_paragraph(style="animation-delay: 1.5s") My name is Alain Cao Van Truong. I am a third-year studend at webschool <push class="text-bold" :isExternal="true" :isTexted="true" title="HÉTIC" href="https://www.hetic.net"/>. I mainly experiment front-end, back-end and a little bit mobile development. I am currently looking for a 5-month internship from late June to late November.
     .about_section
       .about_card
         h2.about_subtitle(style="animation-delay: 2s") <span>What I wish</span> <span>to perfect</span>
@@ -37,9 +37,11 @@
         h2.about_subtitle(style="animation-delay: 2s") <span>What I want</span> <span>to learn</span>
         .about_list(style="animation-delay: 2.5s")
           span.about_list_item Symfony
+          span.about_list_item Django
+          span.about_list_item Ruby on Rails
           span.about_list_item React Native
           span.about_list_item ReasonML
-          span.about_list_item Ruby on Rails
+          span.about_list_item Kotlin
     .about_section
       p.about_text.about_text-framed(style="animation-delay: 3s")
         push.text-bold(
