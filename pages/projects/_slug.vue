@@ -1,19 +1,27 @@
 <template lang="pug">
-.project
-  h1.project_title {{ project.name }}
-  shape(
-    :isReversed="false"
-    :left="{ isPushing: project.code !== '', isExternal: true, title: project.code !== '' ? 'View code' : 'Code unavailable', href: project.code }"
-    :center="{ isPushing: false, title: projectDate }"
-    :right="{ isPushing: project.demo !== '', isExternal: true, title: project.demo !== '' ? 'View demo' : 'Demo unavailable', href: project.demo }"
+.container
+  navigation(
+    :left="{ title: 'Works', href: '/works' }"
+    :right="{ title: 'About', href: '/about' }"
   )
-  .project_description
-    p.project_paragraph(v-for="paragraph of project.description") {{ paragraph }}
+  .container_section
+    .project
+      h1.project_title {{ project.name }}
+      shape(
+        :isReversed="false"
+        :left="{ isPushing: project.code !== '', isExternal: true, title: project.code !== '' ? 'View code' : 'Code unavailable', href: project.code }"
+        :center="{ isPushing: false, title: projectDate }"
+        :right="{ isPushing: project.demo !== '', isExternal: true, title: project.demo !== '' ? 'View demo' : 'Demo unavailable', href: project.demo }"
+      )
+      .project_description
+        p.project_paragraph(v-for="paragraph of project.description") {{ paragraph }}
 </template>
 
 <script>
+import Navigation from '@/components/navigation'
 import Shape from '@/components/shape'
 
+import { TimelineMax } from 'gsap'
 import moment from 'moment'
 
 export default {
@@ -32,6 +40,7 @@ export default {
     if (Object.keys(this.project).length === 0) this.$nuxt.error({ statusCode: 404, message: 'Project not found' })
   },
   components: {
+    'navigation': Navigation,
     'shape': Shape
   },
   computed: {
@@ -48,6 +57,28 @@ export default {
   methods: {
     mod(n, m) {
       return ((n % m) + m) % m
+    }
+  },
+  transition: {
+    mode: 'out-in',
+    enter(el, done) {
+      const tl = new TimelineMax({ onComplete: done })
+
+      if (this.$store.state.nextRoute.includes('/projects/')) {
+
+      }
+    },
+    leave(el, done) {
+      const tl = new TimelineMax({ onComplete: done })
+
+      if (this.$store.state.prevRoute.includes('/projects/')) {
+
+      }
+
+      if (this.$store.state.nextRoute === '/') {
+        tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
+        tl.to('.navigation_main', 1, { y: - window.innerHeight / 4 }, .5)
+      }
     }
   }
 }
