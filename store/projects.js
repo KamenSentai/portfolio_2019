@@ -117,8 +117,9 @@ export const state = () => ([
       { src: '2.png', alt: 'Sign up' },
       { src: '3.png', alt: 'Dashboard' }
     ],
-    description: "In class, we learned how to build a Stack MEAN boilerplate, then we had to use it to build a chat. We had the right to use other frameworks, but the project was a real opportunity to test all the four technologies of the Stack MEAN ecosystem.",
+    description: "In class, we built a Stack MEAN boilerplate, then we had to use it to develop a chat for a school project. The project was a real opportunity to test all the four technologies of the Stack MEAN ecosystem.",
     code: "https://github.com/KamenSentai/ChatMEAN",
+    demo: "",
     mentions: [],
     released: true
   },
