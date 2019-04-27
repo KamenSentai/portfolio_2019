@@ -3,3 +3,9 @@ sqrt(x)
 
 base-equilateral(x)
   sqrt(3) / 2 * x
+
+grid(n)
+  n * $column + (n - 1) * $gutter;
+
+grid-media(n)
+  grid(n) + $gutter * 4;

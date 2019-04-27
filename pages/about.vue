@@ -12,10 +12,8 @@
       :center="{ isPushing: false, title: 'developer' }"
       :right="{ isPushing: false, title: 'stack' }"
     )
-    .about_bloc
-      p.about_paragraph(style="animation-delay: 1.5s") My name is Alain Cao Van Truong.
-      p.about_paragraph(style="animation-delay: 2s") I am a third-year studend at <push class="text-bold" :isExternal="true" :isTexted="true" title="HÉTIC" href="https://www.hetic.net"/>
-      p.about_paragraph(style="animation-delay: 2.5s") I experiment front-end, back-end and mobile development.
+    .about_section
+      p.about_paragraph(style="animation-delay: 1.5s") My name is Alain Cao Van Truong. I am a third-year studend at webschool <push class="text-bold" :isExternal="true" :isTexted="true" title="HÉTIC" href="https://www.hetic.net"/>. I mainly experiment front-end, back-end and mobile development. Moreover, I also have some knowledge about UX/UI design, motion design, SEO/SEA, etc. I am currently looking for a 5-month internship from late June to late November.
     .about_section
       .about_card
         h2.about_subtitle(style="animation-delay: 3s") <span>What I wish</span> <span>to perfect</span>
@@ -42,7 +40,7 @@
           span.about_list_item React Native
           span.about_list_item ReasonML
           span.about_list_item Ruby on Rails
-    .about_bloc
+    .about_section
       p.about_text.about_text-framed(style="animation-delay: 4s")
         push.text-bold(
           :isExternal="true"
@@ -80,7 +78,7 @@
             :isTexted="false"
             title="mail.svg"
             href="mailto:contact@alain-caovantruong.fr")
-    .about_bloc
+    .about_section
       p.about_text.about_text-credit(style="animation-delay: 5.5s")
         push.text-bold(
           :isExternal="true"
@@ -175,33 +173,35 @@ export default {
     font-weight 700
     text-transform uppercase
 
-    @media (max-width 875px)
-      font-size 3.75rem
-
-  &_bloc
-    margin 50px
-    max-width 625px
-    font-size 5rem
-    text-align center
-
-    @media (max-width 625px)
+    @media (max-width $gridmedia8)
       font-size 3.75rem
 
   &_section
     display flex
     justify-content space-evenly
     margin 50px 0
-    padding 0 100px
-    width 100%
+    width grid(8)
 
-    @media (max-width 1000px)
-      padding 0 50px
+    @media (max-width $gridmedia8)
+      width grid(6)
 
-    @media (max-width 875px)
-      padding 0 25px
-
-    @media (max-width 750px)
+    @media (max-width $gridmedia6)
       flex-direction column
+      align-items center
+      width grid(4)
+
+    @media (max-width $gridmedia4)
+      width grid(3)
+
+  &_paragraph
+    font-size 2.5rem
+    font-family $euclidtriangle
+    letter-spacing 0
+    line-height 1.5em
+    text-align justify
+
+    @media (max-width $gridmedia8)
+      font-size 2rem
 
   &_card
     display flex
@@ -210,8 +210,20 @@ export default {
     margin 0 25px
     flex 1
 
-    @media (max-width 750px)
-      margin 25px
+    @media (max-width $gridmedia6)
+      margin 25px 0
+
+      &:first-child
+        margin-top 0
+
+      &:last-child
+        margin-bottom 0
+
+    &:first-child
+      margin-left 0
+
+    &:last-child
+      margin-right 0
 
   &_list
     display flex
@@ -219,10 +231,16 @@ export default {
     align-items flex-start
 
     &_item
-      font-size 3.75rem
+      font-family $euclidtriangle
+      font-size 2rem
+      letter-spacing 0
+      line-height 1.25em
 
   &_text
-    font-size 3.75rem
+    font-family $euclidtriangle
+    font-size 2rem
+    letter-spacing 0
+    line-height 1.25em
 
     &-framed
       position relative
@@ -264,19 +282,31 @@ export default {
           border-bottom 2px solid $black
 
     &-credit
-      font-size 2.5rem
       font-weight 700
+      text-align center
       text-transform uppercase
 
   &_array
     display flex
 
-    @media (max-width 500px)
+    @media (max-width $gridmedia4)
       flex-direction column
 
   &_link
     margin 0 25px
 
-    @media (max-width 500px)
-      margin 25px
+    @media (max-width $gridmedia4)
+      margin 25px 0
+
+      &:first-child
+        margin-top 0
+
+      &:last-child
+        margin-bottom 0
+
+    &:first-child
+      margin-left 0
+
+    &:last-child
+      margin-right 0
 </style>
