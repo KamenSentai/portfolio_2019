@@ -29,7 +29,9 @@ export const state = () => ([
       { src: '9.png', alt: 'Welcome to Mars - landing' },
       { src: '10.png', alt: 'Welcome to Mars - colonizartion' }
     ],
-    description: "I worked on this project for a 5-days front-end development project. Our team decided to expalin how a space trip works on this website.",
+    description: [
+      "I worked on this project for a 5-days front-end development project. Our team decided to expalin how a space trip works on this website."
+    ],
     code: "https://github.com/KamenSentai/Mars_Journey",
     demo: "https://mars-journey.alain-caovantruong.fr/",
     mentions: [],
@@ -56,7 +58,10 @@ export const state = () => ([
       { src: '5.png', alt: 'Types of Pokemons' },
       { src: '6.png', alt: '404 page' }
     ],
-    description: "For a school homework, I had to develop a Pokedex website using Slim Framework. I decided to build a Pokemon game that the player can catch pokemons and save them in a database. Only caught pokemons are unlocked in the Pokedex.",
+    description: [
+      "For a school homework, I had to develop a Pokedex website using Slim Framework.",
+      "I decided to build a Pokemon game that the player can catch pokemons and save them in a database. Only caught pokemons are unlocked in the Pokedex."
+    ],
     code: "https://github.com/KamenSentai/Pokedex",
     demo: "https://pokedex-alaincaovantruong.000webhostapp.com/",
     mentions: [],
@@ -87,7 +92,10 @@ export const state = () => ([
       { src: '3.png', alt: 'List of tips' },
       { src: '4.png', alt: 'List of articles' }
     ],
-    description: "This is a school project on WordPress about environment. Our team had the idea to develop a blog dedicated to tips for the environment. In particular, they are tweet-like post for quick tips, and standard articles for more specific tips.",
+    description: [
+      "This is a school project on WordPress about environment. Our team had the idea to develop a blog dedicated to tips for the environment.",
+      "In particular, they are tweet-like post for quick tips, and standard articles for more specific tips."
+    ],
     code: "https://github.com/KamenSentai/Green-Tips",
     demo: "http://green-tips.floriandurand.com/",
     mentions: [],
@@ -117,7 +125,10 @@ export const state = () => ([
       { src: '2.png', alt: 'Sign up' },
       { src: '3.png', alt: 'Dashboard' }
     ],
-    description: "In class, we built a Stack MEAN boilerplate, then we had to use it to develop a chat for a school project. The project was a real opportunity to test all the four technologies of the Stack MEAN ecosystem.",
+    description: [
+      "In class, we built a Stack MEAN boilerplate, then we had to use it to develop a chat for a school project.",
+      "The project was a real opportunity to test all the four technologies of the Stack MEAN ecosystem."
+    ],
     code: "https://github.com/KamenSentai/ChatMEAN",
     demo: "",
     mentions: [],
@@ -150,7 +161,10 @@ export const state = () => ([
       { src: '10.png', alt: 'Projects page - red version' },
       { src: '11.png', alt: 'Projects page - yellow version' }
     ],
-    description: "Gaëtan Lefebvre is a 4-year student at HÉTIC while I am a 3-third student. He was looking for a developer for his portfolio and I accepted to help him. I started to use Vue.js, but I quickly migrated to Nuxt.js framework for SEO reasons. This portfolio is awarded with a Honorable Mention and a Mobile Excellence : https://www.awwwards.com/sites/gaetan-lefebvre-portfolio.",
+    description: [
+      "Gaëtan Lefebvre is a 4-year student at HÉTIC while I am a 3-third student. He was looking for a developer for his portfolio and I accepted to help him.",
+      "I started to use Vue.js, but I quickly migrated to Nuxt.js framework for SEO reasons. This portfolio is awarded with a Honorable Mention and a Mobile Excellence by Awwwards."
+    ],
     code: "https://github.com/KamenSentai/Gaetan-Lefebvre_portfolio",
     demo: "https://gaetanlefebvre.fr/",
     mentions: [
@@ -179,7 +193,10 @@ export const state = () => ([
       { src: '0.png', alt: 'Sign in, sign up & selection' },
       { src: '1.png', alt: 'History, scanner & suggestions' }
     ],
-    description: "At school, we had a 5-days project about mobile : we had to design a mobile application, develop it and build its business model. There was one rule : use Open Food Fact API. One member of our team has food constraints in their way of life. So, we imagined an application which helps people to easily detect which product is appropriate for a user by scanning it.",
+    description: [
+      "At school, we had a 5-days project about mobile : design a mobile application, develop it and build its business model. There was one rule : use Open Food Fact API.",
+      "One member of our team has food constraints in their way of life. So, we imagined an application which helps people to easily detect which product is appropriate for a user by scanning it."
+    ],
     code: "https://github.com/KamenSentai/ScanEat",
     demo: "",
     mentions: [],
@@ -204,7 +221,9 @@ export const state = () => ([
   //   ],
   //   cover: "offit.png",
   //   images: [],
-  //   description: "Our third year at HÉTIC is lead by a 6-month project with a client. Victor Mertz is the founder of Offit, a BtoB coaching service, and he needs us to develop a website for his company and a webapp to manage his clients' activities.",
+  //   description [
+  //     "Our third year at HÉTIC is lead by a 6-month project with a client. Victor Mertz is the founder of Offit, a BtoB coaching service, and he needs us to develop a website for his company and a webapp to manage his clients' activities."
+  //   ],
   //   code: "",
   //   demo: "",
   //   mentions: [],

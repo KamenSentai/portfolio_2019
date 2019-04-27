@@ -7,7 +7,8 @@
     :center="{ isPushing: false, title: projectDate }"
     :right="{ isPushing: project.demo !== '', isExternal: true, title: project.demo !== '' ? 'View demo' : 'Demo unavailable', href: project.demo }"
   )
-  .project_description {{ project.description }}
+  .project_description
+    p.project_paragraph(v-for="paragraph of project.description") {{ paragraph }}
 </template>
 
 <script>
@@ -90,4 +91,7 @@ export default {
 
     @media (max-width 625px)
       font-size 3.75rem
+
+  &_paragraph
+    margin-bottom .5em
 </style>
