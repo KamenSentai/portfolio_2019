@@ -62,7 +62,14 @@ export default {
   transition: {
     mode: 'out-in',
     enter(el, done) {
-      const tl = new TimelineMax({ onComplete: done })
+      const tl = new TimelineMax({
+        onComplete: () => {
+          TweenMax.set('.container', { clearProps: 'all' })
+          done()
+        }
+      })
+
+      tl.to('.container', 0, { pointerEvents: 'none' }, 0)
 
       if (this.$store.state.nextRoute.includes('/projects/')) {
 

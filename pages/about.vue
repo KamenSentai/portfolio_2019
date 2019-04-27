@@ -118,7 +118,14 @@ export default {
   transition: {
     mode: 'out-in',
     enter(el, done) {
-      const tl = new TimelineMax({ onComplete: done })
+      const tl = new TimelineMax({
+        onComplete: () => {
+          TweenMax.set('.container', { clearProps: 'all' })
+          done()
+        }
+      })
+
+      tl.to('.container', 0, { pointerEvents: 'none' }, 0)
 
       if (this.$store.state.prevRoute === '/') {
         tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
