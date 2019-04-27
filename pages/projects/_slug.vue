@@ -83,15 +83,20 @@ export default {
       font-size 3.75rem
 
   &_description
-    margin 50px
-    max-width 750px
-    font-size 3.75rem
+    display flex
+    flex-direction column
+    align-items center
+    width 100%
+    padding 50px 0
+    color rgba($black, .75)
+    font-family $euclidtriangle
+    font-size 2rem
+    letter-spacing 0
+    line-height 1.25em
     text-align justify
-    text-align-last center
-
-    @media (max-width 625px)
-      font-size 3.75rem
+    background-color $white
 
   &_paragraph
-    margin-bottom .5em
+    margin-bottom 1em
+    width grid(8)
 </style>
