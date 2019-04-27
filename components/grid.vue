@@ -1,23 +1,23 @@
 <template lang="pug">
 .grid
   .grid_card(v-for="(card, index) in cards" :key="index")
-    .grid_frame
-      a(
-        data-mouse="is-reduced"
-        :title="card.name"
-        :href="card.demo !== '' ? card.demo : card.code"
-        target="_blank"
-        rel="noopener"
-      )
+    a(
+      data-mouse="is-reduced"
+      :title="card.name"
+      :href="card.demo !== '' ? card.demo : card.code"
+      target="_blank"
+      rel="noopener"
+    )
+      .grid_frame
         img.grid_image(
           data-mouse="is-reduced"
           :src="require(`../assets/images/${card.slug}/0.png`)"
           :alt="card.name"
         )
-      .grid_mask.grid_mask-top(:data-theme="$store.state.color")
-      .grid_mask.grid_mask-bottom(:data-theme="$store.state.color")
-      .grid_mask.grid_mask-left(:data-theme="$store.state.color")
-      .grid_mask.grid_mask-right(:data-theme="$store.state.color")
+        .grid_mask.grid_mask-top(:data-theme="$store.state.color")
+        .grid_mask.grid_mask-bottom(:data-theme="$store.state.color")
+        .grid_mask.grid_mask-left(:data-theme="$store.state.color")
+        .grid_mask.grid_mask-right(:data-theme="$store.state.color")
     h2.grid_title {{ card.name }}
     .grid_links
       push.grid_link(
@@ -53,11 +53,9 @@ export default {
 <style lang="stylus" scoped>
 @import '~assets/styles/tools/app'
 
-$marginSize = 100px
-
 .grid
   display flex
-  justify-content space-between
+  justify-content space-evenly
   flex-wrap wrap
   margin 0 50px
   width 100%
@@ -66,13 +64,10 @@ $marginSize = 100px
     display flex
     flex-direction column
     align-items center
-    width "calc(50% - %s * 2)" % $marginSize
-    margin $marginSize
+    width grid(4)
+    margin 0 25px
     margin-bottom 100px
     overflow hidden
-
-    @media (max-width $gridmedia8)
-      width 100%
 
   &_frame
     position relative
@@ -122,27 +117,25 @@ $marginSize = 100px
       transform scale(.9375)
 
   &_title
-    margin 50px 0
-    font-size 7.5rem
+    margin-top 50px
+    margin-bottom 25px
+    font-size 5rem
     font-weight 700
     text-align center
     text-transform uppercase
 
     @media (max-width $gridmedia10)
-      font-size 5rem
-
-    @media (max-width $gridmedia4)
       font-size 3.75rem
 
   &_links
     display flex
+    flex-direction column
     justify-content space-evenly
+    align-items center
     width 100%
 
   &_link
     font-size 2.5rem
     text-transform uppercase
-
-    @media (max-width $gridmedia4)
-      font-size 2rem
+    line-height 1.25em
 </style>
