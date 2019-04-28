@@ -1,6 +1,6 @@
 <template lang="pug">
 .shape(
-  :data-theme="$store.state.color"
+  :data-theme="theme || $store.state.color"
   :data-reversed="isReversed"
 )
   .shape_border.shape_border-top
@@ -67,6 +67,7 @@ import Push from './push'
 
 export default {
   props: [
+    'theme',
     'isReversed',
     'left',
     'center',

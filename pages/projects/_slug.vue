@@ -1,24 +1,45 @@
 <template lang="pug">
-.container
-  navigation(
-    :left="{ title: 'Works', href: '/works' }"
-    :right="{ title: 'About', href: '/about' }"
-  )
-  .container_section
-    .project
-      h1.project_title {{ project.name }}
-      shape(
-        :isReversed="false"
-        :left="{ isPushing: project.code !== '', isExternal: true, title: project.code !== '' ? 'View code' : 'Code unavailable', href: project.code }"
-        :center="{ isPushing: false, title: projectDate }"
-        :right="{ isPushing: project.demo !== '', isExternal: true, title: project.demo !== '' ? 'View demo' : 'Demo unavailable', href: project.demo }"
+.project
+  .project_header
+    navigation(
+      :left="{ title: 'Works', href: '/works' }"
+      :right="{ title: 'About', href: '/about' }"
+    )
+    h1.project_title {{ project.name }}
+  .project_body
+    shape(
+      theme="white"
+      :isReversed="false"
+      :left="{ isPushing: project.code !== '', isExternal: true, title: project.code !== '' ? 'View code' : 'Code unavailable', href: project.code }"
+      :center="{ isPushing: false, title: projectDate }"
+      :right="{ isPushing: project.demo !== '', isExternal: true, title: project.demo !== '' ? 'View demo' : 'Demo unavailable', href: project.demo }"
+    )
+    h2.project_subtitle(style="animation-delay: 2.5s") My role
+    span.project_text(style="animation-delay: 3s") {{ project.role }}
+    h2.project_subtitle(style="animation-delay: 3.5s") The team
+    .project_section
+      p.project_paragraph.project_paragraph-center(v-for="(person, index) in project.team" :style="`animation-delay: ${index / 2 + 4}s`") <span class="project_label">{{ person.name }}</span> <span class="project_tag">{{ person.role }}</span>
+    h2.project_subtitle(style="animation-delay: 4.5s") The project
+    .project_section
+      p.project_paragraph(v-for="(paragraph, index) of project.description" :style="`animation-delay: ${index / 2 + 5}s`") {{ paragraph }}
+    .project_bloc(v-if="project.mentions.length !== 0")
+      push.project_text(
+        v-for="(mention, index) of project.mentions"
+        :key="index"
+        :isExternal="true"
+        :isTexted="true"
+        :title="mention.label"
+        :href="mention.url"
+        :style="`animation-delay: ${index / 2 + 5 + project.description.length / 2}s`"
       )
-      .project_description
-        p.project_paragraph(v-for="paragraph of project.description") {{ paragraph }}
+    h2.project_subtitle(style="animation-delay: 5.5s") The tools
+    .project_section
+      p.project_paragraph.project_paragraph-center(v-for="(tool, index) in project.tools" :style="`animation-delay: ${index / 2 + 6}s`") {{ tool }}
 </template>
 
 <script>
 import Navigation from '@/components/navigation'
+import Push from '@/components/push'
 import Shape from '@/components/shape'
 
 import { TimelineMax } from 'gsap'
@@ -41,6 +62,7 @@ export default {
   },
   components: {
     'navigation': Navigation,
+    'push': Push,
     'shape': Shape
   },
   computed: {
@@ -100,6 +122,17 @@ export default {
   align-items center
   width 100%
 
+  &_header,
+  &_body,
+  &_footer
+    display flex
+    flex-direction column
+    align-items center
+    width 100%
+
+  &_header
+    height 100vh
+
   &_title
     display block
     width 100%
@@ -120,21 +153,95 @@ export default {
     @media (max-width 450px)
       font-size 3.75rem
 
-  &_description
+  &_body
+    position relative
+    padding 50px 0
+    padding-top 100px
+    color $black
+    background-color $white
+
+    &::before
+      content ''
+      position absolute
+      left calc(50% - 1px)
+      top 0
+      width 2px
+      height 100%
+      background-color rgba($black, .125)
+
+  &_subtitle,
+  &_text,
+  &_paragraph
+    opacity 0
+    transform translateY(12.5%)
+    will-change opacity, transform
+    animation intro-up 1s $cubic forwards
+
+  &_subtitle
+    margin-top 100px
+    margin-bottom 25px
+    font-size 5rem
+    font-weight 700
+    text-transform uppercase
+
+  &_text
+    font-family $euclidtriangle
+    font-size 2rem
+    letter-spacing 0
+
+  &_section
     display flex
     flex-direction column
     align-items center
     width 100%
-    padding 50px 0
-    color rgba($black, .75)
-    font-family $euclidtriangle
-    font-size 2rem
-    letter-spacing 0
-    line-height 1.25em
-    text-align justify
-    background-color $white
 
   &_paragraph
     margin-bottom 1em
     width grid(8)
+    font-family $euclidtriangle
+    font-size 2rem
+    letter-spacing 0
+    line-height 1.25em
+    hyphens auto
+    text-align justify
+
+    &:last-child
+      margin-bottom 0
+
+    &-center
+      display flex
+      justify-content center
+
+      > *
+        flex 1
+
+    @media (max-width $gridmedia8)
+      width grid(6)
+
+    @media (max-width $gridmedia6)
+      width grid(4)
+      font-size 1.7rem
+
+    @media (max-width $gridmedia4)
+      width grid(3)
+
+  &_label
+    padding-right 1em
+    text-align right
+
+  &_tag
+    font-size 1.6rem
+    font-weight 700
+    text-align left
+
+  &_bloc
+    display flex
+    flex-direction column
+    align-items center
+    margin-top 50px
+    font-weight 700
+    text-transform uppercase
+
+    > *
+      line-height 1.5em
 </style>
