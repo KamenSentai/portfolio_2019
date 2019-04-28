@@ -22,7 +22,7 @@ a.push(
   )
   span.push_text(v-else data-mouse="is-reduced") {{ title }}
 nuxt-link.push(
-  v-else
+  v-else-if="href !== '#'"
   data-mouse="is-reduced"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
@@ -42,6 +42,26 @@ nuxt-link.push(
     :alt="title"
   )
   span.push_text(v-else data-mouse="is-reduced") {{ title }}
+span.push(
+  v-else
+  data-mouse="is-reduced"
+  :data-display="isTexted ? 'text' : 'image'"
+  :data-title="title"
+  @click="scrollClick"
+)
+  img.push_text.push_text-image(
+    v-if="!isTexted"
+    data-mouse="is-reduced"
+    :src="require(`../assets/images/${title}`)"
+    :alt="title"
+  )
+  img.push_text.push_text-sub(
+    v-if="!isTexted"
+    data-mouse="is-reduced"
+    :src="require(`../assets/images/${title}`)"
+    :alt="title"
+  )
+  span.push_text(v-else data-mouse="is-reduced" @click="scrollClick") {{ title }}
 </template>
 
 <script>
@@ -50,8 +70,18 @@ export default {
     'isExternal',
     'isTexted',
     'title',
-    'href'
-  ]
+    'href',
+    'position'
+  ],
+  methods: {
+    scrollClick() {
+      scrollTo({
+        left: this.position.x,
+        top: this.position.y,
+        behavior: 'smooth'
+      })
+    }
+  }
 }
 </script>
 
@@ -64,6 +94,7 @@ $imageSize = 50px
   position relative
   display inline-flex
   overflow hidden
+  cursor pointer
 
   &[data-display="text"]::before
     content attr(data-title)

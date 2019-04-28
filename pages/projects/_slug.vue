@@ -7,6 +7,15 @@
       :right="{ title: 'About', href: '/about' }"
     )
     h1.project_title {{ project.name }}
+    .project_scroll
+      .project_push
+        push.project_button(
+          :isExternal="false"
+          :isTexted="true"
+          title="Scroll"
+          href="#"
+          :position="{ x: 0, y: windowSize.h }"
+        )
   .project_body
     shape(
       theme="white"
@@ -67,6 +76,11 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      windowSize: { w: 0, h: 0 }
+    }
+  },
   created() {
     if (Object.keys(this.project).length === 0) this.$nuxt.error({ statusCode: 404, message: 'Project not found' })
   },
@@ -90,6 +104,10 @@ export default {
     mod(n, m) {
       return ((n % m) + m) % m
     }
+  },
+  mounted() {
+    this.windowSize.w = window.innerWidth
+    this.windowSize.h = window.innerHeight
   },
   transition: {
     mode: 'out-in',
@@ -154,6 +172,45 @@ export default {
     opacity .5
     filter blur(10px)
 
+  &_scroll
+    position absolute
+    left 0
+    bottom 50px
+    display flex
+    justify-content center
+    width 100%
+
+  &_push
+    font-size 0
+
+    &::before,
+    &::after
+      content ''
+      position absolute
+      left calc(50% - 2px)
+      top calc(100% + 10px)
+      width 4px
+      height 10px
+      background-color $white
+      transform-origin 50% 100%
+      transition top .5s $cubic
+
+    &::before
+      transform skewX(-45deg)
+
+    &::after
+      transform skewX(45deg)
+
+    &:hover
+      &::before,
+      &::after
+        top calc(100% + 20px)
+
+  &_button
+    text-transform uppercase
+    font-size 2.5rem
+    font-weight 700
+
   &_title
     display block
     width 100%
@@ -164,7 +221,8 @@ export default {
     text-transform uppercase
     text-align center
 
-    @media (max-width 650px)
+    @media (max-width 650px), (max-height 400px)
+      margin 25px 0
       font-size 7.5rem
       padding 0 50px
 
