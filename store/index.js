@@ -1,7 +1,8 @@
 export const state = () => ({
   prevRoute: '',
   nextRoute: '',
-  color: ''
+  color: '',
+  isTouchevents: false
 })
 
 export const mutations = {
@@ -11,5 +12,8 @@ export const mutations = {
   },
   CHANGE_COLOR(state, color) {
     state.color = color
+  },
+  TOGGLE_TOUCHEVENTS(state, value) {
+    state.isTouchevents = value
   }
 }

@@ -1,5 +1,5 @@
 <template lang="pug">
-.navigation(:data-theme="$store.state.color")
+.navigation(:data-theme="$store.state.color" :data-touchevents="isTouchEvents ? 'true' : 'false'")
   nuxt-link.navigation_main(data-mouse="is-reduced" to="/")
     svg.navigation_logo(
       data-mouse="is-reduced"
@@ -33,12 +33,20 @@
 import Push from './push'
 
 export default {
+  data() {
+    return {
+      isTouchEvents: false
+    }
+  },
   props: [
     'left',
     'right'
   ],
   components: {
     'push': Push
+  },
+  mounted() {
+    this.isTouchEvents = this.$store.state.isTouchevents
   }
 }
 </script>
@@ -110,6 +118,7 @@ $linkGap = .5em
     transition background-color 1s $cubic 1s, transform .5s $cubic
 
     ^[-1]:hover &
+    ^[-1][data-touchevents="true"] &
       transform scaleX(1)
 
     ^[-1][data-theme="black"] &
@@ -133,7 +142,8 @@ $linkGap = .5em
     opacity 0
     transition opacity .5s $cubic, transform .5s $cubic
 
-    ^[-1]:hover &
+    ^[-1]:hover &,
+    ^[-1][data-touchevents="true"] &
       opacity 1
       /* Exception due to font */
       // transform translate(0, -50%)
