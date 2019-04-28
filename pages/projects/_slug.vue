@@ -454,10 +454,10 @@ export default {
 
     @media (max-width $gridmedia10)
       width grid(8)
-      flex-direction column
 
     @media (max-width $gridmedia8)
       width grid(6)
+      flex-direction column
 
     @media (max-width $gridmedia6)
       width grid(4)
@@ -469,7 +469,13 @@ export default {
   &_picture
     width grid(4)
 
-    @media (max-width $gridmedia4)
+    @media (max-width $gridmedia10)
+      width grid(3)
+
+    @media (max-width $gridmedia8)
+      width grid(4)
+
+    @media (max-width $gridmedia6)
       width grid(3)
 
   &_item
