@@ -127,13 +127,13 @@ $linkGap = .5em
         left 0
         transform rotateZ(-30deg) scaleX(0)
         transform-origin 0 50%
-        animation scale-negative .25s linear 1.5s forwards
+        animation scale-negative-border .25s linear 1.5s forwards
 
       &::after
         right 0
         transform rotateZ(30deg) scaleX(0)
         transform-origin 100% 50%
-        animation scale-positive .25s linear 1.5s forwards
+        animation scale-positive-border .25s linear 1.5s forwards
 
     &-center
       top 0
@@ -166,21 +166,21 @@ $linkGap = .5em
         left 0
         transform rotateZ(30deg) scaleX(0)
         transform-origin 0 50%
-        animation scale-positive .25s linear 1.5s forwards
+        animation scale-positive-border .25s linear 1.5s forwards
 
       &::after
         right 0
         transform rotateZ(-30deg) scaleX(0)
         transform-origin 100% 50%
-        animation scale-negative .25s linear 1.5s forwards
+        animation scale-negative-border .25s linear 1.5s forwards
 
-  @keyframes scale-positive
+  @keyframes scale-positive-border
     from
       transform rotateZ(30deg) scaleX(0)
     to
       transform rotateZ(30deg) scaleX(1)
 
-  @keyframes scale-negative
+  @keyframes scale-negative-border
     from
       transform rotateZ(-30deg) scaleX(0)
     to
@@ -188,113 +188,102 @@ $linkGap = .5em
 
   &_branch
     position absolute
-    background-color $white
     width $borderSize
     height $shapeSize
     transition background-color 1s $cubic 1s
     will-change transform
 
-    ^[-1][data-theme="black"] &
+    &::before
+      content ''
+      position absolute
+      left - ($borderSize / 2)
+      top 0
+      full-size()
+
+    ^[-1][data-theme="black"] &::before
       background-color $white
 
-    ^[-1][data-theme="white"] &
+    ^[-1][data-theme="white"] &::before
       background-color $black
 
     &-bottomleft,
-    &-topcenter,
+    &-bottomcenter,
     &-bottomright
-      transform-origin 50% 100%
-
-      & ^[-2]_text
-        bottom calc(100% + .25em)
-        transform-origin 0 100%
-
-    &-bottomleft
-      left - ($borderSize / 2)
-      bottom 0
-      transform rotateZ(-120deg) scaleY(0)
-      animation scale-bottomleft .25s linear 1.75s forwards
-
-      & ^[-2]_text
-        /* Exception due to font */
-        // transform rotateZ(120deg) translate(-100%, 100%) translateX(- $linkGap)
-        transform rotateZ(120deg) translate(-95%, 100%)
-        // transform rotateZ(120deg) translate(-95%, 100%) translateX(- $linkGap)
-        // animation emergence-bottomleft .5s $cubic 2.25s forwards
-
-    &-topcenter
-      left "calc(50% - %s / 2)" % $borderSize
-      bottom "calc(100% + %s / 2)" % $shapeSize
-      transform scaleY(0)
-      animation scale-center .25s linear 1.75s forwards
-
-      & ^[-2]_text
-        /* Exception due to font */
-        // transform translate(-50%, - $linkGap)
-        transform translate(-45%, 0)
-        // transform translate(-45%, - $linkGap)
-        // animation emergence-topcenter .5s $cubic 2s forwards
-
-    &-bottomright
-      right - ($borderSize / 2)
-      bottom 0
-      transform rotateZ(120deg) scaleY(0)
-      animation scale-bottomright .25s linear 1.75s forwards
-
-      & ^[-2]_text
-        /* Exception due to font */
-        // transform rotateZ(-120deg) translate($linkGap, 100%)
-        transform rotateZ(-120deg) translate(0, 105%)
-        // transform rotateZ(-120deg) translate($linkGap, 105%)
-        // animation emergence-bottomright .5s $cubic 2.25s forwards
+      &::before
+        transform-origin 50% 0
 
     &-topleft,
-    &-bottomcenter,
+    &-topcenter,
     &-topright
-      transform-origin 50% 0
+      &::before
+        transform-origin 50% 100%
 
+    &-topcenter,
+    &-bottomcenter
+      left "calc(50% - %s / 2)" % $borderSize
+      &::before
+        transform scaleY(0)
+        animation scale-center .25s linear 1.75s forwards
+      & ^[-2]_text
+        transform translateX(-50%)
+
+    &-topcenter
+      bottom "calc(100% + %s / 2)" % $shapeSize
+      & ^[-2]_text
+        bottom calc(100% + .25em)
+
+    &-bottomcenter
+      top "calc(100% + %s / 2)" % $shapeSize
       & ^[-2]_text
         top calc(100% + .25em)
-        transform-origin 0 0
+
+    &-topleft,
+    &-topright
+      & ^[-2]_text
+        bottom calc(50% + .25em)
+
+    &-bottomleft,
+    &-bottomright
+      & ^[-2]_text
+        top calc(50% + .25em)
+
+    &-topleft,
+    &-bottomleft
+      & ^[-2]_text
+        right "calc(100% + %s + .25em)" % base-equilateral($shapeSize)
+
+    &-topright,
+    &-bottomright
+      & ^[-2]_text
+        left "calc(100% + %s + .25em)" % base-equilateral($shapeSize)
 
     &-topleft
       left - ($borderSize / 2)
-      top 0
-      transform rotateZ(-240deg) scaleY(0)
-      animation scale-topleft .25s linear 1.75s forwards
-
-      & ^[-2]_text
-        /* Exception due to font */
-        // transform rotateZ(240deg) translate(-100%, -100%) translateX(- $linkGap)
-        transform rotateZ(240deg) translate(-95%, -90%)
-        // transform rotateZ(240deg) translate(-95%, -90%) translateX(- $linkGap)
-        // animation emergence-topleft .5s $cubic 2s forwards
-
-    &-bottomcenter
-      left "calc(50% - %s / 2)" % $borderSize
-      top "calc(100% + %s / 2)" % $shapeSize
-      transform scaleY(0)
-      animation scale-center .25s linear 1.75s forwards
-
-      & ^[-2]_text
-        /* Exception due to font */
-        // transform translate(-50%, $linkGap)
-        transform translate(-45%, 0)
-        // transform translate(-45%, $linkGap)
-        // animation emergence-bottomcenter .5s $cubic 2.25s forwards
+      bottom 100%
+      &::before
+        transform rotateZ(-60deg) scaleY(0)
+        animation scale-negative-branch .25s linear 1.75s forwards
 
     &-topright
       right - ($borderSize / 2)
-      top 0
-      transform rotateZ(240deg) scaleY(0)
-      animation scale-topright .25s linear 1.75s forwards
+      bottom 100%
+      &::before
+        transform rotateZ(60deg) scaleY(0)
+        animation scale-positive-branch .25s linear 1.75s forwards
 
-      & ^[-2]_text
-        /* Exception due to font */
-        // transform rotateZ(-240deg) translate($linkGap, -100%)
-        transform rotateZ(-240deg) translate(0, -90%)
-        // transform rotateZ(-240deg) translate($linkGap, -90%)
-        // animation emergence-topright .5s $cubic 2s forwards
+    &-bottomleft
+      left - ($borderSize / 2)
+      top 100%
+      &::before
+        transform rotateZ(60deg) scaleY(0)
+        animation scale-positive-branch .25s linear 1.75s forwards
+
+    &-bottomright
+      right - ($borderSize / 2)
+      top 100%
+      &::before
+        transform rotateZ(-60deg) scaleY(0)
+        animation scale-negative-branch .25s linear 1.75s forwards
 
   @keyframes scale-center
     from
@@ -302,107 +291,21 @@ $linkGap = .5em
     to
       transform scaleY(1)
 
-  @keyframes scale-bottomleft
+  @keyframes scale-positive-branch
     from
-      transform rotateZ(-120deg) scaleY(0)
+      transform rotateZ(60deg) scaleY(0)
     to
-      transform rotateZ(-120deg) scaleY(1)
+      transform rotateZ(60deg) scaleY(1)
 
-  @keyframes scale-bottomright
+  @keyframes scale-negative-branch
     from
-      transform rotateZ(120deg) scaleY(0)
+      transform rotateZ(-60deg) scaleY(0)
     to
-      transform rotateZ(120deg) scaleY(1)
-
-  @keyframes scale-topleft
-    from
-      transform rotateZ(-240deg) scaleY(0)
-    to
-      transform rotateZ(-240deg) scaleY(1)
-
-  @keyframes scale-topright
-    from
-      transform rotateZ(240deg) scaleY(0)
-    to
-      transform rotateZ(240deg) scaleY(1)
-
-  @keyframes emergence-bottomleft
-    from
-      opacity 0
-      /* Exception due to font */
-      // transform rotateZ(120deg) translate(-100%, 100%) translateX(- $linkGap)
-      transform rotateZ(120deg) translate(-95%, 100%) translateX(- $linkGap)
-    to
-      opacity 1
-      /* Exception due to font */
-      // transform rotateZ(120deg) translate(-100%, 100%)
-      transform rotateZ(120deg) translate(-95%, 100%)
-
-  @keyframes emergence-topcenter
-    from
-      opacity 0
-      /* Exception due to font */
-      // transform translate(-50%, - $linkGap)
-      transform translate(-45%, - $linkGap)
-    to
-      opacity 1
-      /* Exception due to font */
-      // transform translate(-50%, 0)
-      transform translate(-45%, 0)
-
-  @keyframes emergence-bottomright
-    from
-      opacity 0
-      /* Exception due to font */
-      // transform rotateZ(-120deg) translate($linkGap, 100%)
-      transform rotateZ(-120deg) translate($linkGap, 105%)
-    to
-      opacity 1
-      /* Exception due to font */
-      // transform rotateZ(-120deg) translate(0, 100%)
-      transform rotateZ(-120deg) translate(0, 105%)
-
-  @keyframes emergence-topleft
-    from
-      opacity 0
-      /* Exception due to font */
-      // transform rotateZ(240deg) translate(-100%, -100%) translateX(- $linkGap)
-      transform rotateZ(240deg) translate(-95%, -90%) translateX(- $linkGap)
-    to
-      opacity 1
-      /* Exception due to font */
-      // transform rotateZ(240deg) translate(-100%, -100%)
-      transform rotateZ(240deg) translate(-95%, -90%)
-
-  @keyframes emergence-bottomcenter
-    from
-      opacity 0
-      /* Exception due to font */
-      // transform translate(-50%,$linkGap)
-      transform translate(-45%, $linkGap)
-    to
-      opacity 1
-      /* Exception due to font */
-      // transform translate(-50%, 0)
-      transform translate(-45%, 0)
-
-  @keyframes emergence-topright
-    from
-      opacity 0
-      /* Exception due to font */
-      // transform rotateZ(-240deg) translate($linkGap, -100%)
-      transform rotateZ(-240deg) translate($linkGap, -90%)
-    to
-      opacity 1
-      /* Exception due to font */
-      // transform rotateZ(-240deg) translate(0, -100%)
-      transform rotateZ(-240deg) translate(0, -90%)
+      transform rotateZ(-60deg) scaleY(1)
 
   &_text
     position absolute
     font-size 2.5rem
     text-transform uppercase
     text-align center
-    // opacity 0
-    // will-change opacity, transform
 </style>
