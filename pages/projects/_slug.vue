@@ -54,6 +54,8 @@
       .project_gallery
         .project_frame(v-for="image in project.images")
           img.project_image(:alt="image.alt" :src="require(`../../assets/images/${project.slug}/${image.src}`)")
+  .project_footer
+
 </template>
 
 <script>
@@ -121,15 +123,35 @@ export default {
 
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
 
-      if (this.$store.state.nextRoute.includes('/projects/')) {
+      if (this.$store.state.prevRoute.includes('/projects/')) {
+        tl.fromTo('.project_title', 1, { yPercent: -12.5, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1)
 
+        tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
+        tl.fromTo('.navigation_menu', 1, { scaleX: 0 }, { scaleX: 1 }, .5)
+      }
+
+      if (this.$store.state.nextRoute.includes('/projects/')) {
+        tl.fromTo('.project_push', 1, { yPercent: -12.5, opacity: 0 }, { yPercent: 0, opacity: 1 }, .5)
+        tl.fromTo('.project_cover', 1, { opacity: 0 }, { opacity: .5 }, 1)
       }
     },
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
 
-      if (this.$store.state.prevRoute.includes('/projects/')) {
+      tl.to('.container', 0, { pointerEvents: 'none' }, 0)
 
+      if (this.$store.state.nextRoute.includes('/projects/')) {
+
+      } else {
+        scrollTo({
+          left: 0,
+          top: 0,
+          behavior: 'smooth'
+        })
+
+        tl.to('.project_cover', 1, { opacity: 0 }, 0)
+        tl.to('.project_push', 1, { yPercent: 12.5, opacity: 0 }, .5)
+        tl.to('.project_title', 1, { yPercent: 12.5, opacity: 0 }, 1)
       }
 
       if (this.$store.state.nextRoute === '/') {
