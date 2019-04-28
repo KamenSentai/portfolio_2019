@@ -60,14 +60,14 @@
     p.project_subtext(style="animation-delay: 3.5s") See more projects
     .project_suggestions
       .project_item
-        nuxt-link.project_purchase(:to="`/projects/${prevProject.slug}`" data-mouse="is-reduced")
+        nuxt-link.project_purchase(:to="{ path: `/projects/${prevProject.slug}` }" data-mouse="is-reduced")
           img.project_picture(
             data-mouse="is-reduced"
             :alt="prevProject.name"
             :src="require(`../../assets/images/${prevProject.cover}`)"
           )
       .project_item
-        nuxt-link.project_purchase(:to="`/projects/${nextProject.slug}`" data-mouse="is-reduced")
+        nuxt-link.project_purchase(:to="{ path: `/projects/${nextProject.slug}` }" data-mouse="is-reduced")
           img.project_picture(
             data-mouse="is-reduced"
             :alt="nextProject.name"

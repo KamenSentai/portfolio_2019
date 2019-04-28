@@ -6,7 +6,6 @@
   )
   .container_section
     jumbotron(
-      :url="$route.path"
       :cards="projects"
     )
 </template>
