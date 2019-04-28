@@ -70,7 +70,7 @@ export const state = () => ([
     code: "https://github.com/KamenSentai/Pokedex",
     demo: "https://pokedex-alaincaovantruong.000webhostapp.com/",
     mentions: [
-      { label: 'Credit', url: 'https://codepen.io/Bidji/pen/MYdPwo' }
+      { label: 'Credit CSS', url: 'https://codepen.io/Bidji/pen/MYdPwo' }
     ],
     released: true
   },

@@ -1,6 +1,7 @@
 <template lang="pug">
 .project
   .project_header
+    img.project_cover(:alt="project.name" :src="require(`../../assets/images/${project.cover}`)")
     navigation(
       :left="{ title: 'Works', href: '/works' }"
       :right="{ title: 'About', href: '/about' }"
@@ -14,27 +15,36 @@
       :center="{ isPushing: false, title: projectDate }"
       :right="{ isPushing: project.demo !== '', isExternal: true, title: project.demo !== '' ? 'View demo' : 'Demo unavailable', href: project.demo }"
     )
-    h2.project_subtitle(style="animation-delay: 2.5s") My role
-    span.project_text(style="animation-delay: 3s") {{ project.role }}
-    h2.project_subtitle(style="animation-delay: 3.5s") The team
     .project_section
-      p.project_paragraph.project_paragraph-center(v-for="(person, index) in project.team" :style="`animation-delay: ${index / 2 + 4}s`") <span class="project_label">{{ person.name }}</span> <span class="project_tag">{{ person.role }}</span>
-    h2.project_subtitle(style="animation-delay: 4.5s") The project
+      h2.project_subtitle(style="animation-delay: 2.5s") My role
+      span.project_text(style="animation-delay: 3s") {{ project.role }}
     .project_section
-      p.project_paragraph(v-for="(paragraph, index) of project.description" :style="`animation-delay: ${index / 2 + 5}s`") {{ paragraph }}
-    .project_bloc(v-if="project.mentions.length !== 0")
-      push.project_text(
-        v-for="(mention, index) of project.mentions"
-        :key="index"
-        :isExternal="true"
-        :isTexted="true"
-        :title="mention.label"
-        :href="mention.url"
-        :style="`animation-delay: ${index / 2 + 5 + project.description.length / 2}s`"
-      )
-    h2.project_subtitle(style="animation-delay: 5.5s") The tools
+      h2.project_subtitle(v-if="project.team.length !== 0" style="animation-delay: 3.5s") The team
+      .project_group
+        p.project_paragraph.project_paragraph-center(v-for="(person, index) in project.team" :style="`animation-delay: ${index / 2 + 4}s`") <span class="project_label">{{ person.name }}</span> <span class="project_tag">{{ person.role }}</span>
     .project_section
-      p.project_paragraph.project_paragraph-center(v-for="(tool, index) in project.tools" :style="`animation-delay: ${index / 2 + 6}s`") {{ tool }}
+      h2.project_subtitle(style="animation-delay: 4.5s") The project
+      .project_group
+        p.project_paragraph(v-for="(paragraph, index) of project.description" :style="`animation-delay: ${index / 2 + 5}s`") {{ paragraph }}
+      .project_bloc(v-if="project.mentions.length !== 0")
+        push.project_text(
+          v-for="(mention, index) of project.mentions"
+          :key="index"
+          :isExternal="true"
+          :isTexted="true"
+          :title="mention.label"
+          :href="mention.url"
+          :style="`animation-delay: ${index / 2 + 5 + project.description.length / 2}s`"
+        )
+    .project_section
+      h2.project_subtitle(style="animation-delay: 5.5s") The tools
+      .project_group
+        p.project_paragraph.project_paragraph-center(v-for="(tool, index) in project.tools" :style="`animation-delay: ${index / 2 + 6}s`") {{ tool }}
+    .project_section
+      h2.project_subtitle(style="animation-delay: 6.5s") Screenshots
+      .project_gallery
+        .project_frame(v-for="image in project.images")
+          img.project_image(:alt="image.alt" :src="require(`../../assets/images/${project.slug}/${image.src}`)")
 </template>
 
 <script>
@@ -131,7 +141,18 @@ export default {
     width 100%
 
   &_header
+    position relative
     height 100vh
+
+  &_cover
+    position absolute
+    left 0
+    top 0
+    z-index -1
+    full-size()
+    object-fit cover
+    opacity .5
+    filter blur(10px)
 
   &_title
     display block
@@ -164,10 +185,20 @@ export default {
       content ''
       position absolute
       left calc(50% - 1px)
+      z-index 0
       top 0
       width 2px
       height 100%
       background-color rgba($black, .125)
+
+    > *
+      z-index 1
+
+  &_section
+    display flex
+    flex-direction column
+    align-items center
+    width 100%
 
   &_subtitle,
   &_text,
@@ -189,7 +220,7 @@ export default {
     font-size 2rem
     letter-spacing 0
 
-  &_section
+  &_group
     display flex
     flex-direction column
     align-items center
@@ -244,4 +275,28 @@ export default {
 
     > *
       line-height 1.5em
+
+  &_gallery
+    display flex
+    flex-direction column
+    align-items center
+    width 100%
+
+  &_frame
+    display flex
+    justify-content center
+    align-items center
+    width 75%
+    font-size 0
+    margin-bottom 50px
+    border 2px solid $black
+    transform-origin 50% 50%
+    overflow hidden
+
+    &:last-child
+      margin-bottom 0
+
+  &_image
+    width 75vw
+    height auto
 </style>
