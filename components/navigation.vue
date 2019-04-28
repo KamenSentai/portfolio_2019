@@ -15,12 +15,14 @@
     .navigation_stripe
     .navigation_stripe.navigation_stripe-middle
       push.navigation_link.navigation_link-left.button(
+        positionValue="absolute"
         :isExternal="false"
         :isTexted="true"
         :title="left.title"
         :href="left.href"
       )
       push.navigation_link.navigation_link-right.button(
+        positionValue="absolute"
         :isExternal="false"
         :isTexted="true"
         :title="right.title"

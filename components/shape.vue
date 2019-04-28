@@ -9,6 +9,7 @@
   .shape_branch.shape_branch-topleft(v-if="isReversed")
     push.shape_text(
       v-if="left.isPushing"
+      positionValue="absolute"
       :isExternal="left.isExternal"
       :isTexted="true"
       :title="left.title"
@@ -18,6 +19,7 @@
   .shape_branch.shape_branch-bottomleft(v-else)
     push.shape_text(
       v-if="left.isPushing"
+      positionValue="absolute"
       :isExternal="left.isExternal"
       :isTexted="true"
       :title="left.title"
@@ -27,6 +29,7 @@
   .shape_branch.shape_branch-bottomcenter(v-if="isReversed")
     push.shape_text(
       v-if="center.isPushing"
+      positionValue="absolute"
       :isExternal="center.isExternal"
       :isTexted="true"
       :title="center.title"
@@ -36,6 +39,7 @@
   .shape_branch.shape_branch-topcenter(v-else)
     push.shape_text(
       v-if="center.isPushing"
+      positionValue="absolute"
       :isExternal="center.isExternal"
       :isTexted="true"
       :title="center.title"
@@ -45,6 +49,7 @@
   .shape_branch.shape_branch-topright(v-if="isReversed")
     push.shape_text(
       v-if="right.isPushing"
+      positionValue="absolute"
       :isExternal="right.isExternal"
       :isTexted="true"
       :title="right.title"
@@ -54,6 +59,7 @@
   .shape_branch.shape_branch-bottomright(v-else)
     push.shape_text(
       v-if="right.isPushing"
+      positionValue="absolute"
       :isExternal="right.isExternal"
       :isTexted="true"
       :title="right.title"

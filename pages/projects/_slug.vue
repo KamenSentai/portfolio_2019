@@ -10,6 +10,7 @@
     .project_scroll
       .project_push
         push.project_button(
+          positionValue="relative"
           :isExternal="false"
           :isTexted="true"
           title="Scroll"
@@ -39,6 +40,7 @@
         push.project_text(
           v-for="(mention, index) of project.mentions"
           :key="index"
+          positionValue="relative"
           :isExternal="true"
           :isTexted="true"
           :title="mention.label"

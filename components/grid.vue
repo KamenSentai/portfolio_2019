@@ -18,6 +18,7 @@
     .grid_links
       push.grid_link(
         v-if="card.code !== ''"
+        positionValue="relative"
         :isExternal="true"
         :isTexted="true"
         title="View code"
@@ -25,6 +26,7 @@
       )
       push.grid_link(
         v-if="card.demo !== ''"
+        positionValue="relative"
         :isExternal="true"
         :isTexted="true"
         title="View demo"

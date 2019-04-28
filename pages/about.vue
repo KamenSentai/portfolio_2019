@@ -14,7 +14,7 @@
       :right="{ isPushing: false, title: 'stack' }"
     )
     .about_section
-      p.about_paragraph(style="animation-delay: 1.5s") My name is Alain Cao Van Truong. I am a third-year studend at webschool <push class="text-bold" :isExternal="true" :isTexted="true" title="HÉTIC" href="https://www.hetic.net"/>. I mainly experiment front-end, back-end and a little bit mobile development. I am currently looking for a 5-month internship from late June to late November.
+      p.about_paragraph(style="animation-delay: 1.5s") My name is Alain Cao Van Truong. I am a third-year studend at webschool <push class="text-bold" positionValue="relative" :isExternal="true" :isTexted="true" title="HÉTIC" href="https://www.hetic.net"/>. I mainly experiment front-end, back-end and a little bit mobile development. I am currently looking for a 5-month internship from late June to late November.
     .about_section
       .about_card
         h2.about_subtitle(style="animation-delay: 2s") <span>What I wish</span> <span>to perfect</span>
@@ -46,6 +46,7 @@
     .about_section
       p.about_text.about_text-framed(style="animation-delay: 2.75s")
         push.text-bold(
+          positionValue="relative"
           :isExternal="true"
           :isTexted="true"
           title="Download my resume"
@@ -56,6 +57,7 @@
         h2.about_subtitle(style="animation-delay: 3s") Contact
         .about_array(style="animation-delay: 3.25s")
           push.about_link(
+            positionValue="relative"
             :isExternal="true"
             :isTexted="false"
             title="linkedin.svg"
@@ -63,6 +65,7 @@
             rel="noopener"
           )
           push.about_link(
+            positionValue="relative"
             :isExternal="true"
             :isTexted="false"
             title="twitter.svg"
@@ -70,6 +73,7 @@
             rel="noopener"
           )
           push.about_link(
+            positionValue="relative"
             :isExternal="true"
             :isTexted="false"
             title="github.svg"
@@ -77,6 +81,7 @@
             rel="noopener"
           )
           push.about_link(
+            positionValue="relative"
             :isExternal="true"
             :isTexted="false"
             title="mail.svg"
@@ -84,6 +89,7 @@
     .about_section
       p.about_text.about_text-credit(style="animation-delay: 3.5s")
         push.text-bold(
+          positionValue="relative"
           :isExternal="true"
           :isTexted="true"
           title="Designed by Gaëtan Lefebvre"

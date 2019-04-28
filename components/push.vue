@@ -2,6 +2,7 @@
 a.push(
   v-if="isExternal"
   data-mouse="is-reduced"
+  :data-position="positionValue"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
   :title="title"
@@ -24,6 +25,7 @@ a.push(
 nuxt-link.push(
   v-else-if="href !== '#'"
   data-mouse="is-reduced"
+  :data-position="positionValue"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
   :title="title"
@@ -45,6 +47,7 @@ nuxt-link.push(
 span.push(
   v-else
   data-mouse="is-reduced"
+  :data-position="positionValue"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
   @click="scrollClick"
@@ -67,6 +70,7 @@ span.push(
 <script>
 export default {
   props: [
+    'positionValue',
     'isExternal',
     'isTexted',
     'title',
@@ -91,10 +95,15 @@ export default {
 $imageSize = 50px
 
 .push
-  position relative
   display inline-flex
   overflow hidden
   cursor pointer
+
+  &[data-position="relative"]
+    position relative
+
+  &[data-position="absolute"]
+    position absolute
 
   &[data-display="text"]::before
     content attr(data-title)
