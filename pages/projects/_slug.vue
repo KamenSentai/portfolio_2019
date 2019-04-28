@@ -158,6 +158,8 @@ export default {
       tl.fromTo('.project_body', 1, { opacity: 0 }, { opacity: 1 }, 0)
       tl.fromTo('.project_push', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, .5)
       tl.fromTo('.project_cover', 1, { opacity: 0 }, { opacity: .5 }, 1)
+      tl.fromTo('.project_frame', 1, { scaleY: 0 }, { scaleY: 1 }, 5)
+      tl.fromTo('.project_frame', 1, { width: 0 }, { width: '75%' }, 6)
     },
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
