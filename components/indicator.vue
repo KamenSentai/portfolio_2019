@@ -1,6 +1,6 @@
 <template lang="pug">
 .indicator
-  .indicator_bar(v-for="(n, index) in positions.length" :data-position="getPosition(index + page)")
+  .indicator_bar(v-for="(n, index) in total" :data-position="getPosition(index)")
 </template>
 
 <script>
@@ -8,10 +8,9 @@ export default {
   data() {
     return {
       positions: [
-        '+0',
         '+1',
         '+0.5',
-        '0',
+        '+0',
         '-0.5',
         '-1',
         '-0'
@@ -19,6 +18,7 @@ export default {
     }
   },
   props: [
+    'total',
     'page'
   ],
   methods: {
@@ -26,7 +26,7 @@ export default {
       return ((n % m) + m) % m
     },
     getPosition(index) {
-      return this.positions[this.mod(index, this.positions.length)]
+      return this.page >= this.positions.lenght ? '-0' : this.positions[this.mod(index + this.page, this.positions.length)]
     }
   }
 }
@@ -60,24 +60,20 @@ export default {
       opacity 0
       transition opacity 1s $cubic
 
-    &[data-position="+0"],
-    &[data-position="-0"]
-      opacity 0
-
     &[data-position="+1"]
       left 37.5%
       top calc(0% - 1px)
       width 25%
       animation-delay 1.25s
 
-    &[data-position="+0"],
     &[data-position="+0.5"]
       left 25%
       top calc(25% - 1px)
       width 50%
       animation-delay 1.125s
 
-    &[data-position="0"]
+    &[data-position="+0"],
+    &[data-position="-0"]
       left 0
       top calc(50% - 1px)
       width 100%
@@ -85,8 +81,10 @@ export default {
       &::before
         opacity 1
 
-    &[data-position="-0.5"],
     &[data-position="-0"]
+      opacity 0
+
+    &[data-position="-0.5"]
       left 25%
       top calc(75% - 1px)
       width 50%

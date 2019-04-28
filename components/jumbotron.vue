@@ -32,8 +32,8 @@
       :data-display="index === page ? 'block' : 'none'"
     ) {{ card.name }}
   .jumbotron_indicators
-    indicator.jumbotron_indicator.jumbotron_indicator-left(:page="page")
-    indicator.jumbotron_indicator.jumbotron_indicator-right(:page="page")
+    indicator.jumbotron_indicator.jumbotron_indicator-left(:total="cards.length" :page="page")
+    indicator.jumbotron_indicator.jumbotron_indicator-right(:total="cards.length" :page="page")
 </template>
 
 <script>
