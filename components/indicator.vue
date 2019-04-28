@@ -36,7 +36,7 @@ export default {
 @import '~assets/styles/tools/app'
 
 .indicator
-  position relative
+  position absolute
 
   &_bar
     position absolute
