@@ -116,16 +116,18 @@ export default {
     enter(el, done) {
       const tl = new TimelineMax({
         onComplete: () => {
-          TweenMax.set('.container', { clearProps: 'all' })
+          TweenMax.set('.project', { clearProps: 'all' })
           done()
         }
       })
 
-      tl.to('.container', 0, { pointerEvents: 'none' }, 0)
+      tl.to('.project', 0, { pointerEvents: 'none' }, 0)
+
+      if (this.$store.state.prevRoute !== '/projects') {
+        tl.fromTo('.project_title', 1, { yPercent: -12.5, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1)
+      }
 
       if (this.$store.state.prevRoute.includes('/projects/')) {
-        tl.fromTo('.project_title', 1, { yPercent: -12.5, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1)
-
         tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
         tl.fromTo('.navigation_menu', 1, { scaleX: 0 }, { scaleX: 1 }, .5)
       }
@@ -138,7 +140,7 @@ export default {
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
 
-      tl.to('.container', 0, { pointerEvents: 'none' }, 0)
+      tl.to('.project', 0, { pointerEvents: 'none' }, 0)
 
       if (this.$store.state.nextRoute.includes('/projects/')) {
 
