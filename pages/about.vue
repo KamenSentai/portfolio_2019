@@ -18,7 +18,7 @@
     .about_section
       .about_card
         h2.about_subtitle(style="animation-delay: 2s") <span>What I wish</span> <span>to perfect</span>
-        .about_list(style="animation-delay: 2.5s")
+        .about_list(style="animation-delay: 2.25s")
           span.about_list_item Vue.js
           span.about_list_item Nuxt.js
           span.about_list_item PHP Slim
@@ -27,7 +27,7 @@
           span.about_list_item Git
       .about_card
         h2.about_subtitle(style="animation-delay: 2s") <span>What I need</span> <span>to improve</span>
-        .about_list(style="animation-delay: 2.5s")
+        .about_list(style="animation-delay: 2.25s")
           span.about_list_item React.js
           span.about_list_item AngularJS
           span.about_list_item Node.js
@@ -36,7 +36,7 @@
           span.about_list_item WordPress
       .about_card
         h2.about_subtitle(style="animation-delay: 2s") <span>What I want</span> <span>to learn</span>
-        .about_list(style="animation-delay: 2.5s")
+        .about_list(style="animation-delay: 2.25s")
           span.about_list_item Symfony
           span.about_list_item Django
           span.about_list_item Ruby on Rails
@@ -44,7 +44,7 @@
           span.about_list_item ReasonML
           span.about_list_item Kotlin
     .about_section
-      p.about_text.about_text-framed(style="animation-delay: 3s")
+      p.about_text.about_text-framed(style="animation-delay: 2.75s")
         push.text-bold(
           :isExternal="true"
           :isTexted="true"
@@ -53,8 +53,8 @@
         )
     .about_section
       .about_card
-        h2.about_subtitle(style="animation-delay: 3.5s") Contact
-        .about_array(style="animation-delay: 4s")
+        h2.about_subtitle(style="animation-delay: 3s") Contact
+        .about_array(style="animation-delay: 3.25s")
           push.about_link(
             :isExternal="true"
             :isTexted="false"
@@ -82,7 +82,7 @@
             title="mail.svg"
             href="mailto:contact@alain-caovantruong.fr")
     .about_section
-      p.about_text.about_text-credit(style="animation-delay: 4.5s")
+      p.about_text.about_text-credit(style="animation-delay: 3.5s")
         push.text-bold(
           :isExternal="true"
           :isTexted="true"
@@ -270,11 +270,11 @@ export default {
 
       &::before
         transform scaleY(0)
-        animation scale-vertical 1s $cubic 4.5s forwards
+        animation scale-vertical 1s $cubic 3.5s forwards
 
       &::after
         transform scaleX(0)
-        animation scale-horizontal 1s $cubic 4s forwards
+        animation scale-horizontal 1s $cubic 3.25s forwards
 
       ^[-2][data-theme="black"] &
         &::before

@@ -26,15 +26,15 @@
     )
     .project_section
       h2.project_subtitle(style="animation-delay: 2.5s") My role
-      span.project_text(style="animation-delay: 3s") {{ project.role }}
+      span.project_text(style="animation-delay: 2.75s") {{ project.role }}
     .project_section
-      h2.project_subtitle(v-if="project.team.length !== 0" style="animation-delay: 3.5s") The team
+      h2.project_subtitle(v-if="project.team.length !== 0" style="animation-delay: 3s") The team
       .project_group
-        p.project_paragraph.project_paragraph-center(v-for="(person, index) in project.team" :style="`animation-delay: ${index / 2 + 4}s`") <span class="project_label">{{ person.name }}</span> <span class="project_tag">{{ person.role }}</span>
+        p.project_paragraph.project_paragraph-center(v-for="(person, index) in project.team" :style="`animation-delay: ${index / 4 + 3.25}s`") <span class="project_label">{{ person.name }}</span> <span class="project_tag">{{ person.role }}</span>
     .project_section
-      h2.project_subtitle(style="animation-delay: 4.5s") The project
+      h2.project_subtitle(style="animation-delay: 3.5s") The project
       .project_group
-        p.project_paragraph(v-for="(paragraph, index) of project.description" :style="`animation-delay: ${index / 2 + 5}s`") {{ paragraph }}
+        p.project_paragraph(v-for="(paragraph, index) of project.description" :style="`animation-delay: ${index / 4 + 3.75}s`") {{ paragraph }}
       .project_bloc(v-if="project.mentions.length !== 0")
         push.project_text(
           v-for="(mention, index) of project.mentions"
@@ -43,14 +43,14 @@
           :isTexted="true"
           :title="mention.label"
           :href="mention.url"
-          :style="`animation-delay: ${index / 2 + 5 + project.description.length / 2}s`"
+          :style="`animation-delay: ${index / 4 + 3.75 + project.description.length / 4}s`"
         )
     .project_section
-      h2.project_subtitle(style="animation-delay: 5.5s") The tools
+      h2.project_subtitle(style="animation-delay: 4s") The tools
       .project_group
-        p.project_paragraph.project_paragraph-center(v-for="(tool, index) in project.tools" :style="`animation-delay: ${index / 2 + 6}s`") {{ tool }}
+        p.project_paragraph.project_paragraph-center(v-for="(tool, index) in project.tools" :style="`animation-delay: ${index / 4 + 4.25}s`") {{ tool }}
     .project_section
-      h2.project_subtitle(style="animation-delay: 6.5s") Screenshots
+      h2.project_subtitle(style="animation-delay: 4.5s") Screenshots
       .project_gallery
         .project_frame(v-for="image in project.images")
           img.project_image(:alt="image.alt" :src="require(`../../assets/images/${project.slug}/${image.src}`)")
@@ -144,19 +144,18 @@ export default {
 
       tl.to('.project', 0, { pointerEvents: 'none' }, 0)
 
-      if (this.$store.state.prevRoute !== '/projects') {
-        tl.fromTo('.project_title', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1)
-      }
-
       if (this.$store.state.prevRoute.includes('/projects/')) {
         tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
         tl.fromTo('.navigation_menu', 1, { scaleX: 0 }, { scaleX: 1 }, .5)
       }
 
-      if (this.$store.state.nextRoute.includes('/projects/')) {
-        tl.fromTo('.project_push', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, .5)
-        tl.fromTo('.project_cover', 1, { opacity: 0 }, { opacity: .5 }, 1)
+      if (this.$store.state.prevRoute !== '/projects') {
+        tl.fromTo('.project_title', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1)
       }
+
+      tl.fromTo('.project_body', 1, { opacity: 0 }, { opacity: 1 }, 0)
+      tl.fromTo('.project_push', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, .5)
+      tl.fromTo('.project_cover', 1, { opacity: 0 }, { opacity: .5 }, 1)
     },
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
@@ -171,7 +170,7 @@ export default {
         tl.to('.project_more', 1, { yPercent: 25, opacity: 0 }, 0)
         tl.to('.project_frame', 1, { width: 0 }, 0)
         tl.to('.project_frame', 1, { scaleY: 0 }, 1)
-        tl.to('.project_body', 1, { opacity: 0 }, 1.5)
+        tl.to('.project_body', 1, { scaleX: 0 }, 1)
         tl.to('.project_purchase', 1, { width: 0 }, .5)
         tl.to('.project_purchase', 1, { scaleY: 0 }, 1.5)
       } else {

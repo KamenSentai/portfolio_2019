@@ -7,7 +7,7 @@
     nuxt-link.jumbotron_link(
       v-for="(card, index) in cards"
       :key="index"
-      :to="`${url}/${card.slug}`"
+      :to="`${url}/${card.slug}/`"
       :data-display="index === page ? 'flex' : 'none'"
     )
       img.jumbotron_image(

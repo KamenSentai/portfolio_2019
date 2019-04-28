@@ -56,12 +56,10 @@ export default {
         tl.fromTo('.navigation_menu', 1, { scaleX: 0 }, { scaleX: 1 }, .5)
       }
 
-      if (this.$store.state.nextRoute === '/works') {
-        tl.fromTo('.grid_title', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1.5)
-        tl.fromTo('.grid_links', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 2)
-        tl.fromTo('.grid_frame', 1, { scaleY: 0 }, { scaleY: 1 }, 1)
-        tl.fromTo('.grid_frame', 1, { width: 0 }, { width: '100%' }, 2)
-      }
+      tl.fromTo('.grid_title', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1.5)
+      tl.fromTo('.grid_links', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 2)
+      tl.fromTo('.grid_frame', 1, { scaleY: 0 }, { scaleY: 1 }, 1)
+      tl.fromTo('.grid_frame', 1, { width: 0 }, { width: '100%' }, 2)
     },
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
@@ -74,12 +72,10 @@ export default {
 
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
 
-      if (this.$store.state.prevRoute === '/works') {
-        tl.to('.grid_frame', 1, { width: 0 }, 0)
-        tl.to('.grid_frame', 1, { scaleY: 0 }, 1)
-        tl.to('.grid_title', 1, { yPercent: -25, opacity: 0 }, .5)
-        tl.to('.grid_links', 1, { yPercent: -25, opacity: 0 }, 1)
-      }
+      tl.to('.grid_frame', 1, { width: 0 }, 0)
+      tl.to('.grid_frame', 1, { scaleY: 0 }, 1)
+      tl.to('.grid_title', 1, { yPercent: -25, opacity: 0 }, .5)
+      tl.to('.grid_links', 1, { yPercent: -25, opacity: 0 }, 1)
 
       if (this.$store.state.nextRoute === '/') {
         tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
