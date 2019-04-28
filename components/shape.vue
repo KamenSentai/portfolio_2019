@@ -105,7 +105,7 @@ $linkGap = .5em
     &::after
       content ''
       position absolute
-      transition background-color 1s $cubic 2s
+      transition background-color 1s $cubic 1s
       will-change transform
 
       ^[-2][data-theme="black"] &
@@ -191,7 +191,7 @@ $linkGap = .5em
     background-color $white
     width $borderSize
     height $shapeSize
-    transition background-color 1s $cubic 2s
+    transition background-color 1s $cubic 1s
     will-change transform
 
     ^[-1][data-theme="black"] &
