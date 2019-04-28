@@ -33,7 +33,7 @@ module.exports = {
 
   loading: {
     color: '#111111',
-    background: '#EE1111'
+    background: '#EEEEEE'
   },
 
   router: {

@@ -6,8 +6,16 @@ html
   &[data-theme="black"]
     background-color $black
 
+    *::selection
+      color $black
+      background-color $white
+
   &[data-theme="white"]
     background-color $white
+
+    *::selection
+      color $white
+      background-color $black
 
 body
   position relative
@@ -27,7 +35,3 @@ body
 
     > *
       full-size()
-
-*::selection
-  color $white
-  background-color $red
