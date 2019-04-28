@@ -31,9 +31,14 @@
       :key="index"
       :data-display="index === page ? 'block' : 'none'"
     ) {{ card.name }}
+  .jumbotron_indicators
+    indicator.jumbotron_indicator.jumbotron_indicator-left(:page="page")
+    indicator.jumbotron_indicator.jumbotron_indicator-right(:page="page")
 </template>
 
 <script>
+import Indicator from './indicator'
+
 import { TimelineMax } from 'gsap'
 
 export default {
@@ -53,6 +58,9 @@ export default {
     subtitle() {
       return this.$refs.subtitle[this.page]
     }
+  },
+  components: {
+    'indicator': Indicator
   },
   methods: {
     mod(n, m) {
@@ -146,7 +154,9 @@ export default {
 <style lang="stylus" scoped>
 @import '~assets/styles/tools/app'
 
+$framSize = 75%
 $buttonSize = 50px
+$indicatorSize = 50px
 
 .jumbotron
   position relative
@@ -164,7 +174,7 @@ $buttonSize = 50px
     display flex
     justify-content center
     align-items center
-    width 75%
+    width $framSize
     height 100%
     margin 0 50px
     background-color $black
@@ -292,4 +302,25 @@ $buttonSize = 50px
     &[data-display="none"]
       opacity 0
       transform translateY(-12.5%)
+
+  &_indicators
+    position absolute
+    left 12.5%
+    width $framSize
+    bottom $buttonSize * 1.5
+    pointer-events none
+
+  &_indicator
+    position absolute
+    bottom 0
+    width $indicatorSize * 2
+    height $indicatorSize
+
+    &-left
+      left - $indicatorSize
+      transform scaleX(1)
+
+    &-right
+      right - $indicatorSize
+      transform scaleX(-1)
 </style>

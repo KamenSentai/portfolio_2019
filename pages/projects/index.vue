@@ -63,8 +63,9 @@ export default {
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
 
-      tl.to('.jumbotron_button', 1, { rotationX: '-90deg' }, 0)
       tl.to('.jumbotron_buttons', 0, { opacity: 0 }, 1)
+      tl.to('.jumbotron_indicator', .5, { scaleX: 0 }, 0)
+      tl.to('.jumbotron_button', 1, { rotationX: '-90deg' }, 0)
       tl.to('.jumbotron_frame', 1, { height: 0 }, 0)
       tl.to('.jumbotron_frame', 1, { scaleX: 0 }, 1)
 
