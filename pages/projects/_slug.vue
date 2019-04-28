@@ -22,7 +22,7 @@
       theme="white"
       :isReversed="false"
       :left="{ isPushing: project.code !== '', isExternal: true, title: project.code !== '' ? 'View code' : 'Code unavailable', href: project.code }"
-      :center="{ isPushing: false, title: projectDate }"
+      :center="{ isPushing: false, title: project.date }"
       :right="{ isPushing: project.demo !== '', isExternal: true, title: project.demo !== '' ? 'View demo' : 'Demo unavailable', href: project.demo }"
     )
     .project_section
@@ -81,7 +81,6 @@ import Push from '@/components/push'
 import Shape from '@/components/shape'
 
 import { TimelineMax } from 'gsap'
-import moment from 'moment'
 
 export default {
   head() {
@@ -123,9 +122,6 @@ export default {
     },
     nextProject() {
       return this.projects[this.mod(this.index + 1, this.projects.length)]
-    },
-    projectDate() {
-      return moment(this.project.date).format('MMMM YYYY')
     }
   },
   methods: {

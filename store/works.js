@@ -2,7 +2,7 @@ export const state = () => ([
   {
     name: "Animation Science",
     slug: "animation-science",
-    date: new Date('October 2017'),
+    date: 'October 2017',
     role: "Front-end developer",
     tools: [
       'HTML',
@@ -20,7 +20,7 @@ export const state = () => ([
   {
     name: "Clock",
     slug: "clock",
-    date: new Date('October 2017'),
+    date: 'October 2017',
     role: "Front-end developer",
     tools: [
       'HTML',
@@ -36,7 +36,7 @@ export const state = () => ([
   {
     name: "Canvas Piano",
     slug: "canvas-piano",
-    date: new Date('December 2017'),
+    date: 'December 2017',
     role: "Front-end developer",
     tools: [
       'HTML',
@@ -56,7 +56,7 @@ export const state = () => ([
   {
     name: "Raining molecules",
     slug: "raining-molecules",
-    date: new Date('February 2018'),
+    date: 'February 2018',
     role: "Front-end developer",
     tools: [
       'HTML',
@@ -72,7 +72,7 @@ export const state = () => ([
   {
     name: "Todo list",
     slug: "todo-list",
-    date: new Date('April 2018'),
+    date: 'April 2018',
     role: "Front-end developer",
     tools: [
       'PHP',
@@ -92,7 +92,7 @@ export const state = () => ([
   {
     name: "Loyalty",
     slug: "loyalty",
-    date: new Date('December 2018'),
+    date: 'December 2018',
     role: "Mobile developer",
     tools: [
       'Swift'

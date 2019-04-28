@@ -2,7 +2,7 @@ export const state = () => ([
   {
     name: "Mars Journey",
     slug: "mars-journey",
-    date: new Date('December 2017'),
+    date: 'December 2017',
     role: "Lead developer",
     team: [
       { name: "Alexandre Godde", role: "Project manager & designer" },
@@ -43,7 +43,7 @@ export const state = () => ([
   {
     name: "Pokedex",
     slug: "pokedex",
-    date: new Date('June 2018'),
+    date: 'June 2018',
     role: "Full-stack developer",
     team: [],
     tools: [
@@ -76,7 +76,7 @@ export const state = () => ([
   {
     name: "Green Tips",
     slug: "green-tips",
-    date: new Date('December 2018'),
+    date: 'December 2018',
     role: "JavaScript developer",
     team: [
       { name: "Théodore Morio", role: "Project manager" },
@@ -113,7 +113,7 @@ export const state = () => ([
   {
     name: "ChatMEAN",
     slug: "chat-mean",
-    date: new Date('February 2019'),
+    date: 'February 2019',
     role: "Back-end developer",
     team: [
       { name: "Jay-min Patel", role: "Project manager & designer" },
@@ -147,7 +147,7 @@ export const state = () => ([
   {
     name: "Gaëtan Lefebvre",
     slug: "gaetan-lefebvre",
-    date: new Date('March 2019'),
+    date: 'March 2019',
     role: "Front-end developer",
     team: [
       { name: "Gaëtan Lefebvre", role: "UX/UI designer" }
@@ -188,7 +188,7 @@ export const state = () => ([
   {
     name: "Scaneat",
     slug: "scaneat",
-    date: new Date('April 2019'),
+    date: 'April 2019',
     role: "Full-stack developer",
     team: [
       { name: "Marie-Athénaïs Dussordet", role: "Full-stack developer" },
@@ -218,7 +218,7 @@ export const state = () => ([
   // {
   //   name: "Offit",
   //   slug: "offit",
-  //   date: new Date('June 2019'),
+  //   date: 'June 2019',
   //   role: "Front-end developer",
   //   team: [
   //     { name: "Paul Agostini", role: "Project manager & UX/UI designer" },
