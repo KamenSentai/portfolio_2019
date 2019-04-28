@@ -163,18 +163,23 @@ export default {
 
       tl.to('.project', 0, { pointerEvents: 'none' }, 0)
 
+      tl.to('.project_cover', 1, { opacity: 0 }, 0)
+      tl.to('.project_push', 1, { yPercent: 25, opacity: 0 }, .5)
+      tl.to('.project_title', 1, { yPercent: 25, opacity: 0 }, 1)
+
       if (this.$store.state.nextRoute.includes('/projects/')) {
         tl.to('.project_more', 1, { yPercent: 25, opacity: 0 }, 0)
+        tl.to('.project_frame', 1, { width: 0 }, 0)
+        tl.to('.project_frame', 1, { scaleY: 0 }, 1)
+        tl.to('.project_body', 1, { opacity: 0 }, 1.5)
+        tl.to('.project_purchase', 1, { width: 0 }, .5)
+        tl.to('.project_purchase', 1, { scaleY: 0 }, 1.5)
       } else {
         scrollTo({
           left: 0,
           top: 0,
           behavior: 'smooth'
         })
-
-        tl.to('.project_cover', 1, { opacity: 0 }, 0)
-        tl.to('.project_push', 1, { yPercent: 25, opacity: 0 }, .5)
-        tl.to('.project_title', 1, { yPercent: 25, opacity: 0 }, 1)
       }
 
       if (this.$store.state.nextRoute === '/') {
@@ -434,6 +439,7 @@ export default {
     font-size 0
     border 2px solid $white
     overflow hidden
+    transform-origin 50% 50%
 
   &_picture
     height auto
