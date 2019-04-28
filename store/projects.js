@@ -58,8 +58,7 @@ export const state = () => ([
       { src: '2.png', alt: 'Catch a Pokemon' },
       { src: '3.png', alt: 'Pokemon page' },
       { src: '4.png', alt: 'Unknown Pokemon' },
-      { src: '5.png', alt: 'Types of Pokemons' },
-      { src: '6.png', alt: '404 page' }
+      { src: '5.png', alt: 'Types of Pokemons' }
     ],
     description: [
       "For a school homework, I had to develop a Pokedex website using Slim Framework.",
