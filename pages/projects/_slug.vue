@@ -55,7 +55,19 @@
         .project_frame(v-for="image in project.images")
           img.project_image(:alt="image.alt" :src="require(`../../assets/images/${project.slug}/${image.src}`)")
   .project_footer
-
+    p.project_more See more projects
+    nuxt-link.project_purchase(:to="`/projects/${prevProject.slug}`" data-mouse="is-reduced")
+      img.project_picture(
+        data-mouse="is-reduced"
+        :alt="prevProject.name"
+        :src="require(`../../assets/images/${prevProject.cover}`)"
+      )
+    nuxt-link.project_purchase(:to="`/projects/${nextProject.slug}`" data-mouse="is-reduced")
+      img.project_picture(
+        data-mouse="is-reduced"
+        :alt="nextProject.name"
+        :src="require(`../../assets/images/${nextProject.cover}`)"
+      )
 </template>
 
 <script>
@@ -98,6 +110,15 @@ export default {
     project() {
       return this.projects.find(project => project.slug === this.$route.params.slug) || {}
     },
+    index() {
+      return this.projects.indexOf(this.project)
+    },
+    prevProject() {
+      return this.projects[this.mod(this.index - 1, this.projects.length)]
+    },
+    nextProject() {
+      return this.projects[this.mod(this.index + 1, this.projects.length)]
+    },
     projectDate() {
       return moment(this.project.date).format('MMMM YYYY')
     }
@@ -124,7 +145,7 @@ export default {
       tl.to('.project', 0, { pointerEvents: 'none' }, 0)
 
       if (this.$store.state.prevRoute !== '/projects') {
-        tl.fromTo('.project_title', 1, { yPercent: -12.5, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1)
+        tl.fromTo('.project_title', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1)
       }
 
       if (this.$store.state.prevRoute.includes('/projects/')) {
@@ -133,7 +154,7 @@ export default {
       }
 
       if (this.$store.state.nextRoute.includes('/projects/')) {
-        tl.fromTo('.project_push', 1, { yPercent: -12.5, opacity: 0 }, { yPercent: 0, opacity: 1 }, .5)
+        tl.fromTo('.project_push', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, .5)
         tl.fromTo('.project_cover', 1, { opacity: 0 }, { opacity: .5 }, 1)
       }
     },
@@ -143,7 +164,7 @@ export default {
       tl.to('.project', 0, { pointerEvents: 'none' }, 0)
 
       if (this.$store.state.nextRoute.includes('/projects/')) {
-
+        tl.to('.project_more', 1, { yPercent: 25, opacity: 0 }, 0)
       } else {
         scrollTo({
           left: 0,
@@ -152,8 +173,8 @@ export default {
         })
 
         tl.to('.project_cover', 1, { opacity: 0 }, 0)
-        tl.to('.project_push', 1, { yPercent: 12.5, opacity: 0 }, .5)
-        tl.to('.project_title', 1, { yPercent: 12.5, opacity: 0 }, 1)
+        tl.to('.project_push', 1, { yPercent: 25, opacity: 0 }, .5)
+        tl.to('.project_title', 1, { yPercent: 25, opacity: 0 }, 1)
       }
 
       if (this.$store.state.nextRoute === '/') {
@@ -381,4 +402,45 @@ export default {
   &_image
     width 75vw
     height auto
+
+  &_footer
+    display flex
+    flex-direction row
+    justify-content space-evenly
+    flex-wrap wrap
+
+  &_more
+    margin-top 50px
+    margin-bottom 25px
+    width 100%
+    font-family $euclidtriangle
+    font-size 2.5rem
+    letter-spacing 0
+    text-transform uppercase
+    text-align center
+
+  &_purchase,
+  &_picture
+    width grid(4)
+
+    @media (max-width $gridmedia4)
+      width grid(3)
+
+  &_purchase
+    display flex
+    justify-content center
+    align-items center
+    margin 50px
+    font-size 0
+    border 2px solid $white
+    overflow hidden
+
+  &_picture
+    height auto
+    transition all 1s $cubic
+    will-change transform
+
+    &:hover
+      transform scale(1.125)
+      filter blur(5px)
 </style>

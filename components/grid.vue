@@ -49,8 +49,6 @@ export default {
 <style lang="stylus" scoped>
 @import '~assets/styles/tools/app'
 
-$cardSize = grid(4)
-
 .grid
   display flex
   justify-content space-evenly
@@ -58,11 +56,17 @@ $cardSize = grid(4)
   margin 0 50px
   width 100%
 
+  &_card,
+  &_image
+    width grid(4)
+
+    @media (max-width $gridmedia4)
+      width grid(3)
+
   &_card
     display flex
     flex-direction column
     align-items center
-    width $cardSize
     margin 0 25px
     margin-bottom 100px
 
@@ -79,13 +83,13 @@ $cardSize = grid(4)
       font-size 0
 
   &_image
-    width $cardSize
     height auto
-    transition transform 1s $cubic
+    transition all 1s $cubic
     will-change transform
 
     &:hover
       transform scale(1.125)
+      filter blur(5px)
 
   &_title
     margin-top 50px
