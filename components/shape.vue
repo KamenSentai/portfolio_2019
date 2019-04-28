@@ -196,7 +196,6 @@ $linkGap = .5em
     position absolute
     width $borderSize
     height $shapeSize
-    transition background-color 1s $cubic 1s
     will-change transform
 
     &::before
@@ -205,6 +204,11 @@ $linkGap = .5em
       left - ($borderSize / 2)
       top 0
       full-size()
+      transition background-color 1s $cubic 1s
+      animation-duration .25s
+      animation-timing-function $cubic
+      animation-delay 1.75s
+      animation-fill-mode forwards
 
     ^[-1][data-theme="black"] &::before
       background-color $white
@@ -229,19 +233,21 @@ $linkGap = .5em
       left "calc(50% - %s / 2)" % $borderSize
       &::before
         transform scaleY(0)
-        animation scale-center .25s linear 1.75s forwards
-      & ^[-2]_text
-        transform translateX(-50%)
+        animation-name scale-center
 
     &-topcenter
       bottom "calc(100% + %s / 2)" % $shapeSize
       & ^[-2]_text
         bottom calc(100% + .25em)
+        transform translate(-50%, - .5em)
+        animation-name translate-top-text
 
     &-bottomcenter
       top "calc(100% + %s / 2)" % $shapeSize
       & ^[-2]_text
         top calc(100% + .25em)
+        transform translate(-50%, .5em)
+        animation-name translate-bottom-text
 
     &-topleft,
     &-topright
@@ -257,39 +263,41 @@ $linkGap = .5em
     &-bottomleft
       & ^[-2]_text
         right "calc(100% + %s + .25em)" % base-equilateral($shapeSize)
+        animation-name translate-left-text
 
     &-topright,
     &-bottomright
       & ^[-2]_text
         left "calc(100% + %s + .25em)" % base-equilateral($shapeSize)
+        animation-name translate-right-text
 
     &-topleft
       left - ($borderSize / 2)
       bottom 100%
       &::before
         transform rotateZ(-60deg) scaleY(0)
-        animation scale-negative-branch .25s linear 1.75s forwards
+        animation-name scale-negative-branch
 
     &-topright
       right - ($borderSize / 2)
       bottom 100%
       &::before
         transform rotateZ(60deg) scaleY(0)
-        animation scale-positive-branch .25s linear 1.75s forwards
+        animation-name scale-positive-branch
 
     &-bottomleft
       left - ($borderSize / 2)
       top 100%
       &::before
         transform rotateZ(60deg) scaleY(0)
-        animation scale-positive-branch .25s linear 1.75s forwards
+        animation-name scale-positive-branch
 
     &-bottomright
       right - ($borderSize / 2)
       top 100%
       &::before
         transform rotateZ(-60deg) scaleY(0)
-        animation scale-negative-branch .25s linear 1.75s forwards
+        animation-name scale-negative-branch
 
   @keyframes scale-center
     from
@@ -314,4 +322,42 @@ $linkGap = .5em
     font-size 2.5rem
     text-transform uppercase
     text-align center
+    opacity 0
+    will-change opacity, transform
+    animation-duration 1s
+    animation-timing-function $cubic
+    animation-delay 1.5s
+    animation-fill-mode forwards
+
+  @keyframes translate-top-text
+    from
+      opacity 0
+      transform translate(-50%, - .5em)
+    to
+      opacity 1
+      transform translate(-50%, 0)
+
+  @keyframes translate-bottom-text
+    from
+      opacity 0
+      transform translate(-50%, .5em)
+    to
+      opacity 1
+      transform translate(-50%, 0)
+
+  @keyframes translate-left-text
+    from
+      opacity 0
+      transform translateX(- .5em)
+    to
+      opacity 1
+      transform translateX(0)
+
+  @keyframes translate-right-text
+    from
+      opacity 0
+      transform translateX(.5em)
+    to
+      opacity 1
+      transform translateX(0)
 </style>

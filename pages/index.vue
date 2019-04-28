@@ -44,7 +44,8 @@ export default {
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
       tl.to('.hero_subtitle span', 0.5, { opacity: 0, y: '12.5%' }, 0)
       tl.to('.hero_title span', 0.5, { opacity: 0, y: '12.5%' }, 0.25)
-      tl.to('.shape', 0.5, { opacity: 0, y: '12.5%' }, .5)
+      tl.to('.shape_branch', 0.5, { opacity: 0 }, .5)
+      tl.to('.shape', 0.5, { opacity: 0, y: '12.5%' }, .75)
     }
   }
 }

@@ -150,7 +150,8 @@ export default {
 
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
       tl.to('.about_head', 1, { opacity: 0, yPercent: 25 }, 0)
-      tl.to('.about', 1, { opacity: 0, y: 100 }, .5)
+      tl.to('.shape_branch', 0.5, { opacity: 0 }, .5)
+      tl.to('.about', 1, { opacity: 0, y: 100 }, .75)
 
       if (this.$store.state.nextRoute === '/') {
         tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
