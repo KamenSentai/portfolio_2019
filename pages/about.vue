@@ -17,8 +17,8 @@
       p.about_paragraph(style="animation-delay: 1.5s") My name is Alain Cao Van Truong. I am a third-year studend at webschool <push class="text-bold" positionValue="relative" :isExternal="true" :isTexted="true" title="HÉTIC" href="https://www.hetic.net"/>. I mainly experiment front-end, back-end and a little bit mobile development. I am currently looking for a 5-month internship from late June to late November.
     .about_section
       .about_card
-        h2.about_subtitle(style="animation-delay: 2s") <span>What I wish</span> <span>to perfect</span>
-        .about_list(style="animation-delay: 2.25s")
+        h2.about_subtitle(style="animation-delay: 1.75s") <span>What I wish</span> <span>to perfect</span>
+        .about_list(style="animation-delay: 2s")
           span.about_list_item Vue.js
           span.about_list_item Nuxt.js
           span.about_list_item PHP Slim
@@ -26,8 +26,8 @@
           span.about_list_item Three.js
           span.about_list_item Git
       .about_card
-        h2.about_subtitle(style="animation-delay: 2s") <span>What I need</span> <span>to improve</span>
-        .about_list(style="animation-delay: 2.25s")
+        h2.about_subtitle(style="animation-delay: 1.75s") <span>What I need</span> <span>to improve</span>
+        .about_list(style="animation-delay: 2s")
           span.about_list_item React.js
           span.about_list_item AngularJS
           span.about_list_item Node.js
@@ -35,8 +35,8 @@
           span.about_list_item Typescript
           span.about_list_item WordPress
       .about_card
-        h2.about_subtitle(style="animation-delay: 2s") <span>What I want</span> <span>to learn</span>
-        .about_list(style="animation-delay: 2.25s")
+        h2.about_subtitle(style="animation-delay: 1.75s") <span>What I want</span> <span>to learn</span>
+        .about_list(style="animation-delay: 2s")
           span.about_list_item Symfony
           span.about_list_item Django
           span.about_list_item Ruby on Rails
@@ -44,7 +44,7 @@
           span.about_list_item ReasonML
           span.about_list_item Kotlin
     .about_section
-      p.about_text.about_text-framed(style="animation-delay: 2.75s")
+      p.about_text.about_text-framed(style="animation-delay: 2.25s")
         push.text-bold(
           positionValue="relative"
           :isExternal="true"
@@ -54,8 +54,8 @@
         )
     .about_section
       .about_card
-        h2.about_subtitle(style="animation-delay: 3s") Contact
-        .about_array(style="animation-delay: 3.25s")
+        h2.about_subtitle(style="animation-delay: 2.5s") Contact
+        .about_array(style="animation-delay: 2.75s")
           push.about_link(
             positionValue="relative"
             :isExternal="true"
@@ -87,7 +87,7 @@
             title="mail.svg"
             href="mailto:contact@alain-caovantruong.fr")
     .about_section
-      p.about_text.about_text-credit(style="animation-delay: 3.5s")
+      p.about_text.about_text-credit(style="animation-delay: 3s")
         push.text-bold(
           positionValue="relative"
           :isExternal="true"
@@ -277,11 +277,11 @@ export default {
 
       &::before
         transform scaleY(0)
-        animation scale-vertical 1s $cubic 3.5s forwards
+        animation scale-vertical 1s $cubic 2.5s forwards
 
       &::after
         transform scaleX(0)
-        animation scale-horizontal 1s $cubic 3.25s forwards
+        animation scale-horizontal 1s $cubic 2.75s forwards
 
       ^[-2][data-theme="black"] &
         &::before

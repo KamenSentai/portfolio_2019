@@ -133,13 +133,13 @@ $linkGap = .5em
         left 0
         transform rotateZ(-30deg) scaleX(0)
         transform-origin 0 50%
-        animation scale-negative-border .25s linear 1.5s forwards
+        animation scale-negative-border .25s linear 1.25s forwards
 
       &::after
         right 0
         transform rotateZ(30deg) scaleX(0)
         transform-origin 100% 50%
-        animation scale-positive-border .25s linear 1.5s forwards
+        animation scale-positive-border .25s linear 1.25s forwards
 
     &-center
       top 0
@@ -151,7 +151,7 @@ $linkGap = .5em
         height 100%
         top 0
         transform scaleY(0)
-        animation scale-center .25s linear 1.25s forwards
+        animation scale-center .25s linear 1s forwards
 
       &::before
         left - ($borderSize / 2)
@@ -172,13 +172,13 @@ $linkGap = .5em
         left 0
         transform rotateZ(30deg) scaleX(0)
         transform-origin 0 50%
-        animation scale-positive-border .25s linear 1.5s forwards
+        animation scale-positive-border .25s linear 1.25s forwards
 
       &::after
         right 0
         transform rotateZ(-30deg) scaleX(0)
         transform-origin 100% 50%
-        animation scale-negative-border .25s linear 1.5s forwards
+        animation scale-negative-border .25s linear 1.25s forwards
 
   @keyframes scale-positive-border
     from
@@ -207,7 +207,7 @@ $linkGap = .5em
       transition background-color 1s $cubic 1s
       animation-duration .25s
       animation-timing-function $cubic
-      animation-delay 1.75s
+      animation-delay 1.5s
       animation-fill-mode forwards
 
     ^[-1][data-theme="black"] &::before
@@ -326,7 +326,7 @@ $linkGap = .5em
     will-change opacity, transform
     animation-duration 1s
     animation-timing-function $cubic
-    animation-delay 1.5s
+    animation-delay 1.25s
     animation-fill-mode forwards
 
   @keyframes translate-top-text

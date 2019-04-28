@@ -26,16 +26,16 @@
       :right="{ isPushing: project.demo !== '', isExternal: true, title: project.demo !== '' ? 'View demo' : 'Demo unavailable', href: project.demo }"
     )
     .project_section
-      h2.project_subtitle(style="animation-delay: 2.5s") My role
-      span.project_text(style="animation-delay: 2.75s") {{ project.role }}
+      h2.project_subtitle(style="animation-delay: 1.5s") My role
+      span.project_text(style="animation-delay: 1.625s") {{ project.role }}
     .project_section
-      h2.project_subtitle(v-if="project.team.length !== 0" style="animation-delay: 3s") The team
+      h2.project_subtitle(v-if="project.team.length !== 0" style="animation-delay: 1.75s") The team
       .project_group
-        p.project_paragraph.project_paragraph-center(v-for="(person, index) in project.team" :style="`animation-delay: ${index / 4 + 3.25}s`") <span class="project_label">{{ person.name }}</span> <span class="project_tag">{{ person.role }}</span>
+        p.project_paragraph.project_paragraph-center(v-for="(person, index) in project.team" :style="`animation-delay: ${index / 4 + 1.875}s`") <span class="project_label">{{ person.name }}</span> <span class="project_tag">{{ person.role }}</span>
     .project_section
-      h2.project_subtitle(style="animation-delay: 3.5s") The project
+      h2.project_subtitle(style="animation-delay: 2s") The project
       .project_group
-        p.project_paragraph(v-for="(paragraph, index) of project.description" :style="`animation-delay: ${index / 4 + 3.75}s`") {{ paragraph }}
+        p.project_paragraph(v-for="(paragraph, index) of project.description" :style="`animation-delay: ${index / 4 + 2.125}s`") {{ paragraph }}
       .project_bloc(v-if="project.mentions.length !== 0")
         push.project_text(
           v-for="(mention, index) of project.mentions"
@@ -45,31 +45,34 @@
           :isTexted="true"
           :title="mention.label"
           :href="mention.url"
-          :style="`animation-delay: ${index / 4 + 3.75 + project.description.length / 4}s`"
+          :style="`animation-delay: ${index / 4 + 2.5 + project.description.length / 4}s`"
         )
     .project_section
-      h2.project_subtitle(style="animation-delay: 4s") The tools
+      h2.project_subtitle(style="animation-delay: 2.625s") The tools
       .project_group
-        p.project_paragraph.project_paragraph-center(v-for="(tool, index) in project.tools" :style="`animation-delay: ${index / 4 + 4.25}s`") {{ tool }}
+        p.project_paragraph.project_paragraph-center(v-for="(tool, index) in project.tools" :style="`animation-delay: ${index / 4 + 2.75}s`") {{ tool }}
     .project_section
-      h2.project_subtitle(style="animation-delay: 4.5s") Screenshots
+      h2.project_subtitle(style="animation-delay: 2.875s") Screenshots
       .project_gallery
         .project_frame(v-for="image in project.images")
           img.project_image(:alt="image.alt" :src="require(`../../assets/images/${project.slug}/${image.src}`)")
   .project_footer
-    p.project_more See more projects
-    nuxt-link.project_purchase(:to="`/projects/${prevProject.slug}`" data-mouse="is-reduced")
-      img.project_picture(
-        data-mouse="is-reduced"
-        :alt="prevProject.name"
-        :src="require(`../../assets/images/${prevProject.cover}`)"
-      )
-    nuxt-link.project_purchase(:to="`/projects/${nextProject.slug}`" data-mouse="is-reduced")
-      img.project_picture(
-        data-mouse="is-reduced"
-        :alt="nextProject.name"
-        :src="require(`../../assets/images/${nextProject.cover}`)"
-      )
+    p.project_subtext(style="animation-delay: 3.5s") See more projects
+    .project_suggestions
+      .project_item
+        nuxt-link.project_purchase(:to="`/projects/${prevProject.slug}`" data-mouse="is-reduced")
+          img.project_picture(
+            data-mouse="is-reduced"
+            :alt="prevProject.name"
+            :src="require(`../../assets/images/${prevProject.cover}`)"
+          )
+      .project_item
+        nuxt-link.project_purchase(:to="`/projects/${nextProject.slug}`" data-mouse="is-reduced")
+          img.project_picture(
+            data-mouse="is-reduced"
+            :alt="nextProject.name"
+            :src="require(`../../assets/images/${nextProject.cover}`)"
+          )
 </template>
 
 <script>
@@ -158,8 +161,10 @@ export default {
       tl.fromTo('.project_body', 1, { opacity: 0 }, { opacity: 1 }, 0)
       tl.fromTo('.project_push', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, .5)
       tl.fromTo('.project_cover', 1, { opacity: 0 }, { opacity: .5 }, 1)
-      tl.fromTo('.project_frame', 1, { scaleY: 0 }, { scaleY: 1 }, 5)
-      tl.fromTo('.project_frame', 1, { width: 0 }, { width: '75%' }, 6)
+      tl.fromTo('.project_frame', 1, { scaleY: 0 }, { scaleY: 1 }, 3)
+      tl.fromTo('.project_frame', 1, { width: 0 }, { width: '100%' }, 4)
+      tl.fromTo('.project_purchase', 1, { scaleY: 0 }, { scaleY: 1 }, 3.5)
+      tl.fromTo('.project_purchase', 1, { width: 0 }, { width: '100%' }, 4.5)
     },
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
@@ -171,12 +176,12 @@ export default {
       tl.to('.project_title', 1, { yPercent: 25, opacity: 0 }, 1)
 
       if (this.$store.state.nextRoute.includes('/projects/')) {
-        tl.to('.project_more', 1, { yPercent: 25, opacity: 0 }, 0)
         tl.to('.project_frame', 1, { width: 0 }, 0)
         tl.to('.project_frame', 1, { scaleY: 0 }, 1)
         tl.to('.project_body', 1, { scaleX: 0 }, 1)
         tl.to('.project_purchase', 1, { width: 0 }, .5)
         tl.to('.project_purchase', 1, { scaleY: 0 }, 1.5)
+        tl.to('.project_footer', 1, { opacity: 0 }, 1)
       } else {
         scrollTo({
           left: 0,
@@ -313,7 +318,8 @@ export default {
 
   &_subtitle,
   &_text,
-  &_paragraph
+  &_paragraph,
+  &_subtext
     opacity 0
     transform translateY(12.5%)
     will-change opacity, transform
@@ -387,17 +393,32 @@ export default {
     > *
       line-height 1.5em
 
+  &_gallery,
+  &_image
+    width grid(10)
+
+    @media (max-width $gridmedia10)
+      width grid(8)
+
+    @media (max-width $gridmedia8)
+      width grid(6)
+
+    @media (max-width $gridmedia6)
+      width grid(4)
+
+    @media (max-width $gridmedia4)
+      width grid(3)
+
   &_gallery
     display flex
     flex-direction column
     align-items center
-    width 100%
 
   &_frame
     display flex
     justify-content center
     align-items center
-    width 75%
+    width 100%
     font-size 0
     margin-bottom 50px
     border 2px solid $black
@@ -408,18 +429,16 @@ export default {
       margin-bottom 0
 
   &_image
-    width 75vw
     height auto
 
   &_footer
     display flex
-    flex-direction row
-    justify-content space-evenly
-    flex-wrap wrap
+    flex-direction column
+    align-items center
+    padding 50px 0
 
-  &_more
-    margin-top 50px
-    margin-bottom 25px
+  &_subtext
+    margin-bottom 50px
     width 100%
     font-family $euclidtriangle
     font-size 2.5rem
@@ -427,19 +446,44 @@ export default {
     text-transform uppercase
     text-align center
 
-  &_purchase,
+  &_suggestions
+    display flex
+    justify-content space-between
+    align-items center
+    width grid(10)
+
+    @media (max-width $gridmedia10)
+      width grid(8)
+      flex-direction column
+
+    @media (max-width $gridmedia8)
+      width grid(6)
+
+    @media (max-width $gridmedia6)
+      width grid(4)
+
+    @media (max-width $gridmedia4)
+      width grid(3)
+
+  &_item,
   &_picture
     width grid(4)
 
     @media (max-width $gridmedia4)
       width grid(3)
 
+  &_item
+    margin 25px 0
+
+  &_item,
   &_purchase
     display flex
     justify-content center
     align-items center
-    margin 50px
     font-size 0
+
+  &_purchase
+    width 100%
     border 2px solid $white
     overflow hidden
     transform-origin 50% 50%
