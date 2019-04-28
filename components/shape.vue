@@ -219,7 +219,7 @@ $linkGap = .5em
         /* Exception due to font */
         // transform rotateZ(120deg) translate(-100%, 100%) translateX(- $linkGap)
         transform rotateZ(120deg) translate(-95%, 100%) translateX(- $linkGap)
-        animation apperance-bottomleft .5s $cubic 2.25s forwards
+        animation emergence-bottomleft .5s $cubic 2.25s forwards
 
     &-topcenter
       left "calc(50% - %s / 2)" % $borderSize
@@ -231,7 +231,7 @@ $linkGap = .5em
         /* Exception due to font */
         // transform translate(-50%, - $linkGap)
         transform translate(-45%, - $linkGap)
-        animation apperance-topcenter .5s $cubic 2s forwards
+        animation emergence-topcenter .5s $cubic 2s forwards
 
     &-bottomright
       right - ($borderSize / 2)
@@ -243,7 +243,7 @@ $linkGap = .5em
         /* Exception due to font */
         // transform rotateZ(-120deg) translate($linkGap, 100%)
         transform rotateZ(-120deg) translate($linkGap, 105%)
-        animation apperance-bottomright .5s $cubic 2.25s forwards
+        animation emergence-bottomright .5s $cubic 2.25s forwards
 
     &-topleft,
     &-bottomcenter,
@@ -264,7 +264,7 @@ $linkGap = .5em
         /* Exception due to font */
         // transform rotateZ(240deg) translate(-100%, -100%) translateX(- $linkGap)
         transform rotateZ(240deg) translate(-95%, -90%) translateX(- $linkGap)
-        animation apperance-topleft .5s $cubic 2s forwards
+        animation emergence-topleft .5s $cubic 2s forwards
 
     &-bottomcenter
       left "calc(50% - %s / 2)" % $borderSize
@@ -276,7 +276,7 @@ $linkGap = .5em
         /* Exception due to font */
         // transform translate(-50%, $linkGap)
         transform translate(-45%, $linkGap)
-        animation apperance-bottomcenter .5s $cubic 2.25s forwards
+        animation emergence-bottomcenter .5s $cubic 2.25s forwards
 
     &-topright
       right - ($borderSize / 2)
@@ -288,7 +288,7 @@ $linkGap = .5em
         /* Exception due to font */
         // transform rotateZ(-240deg) translate($linkGap, -100%)
         transform rotateZ(-240deg) translate($linkGap, -90%)
-        animation apperance-topright .5s $cubic 2s forwards
+        animation emergence-topright .5s $cubic 2s forwards
 
   @keyframes scale-center
     from
@@ -320,7 +320,7 @@ $linkGap = .5em
     to
       transform rotateZ(240deg) scaleY(1)
 
-  @keyframes apperance-bottomleft
+  @keyframes emergence-bottomleft
     from
       opacity 0
       /* Exception due to font */
@@ -332,7 +332,7 @@ $linkGap = .5em
       // transform rotateZ(120deg) translate(-100%, 100%)
       transform rotateZ(120deg) translate(-95%, 100%)
 
-  @keyframes apperance-topcenter
+  @keyframes emergence-topcenter
     from
       opacity 0
       /* Exception due to font */
@@ -344,7 +344,7 @@ $linkGap = .5em
       // transform translate(-50%, 0)
       transform translate(-45%, 0)
 
-  @keyframes apperance-bottomright
+  @keyframes emergence-bottomright
     from
       opacity 0
       /* Exception due to font */
@@ -356,7 +356,7 @@ $linkGap = .5em
       // transform rotateZ(-120deg) translate(0, 100%)
       transform rotateZ(-120deg) translate(0, 105%)
 
-  @keyframes apperance-topleft
+  @keyframes emergence-topleft
     from
       opacity 0
       /* Exception due to font */
@@ -368,7 +368,7 @@ $linkGap = .5em
       // transform rotateZ(240deg) translate(-100%, -100%)
       transform rotateZ(240deg) translate(-95%, -90%)
 
-  @keyframes apperance-bottomcenter
+  @keyframes emergence-bottomcenter
     from
       opacity 0
       /* Exception due to font */
@@ -380,7 +380,7 @@ $linkGap = .5em
       // transform translate(-50%, 0)
       transform translate(-45%, 0)
 
-  @keyframes apperance-topright
+  @keyframes emergence-topright
     from
       opacity 0
       /* Exception due to font */
