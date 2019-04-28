@@ -5,7 +5,8 @@
     :right="{ title: 'Works', href: '/works' }"
   )
   .container_page.about(:data-theme="$store.state.color")
-    h1.about_title About
+    .about_head
+      h1.about_title About
     shape(
       :isReversed="true"
       :left="{ isPushing: false, title: 'Full' }"
@@ -47,7 +48,7 @@
         push.text-bold(
           :isExternal="true"
           :isTexted="true"
-          title="Download my CV here"
+          title="Download my resume"
           href="/pdf/CV-Alain_Cao_Van_Truong.pdf"
         )
     .about_section
@@ -142,7 +143,8 @@ export default {
       })
 
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
-      tl.to('.about', 1, { opacity: 0, y: 100 }, 1)
+      tl.to('.about_head', 1, { opacity: 0, yPercent: 25 }, 0)
+      tl.to('.about', 1, { opacity: 0, y: 100 }, .5)
 
       if (this.$store.state.nextRoute === '/') {
         tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
