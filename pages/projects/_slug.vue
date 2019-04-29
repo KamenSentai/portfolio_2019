@@ -144,12 +144,12 @@ export default {
       tl.to('.project', 0, { pointerEvents: 'none' }, 0)
       tl.to('.project_body', 0, { pointerEvents: 'none' }, 0)
 
-      if (this.$store.state.prevRoute.includes('/projects/')) {
+      if (this.$store.state.prevRoute === 'projects-slug') {
         tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
         tl.fromTo('.navigation_menu', 1, { scaleX: 0 }, { scaleX: 1 }, .5)
       }
 
-      if (this.$store.state.prevRoute !== '/projects') {
+      if (this.$store.state.prevRoute !== 'projects') {
         tl.fromTo('.project_title', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1)
       }
 
@@ -176,7 +176,7 @@ export default {
       tl.to('.project_push', 1, { yPercent: 25, opacity: 0 }, .5)
       tl.to('.project_title', 1, { yPercent: 25, opacity: 0 }, 1)
 
-      if (this.$store.state.nextRoute.includes('/projects/')) {
+      if (this.$store.state.nextRoute === 'projects-slug') {
         tl.to('.project_frame', 1, { width: 0 }, 0)
         tl.to('.project_frame', 1, { scaleY: 0 }, 1)
         tl.to('.project_body', 1, { scaleX: 0 }, 1)
@@ -191,7 +191,7 @@ export default {
         })
       }
 
-      if (this.$store.state.nextRoute === '/') {
+      if (this.$store.state.nextRoute === 'index') {
         tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
         tl.to('.navigation_main', 1, { y: - window.innerHeight / 4 }, .5)
       }

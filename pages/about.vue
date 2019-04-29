@@ -134,7 +134,7 @@ export default {
 
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
 
-      if (this.$store.state.prevRoute === '/') {
+      if (this.$store.state.prevRoute === 'index') {
         tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
         tl.fromTo('.navigation_menu', 1, { scaleX: 0 }, { scaleX: 1 }, .5)
       }
@@ -153,7 +153,7 @@ export default {
       tl.to('.shape_branch', 0.5, { opacity: 0 }, .5)
       tl.to('.about', 1, { opacity: 0, y: 100 }, .75)
 
-      if (this.$store.state.nextRoute === '/') {
+      if (this.$store.state.nextRoute === 'index') {
         tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
         tl.to('.navigation_main', 1, { y: - window.innerHeight / 4 }, .5)
       }

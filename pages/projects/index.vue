@@ -49,7 +49,7 @@ export default {
 
       tl.to('.container', 0, { pointerEvents: 'none' }, 0)
 
-      if (this.$store.state.prevRoute === '/') {
+      if (this.$store.state.prevRoute === 'index') {
         tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
         tl.fromTo('.navigation_menu', 1, { scaleX: 0 }, { scaleX: 1 }, .5)
       }
@@ -68,12 +68,12 @@ export default {
       tl.to('.jumbotron_frame', 1, { height: 0 }, 0)
       tl.to('.jumbotron_frame', 1, { scaleX: 0 }, 1)
 
-      if (!this.$store.state.nextRoute.includes('/projects/')) {
+      if (this.$store.state.nextRoute !== 'projects-slug') {
         tl.to('.container', 0, { pointerEvents: 'none' }, 0)
-        tl.to('.jumbotron_titles', 1, { opacity: 0 }, 1)
+        tl.to('.jumbotron', 1, { opacity: 0 }, 1)
       }
 
-      if (this.$store.state.nextRoute === '/') {
+      if (this.$store.state.nextRoute === 'index') {
         tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
         tl.to('.navigation_main', 1, { y: - window.innerHeight / 4 }, .5)
       }
