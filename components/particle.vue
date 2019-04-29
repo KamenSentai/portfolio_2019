@@ -65,10 +65,11 @@ export default {
       for (let i = 0 ; i < particles.length ; i++) {
         const particle = particles[i]
 
-        context.beginPath()
-
         if (i > 0) {
+          context.beginPath()
           context.arc(particle.x, particle.y, particleSize, 0, Math.PI * 2, false)
+          context.fill()
+          context.closePath()
 
           particle.x = mod(particle.x + particle.dx, this.$el.width)
           particle.y = mod(particle.y + particle.dy, this.$el.height)
@@ -80,17 +81,17 @@ export default {
         for (let j = i + 1 ; j < particles.length ; j++) {
           const neighbour = particles[j]
           const distance = Math.sqrt((particle.x - neighbour.x) ** 2 + (particle.y - neighbour.y) ** 2)
+          const opacity = 1 - distance / maxDistance
 
-          if (distance < maxDistance) {
-            context.strokeStyle = `hsla(0, 0%, 93%, ${1 - distance / maxDistance})`
+          if (opacity > 0) {
+            context.beginPath()
+            context.strokeStyle = `hsla(0, 0%, 93%, ${opacity})`
             context.moveTo(particle.x, particle.y)
             context.lineTo(neighbour.x, neighbour.y)
+            context.stroke()
+            context.closePath()
           }
         }
-
-        context.closePath()
-        context.stroke()
-        context.fill()
       }
 
       window.requestAnimationFrame(loop)
@@ -104,14 +105,18 @@ export default {
 @import '~assets/styles/tools/app'
 
 .particle
-  position absolute
+  position fixed
+  left 0
+  top 0
   pointer-events none
   opacity 0
   transform scale(.5)
   transition all 2s $cubic 1s
   will-change opacity, transform
 
-  &[data-state="active"][data-page="index"]
+  &[data-state="active"][data-page="index"],
+  &[data-state="active"][data-page="lab"],
+  &[data-state="active"][data-page="projects"]
     opacity .25
     transform scale(1)
 </style>
