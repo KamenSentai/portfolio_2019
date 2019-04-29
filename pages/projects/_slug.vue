@@ -1,7 +1,7 @@
 <template lang="pug">
 .project
   .project_header
-    img.project_cover(:alt="project.name" :src="require(`../../assets/images/${project.cover}`)")
+    img.project_cover(ref="cover" :alt="project.name" :src="require(`../../assets/images/${project.cover}`)")
     navigation(
       :left="{ title: 'Lab', href: '/lab' }"
       :right="{ title: 'About', href: '/about' }"
@@ -125,11 +125,16 @@ export default {
   methods: {
     mod(n, m) {
       return ((n % m) + m) % m
+    },
+    translateCover() {
+      if (this.$refs.cover) this.$refs.cover.style.transform = `translateY(${window.scrollY / 5}px)`
     }
   },
   mounted() {
     this.windowSize.w = window.innerWidth
     this.windowSize.h = window.innerHeight
+
+    window.addEventListener('wheel', this.translateCover)
   },
   transition: {
     mode: 'out-in',
@@ -155,7 +160,8 @@ export default {
 
       tl.fromTo('.project_body', 1, { opacity: 0 }, { opacity: 1 }, 0)
       tl.fromTo('.project_push', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, .5)
-      tl.fromTo('.project_cover', 1, { opacity: 0 }, {
+      tl.fromTo('.project_cover', 1, { yPercent: 12.5, opacity: 0 }, {
+        yPercent: 0,
         opacity: .5,
         onComplete: () => {
           TweenMax.set('.project', { clearProps: 'all' })
