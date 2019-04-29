@@ -1,5 +1,5 @@
 <template lang="pug">
-canvas.particle
+canvas.particle(:data-visibility="$route.name === 'index' ? 'displayed' : 'hidden'")
 </template>
 
 <script>
@@ -17,6 +17,8 @@ export default {
     },
   },
   mounted() {
+    this.$el.dataset.state = 'active'
+
     const context = this.$el.getContext('2d')
 
     const total = Math.sqrt(window.innerWidth * window.innerHeight) / 10
@@ -94,8 +96,6 @@ export default {
       window.requestAnimationFrame(loop)
     }
     loop()
-
-    this.$el.classList.add('is-active')
   }
 }
 </script>
@@ -111,7 +111,7 @@ export default {
   transition all 2s $cubic 1s
   will-change opacity, transform
 
-  &.is-active
+  &[data-state="active"][data-visibility="displayed"]
     opacity .5
     transform scale(1)
 </style>
