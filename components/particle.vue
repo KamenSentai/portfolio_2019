@@ -1,5 +1,5 @@
 <template lang="pug">
-canvas.particle(:data-visibility="$route.name === 'index' ? 'displayed' : 'hidden'")
+canvas.particle(:data-page="$route.name")
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
 
     const context = this.$el.getContext('2d')
 
-    const total = Math.sqrt(window.innerWidth * window.innerHeight) / 10
+    const total = Math.floor(Math.sqrt(window.innerWidth * window.innerHeight) / 5)
     const maxSpeed = 1
     const maxDistance = 100
     const particleSize = 1
@@ -111,7 +111,7 @@ export default {
   transition all 2s $cubic 1s
   will-change opacity, transform
 
-  &[data-state="active"][data-visibility="displayed"]
-    opacity .5
+  &[data-state="active"][data-page="index"]
+    opacity .25
     transform scale(1)
 </style>
