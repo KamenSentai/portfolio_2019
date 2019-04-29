@@ -13,7 +13,7 @@ export const mutations = {
   CHANGE_COLOR(state, color) {
     state.theme = color
   },
-  TOGGLE_TOUCHEVENTS(state, value) {
+  CHECK_TOUCHEVENTS(state, value) {
     state.isTouchevents = value
   }
 }

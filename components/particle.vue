@@ -38,6 +38,9 @@ export default {
       return mq(query)
     },
   },
+  beforeMount() {
+    this.$store.commit('CHECK_TOUCHEVENTS', this.checkTouchevents)
+  },
   mounted() {
     this.$el.dataset.state = 'active'
 

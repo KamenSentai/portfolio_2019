@@ -109,12 +109,13 @@ $linkGap = .5em
     display flex
     flex-direction column
     align-items center
+    width $stripeWidth * 2
 
     @media (max-height 450px)
       margin-bottom 0
 
   &_stripe
-    width $stripeWidth
+    width 50%
     height $stripeHeight
     transition background-color 1s $cubic 1s, transform .5s $cubic
 
@@ -130,7 +131,7 @@ $linkGap = .5em
 
     &-middle
       position relative
-      width $stripeWidth * 2
+      width 100%
       margin 10px 0
       transform scaleX(.5)
       transform-origin 50% 50%

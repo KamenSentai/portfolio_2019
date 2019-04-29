@@ -128,6 +128,7 @@ export default {
       const tl = new TimelineMax({
         onComplete: () => {
           TweenMax.set('.container', { clearProps: 'all' })
+          TweenMax.set('.navigation_stripe-middle', { clearProps: 'all' })
           done()
         }
       })
@@ -137,6 +138,10 @@ export default {
       if (this.$store.state.prevRoute === 'index') {
         tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
         tl.fromTo('.navigation_menu', 1, { scaleX: 0 }, { scaleX: 1 }, .5)
+      } else {
+        if (this.$store.state.isTouchevents) {
+          tl.fromTo('.navigation_stripe-middle', 1, { width: 0, opacity: 0 }, { width: '100%', opacity: 1 }, 0)
+        }
       }
     },
     leave(el, done) {
@@ -156,6 +161,10 @@ export default {
       if (this.$store.state.nextRoute === 'index') {
         tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
         tl.to('.navigation_main', 1, { y: - window.innerHeight / 4 }, .5)
+      } else {
+        if (this.$store.state.isTouchevents) {
+          tl.to('.navigation_stripe-middle', 1, { width: 0, opacity: 0 }, 0)
+        }
       }
     }
   }
