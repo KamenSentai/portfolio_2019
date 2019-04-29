@@ -77,7 +77,7 @@ export const state = () => ([
     name: "Green Tips",
     slug: "green-tips",
     date: 'December 2018',
-    role: "JavaScript developer",
+    role: "Full-stack developer",
     team: [
       { name: "Théodore Morio", role: "Project manager" },
       { name: "Bryan Chung", role: "UX/UI designer" },
@@ -103,7 +103,7 @@ export const state = () => ([
       "In particular, they are tweet-like post for quick tips, and standard articles for more specific tips.",
       "Théodore led the project with his ideas about which features we need. He also assisted Bryan in UX/UI design.",
       "Loris intefrated the sketches and Florian is used to develop with WordPress, so we let him all the back-end.",
-      "Everytime before Florian retrieves Loris' integration, I had to reorganize with components. Then, I worked between front-end and back-end by fetching data in JavaScript."
+      "Everytime before Florian retrieves Loris' integration, I had to reorganize with components. Then, I worked between front-end and back-end by fetching data in JavaScript. For instance, one of the features is Ajax loading : I managed, fetched and displayed data with PHP and JavaScript."
     ],
     code: "https://github.com/KamenSentai/Green-Tips",
     demo: "http://green-tips.floriandurand.com/",
