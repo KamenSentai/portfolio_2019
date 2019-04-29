@@ -4,15 +4,35 @@ canvas.particle
 
 <script>
 export default {
+  computed: {
+    checkTouchevents() {
+      const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
+      const mq = query => window.matchMedia(query).matches
+
+      if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) return true
+
+      const query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('')
+
+      return mq(query)
+    },
+  },
   mounted() {
     const context = this.$el.getContext('2d')
+
+    const total = Math.sqrt(window.innerWidth * window.innerHeight) / 10
+    const maxSpeed = 1
+    const maxDistance = 100
+    const particleSize = 1
+    const particles = []
+    const links = []
+    const mousePosition = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+
+    const mod = (n, m) => ((n % m) + m) % m
 
     this.$el.width = window.innerWidth
     this.$el.height = window.innerHeight
     context.fillStyle = 'hsl(0, 0%, 93%)'
     context.lineWidth = .5
-
-    const size = { w: this.$el.width, h: this.$el.height }
 
     window.addEventListener('resize', () => {
       this.$el.width = window.innerWidth
@@ -21,14 +41,14 @@ export default {
       context.lineWidth = 1
     })
 
-    const total = Math.sqrt(window.innerWidth * window.innerHeight) / 10
-    const maxSpeed = 1
-    const maxDistance = 100
-    const particleSize = 1
-    const particles = []
-    const links = []
+    if (!this.checkTouchevents) {
+      particles.push({ x: mousePosition.x, y: mousePosition.y })
 
-    const mod = (n, m) => ((n % m) + m) % m
+      window.addEventListener('mousemove', event => {
+        mousePosition.x = event.clientX
+        mousePosition.y = event.clientY
+      })
+    }
 
     for (let i = 0 ; i < total ; i++) particles.push({
       x: Math.random() * this.$el.width,
@@ -45,10 +65,15 @@ export default {
 
         context.beginPath()
 
-        context.arc(particle.x, particle.y, particleSize, 0, Math.PI * 2, false)
+        if (i > 0) {
+          context.arc(particle.x, particle.y, particleSize, 0, Math.PI * 2, false)
 
-        particle.x = mod(particle.x + particle.dx, this.$el.width)
-        particle.y = mod(particle.y + particle.dy, this.$el.height)
+          particle.x = mod(particle.x + particle.dx, this.$el.width)
+          particle.y = mod(particle.y + particle.dy, this.$el.height)
+        } else {
+          particle.x = mousePosition.x
+          particle.y = mousePosition.y
+        }
 
         for (let j = i + 1 ; j < particles.length ; j++) {
           const neighbour = particles[j]
