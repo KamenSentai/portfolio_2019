@@ -30,7 +30,7 @@ export const state = () => ([
       { src: '10.png', alt: 'Welcome to Mars - colonizartion' }
     ],
     description: [
-      "I worked on this project with comrades for a 5-days front-end development project. Our team decided to expalin how a space trip works on this website.",
+      "I worked on this project with comrades for a 5-days front-end development project. Our team decided to explain how a space trip works on this website.",
       "Alexandre led the project. He decided which data are displayed and he deisgned alongside Julien about UX and UI.",
       "As the lead developer, I mainly integrated the sketch and I built a mini staircase-like slider framework. Also, I managed the front-end boilerplate.",
       "Justine managed UX by playing 3D musics and sounds with Howler.js library and Amélie added UI experience with parallax."
@@ -103,7 +103,7 @@ export const state = () => ([
       "In particular, they are tweet-like post for quick tips, and standard articles for more specific tips.",
       "Théodore led the project with his ideas about which features we need. He also assisted Bryan in UX/UI design.",
       "Loris intefrated the sketches and Florian is used to develop with WordPress, so we let him all the back-end.",
-      "Everytime before Florian retrieves Loris' integration, I had to reorganize with components. Then, I worked between front-end and back-end by fetching data in JavaScript. For instance, one of the features is Ajax loading : I managed, fetched and displayed data with PHP and JavaScript."
+      "Everytime before Florian retrieves Loris' integration, I had to reorganize with components. Then, I worked between front-end and back-end by fetching data in JavaScript."
     ],
     code: "https://github.com/KamenSentai/Green-Tips",
     demo: "http://green-tips.floriandurand.com/",
