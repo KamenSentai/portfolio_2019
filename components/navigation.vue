@@ -1,8 +1,7 @@
 <template lang="pug">
 .navigation(:data-theme="$store.state.color" :data-touchevents="isTouchEvents ? 'true' : 'false'")
-  nuxt-link.navigation_main(data-mouse="is-reduced" to="/")
+  nuxt-link.navigation_main(to="/")
     svg.navigation_logo(
-      data-mouse="is-reduced"
       x="0px"
       y="0px"
       viewBox="0 0 125 162.5"

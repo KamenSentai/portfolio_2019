@@ -1,7 +1,6 @@
 <template lang="pug">
 a.push(
   v-if="isExternal"
-  data-mouse="is-reduced"
   :data-position="positionValue"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
@@ -11,20 +10,17 @@ a.push(
 )
   img.push_text.push_text-image(
     v-if="!isTexted"
-    data-mouse="is-reduced"
     :src="require(`../assets/images/${title}`)"
     :alt="title"
   )
   img.push_text.push_text-sub(
     v-if="!isTexted"
-    data-mouse="is-reduced"
     :src="require(`../assets/images/${title}`)"
     :alt="title"
   )
-  span.push_text(v-else data-mouse="is-reduced") {{ title }}
+  span.push_text(v-else) {{ title }}
 nuxt-link.push(
   v-else-if="href !== '#'"
-  data-mouse="is-reduced"
   :data-position="positionValue"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
@@ -33,20 +29,17 @@ nuxt-link.push(
 )
   img.push_text.push_text-image(
     v-if="!isTexted"
-    data-mouse="is-reduced"
     :src="require(`../assets/images/${title}`)"
     :alt="title"
   )
   img.push_text.push_text-sub(
     v-if="!isTexted"
-    data-mouse="is-reduced"
     :src="require(`../assets/images/${title}`)"
     :alt="title"
   )
-  span.push_text(v-else data-mouse="is-reduced") {{ title }}
+  span.push_text(v-else) {{ title }}
 span.push(
   v-else
-  data-mouse="is-reduced"
   :data-position="positionValue"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
@@ -54,17 +47,15 @@ span.push(
 )
   img.push_text.push_text-image(
     v-if="!isTexted"
-    data-mouse="is-reduced"
     :src="require(`../assets/images/${title}`)"
     :alt="title"
   )
   img.push_text.push_text-sub(
     v-if="!isTexted"
-    data-mouse="is-reduced"
     :src="require(`../assets/images/${title}`)"
     :alt="title"
   )
-  span.push_text(v-else data-mouse="is-reduced" @click="scrollClick") {{ title }}
+  span.push_text(v-else @click="scrollClick") {{ title }}
 </template>
 
 <script>

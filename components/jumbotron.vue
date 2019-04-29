@@ -2,7 +2,6 @@
 .jumbotron(@touchstart="touchStart" @touchmove="touchMove")
   .jumbotron_frame(
     ref="frame"
-    data-mouse="is-reduced"
   )
     nuxt-link.jumbotron_link(
       v-for="(card, index) in cards"
@@ -11,17 +10,14 @@
       :data-display="index === page ? 'flex' : 'none'"
     )
       img.jumbotron_image(
-        data-mouse="is-reduced"
         :src="require(`../assets/images/${card.cover}`)"
         :alt="card.name"
       )
   .jumbotron_buttons
     button.jumbotron_button.jumbotron_button-up(
-      data-mouse="is-reduced"
       @click="slideUp"
     )
     button.jumbotron_button.jumbotron_button-down(
-      data-mouse="is-reduced"
       @click="slideDown"
     )
   .jumbotron_titles

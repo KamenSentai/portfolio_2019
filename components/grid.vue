@@ -3,14 +3,12 @@
   .grid_card(v-for="(card, index) in cards" :key="index")
     .grid_frame
       a.grid_frame_button(
-        data-mouse="is-reduced"
         :title="card.name"
         :href="card.demo !== '' ? card.demo : card.code"
         target="_blank"
         rel="noopener"
       )
         img.grid_image(
-          data-mouse="is-reduced"
           :src="require(`../assets/images/${card.slug}/0.png`)"
           :alt="card.name"
         )
