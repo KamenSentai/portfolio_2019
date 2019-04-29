@@ -1,7 +1,7 @@
 <template lang="pug">
 .container
   navigation(
-    :left="{ title: 'Works', href: '/works' }"
+    :left="{ title: 'Lab', href: '/lab' }"
     :right="{ title: 'About', href: '/about' }"
   )
   .container_section

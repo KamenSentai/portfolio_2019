@@ -7,7 +7,7 @@
       :isReversed="false"
       :left="{ isPushing: true, isExternal: false, title: 'Projects', href: '/projects' }"
       :center="{ isPushing: true, isExternal: false, title: 'About', href: '/about' }"
-      :right="{ isPushing: true, isExternal: false, title: 'Works', href: '/works' }"
+      :right="{ isPushing: true, isExternal: false, title: 'Lab', href: '/lab' }"
     )
 </template>
 

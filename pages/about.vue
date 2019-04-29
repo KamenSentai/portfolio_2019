@@ -2,7 +2,7 @@
 .container
   navigation(
     :left="{ title: 'Projects', href: '/projects' }"
-    :right="{ title: 'Works', href: '/works' }"
+    :right="{ title: 'Lab', href: '/lab' }"
   )
   .container_page.about(:data-theme="$store.state.color")
     .about_head

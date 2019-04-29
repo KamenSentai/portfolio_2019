@@ -3,7 +3,7 @@
   .project_header
     img.project_cover(:alt="project.name" :src="require(`../../assets/images/${project.cover}`)")
     navigation(
-      :left="{ title: 'Works', href: '/works' }"
+      :left="{ title: 'Lab', href: '/lab' }"
       :right="{ title: 'About', href: '/about' }"
     )
     h1.project_title {{ project.name }}

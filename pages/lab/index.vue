@@ -7,7 +7,7 @@
   .container_section
     grid(
       :url="$route.path"
-      :cards="works"
+      :cards="lab"
     )
 </template>
 
@@ -20,7 +20,7 @@ import { TimelineMax } from 'gsap'
 export default {
   head() {
     return {
-      title: 'Alain Cao Van Truong | Works',
+      title: 'Alain Cao Van Truong | Lab',
       meta: [
         { hid: 'description', name: 'description', content: 'Check out my little works and tests.' }
       ],
@@ -34,8 +34,8 @@ export default {
     'navigation': Navigation
   },
   computed: {
-    works() {
-      return this.$store.state.works
+    lab() {
+      return this.$store.state.lab
     }
   },
   transition: {
