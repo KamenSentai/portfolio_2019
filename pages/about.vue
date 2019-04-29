@@ -4,7 +4,7 @@
     :left="{ title: 'Projects', href: '/projects' }"
     :right="{ title: 'Lab', href: '/lab' }"
   )
-  .container_page.about(:data-theme="$store.state.color")
+  .about(:data-theme="$store.state.color")
     .about_head
       h1.about_title About
     shape(
@@ -166,6 +166,12 @@ export default {
 @import '~assets/styles/tools/app'
 
 .about
+  display flex
+  flex-direction column
+  align-items center
+  flex-shrink 0
+  padding 50px 0
+
   &_title,
   &_subtitle,
   &_paragraph,
