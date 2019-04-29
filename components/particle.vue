@@ -43,9 +43,9 @@ export default {
 
     const context = this.$el.getContext('2d')
 
-    const total = Math.floor(Math.sqrt(window.innerWidth * window.innerHeight) / 10)
+    const total = Math.floor(Math.sqrt(window.innerWidth * window.innerHeight) / 25)
     const maxSpeed = 1
-    const maxDistance = 100
+    const maxDistance = 250
     const particleSize = 1
     const particles = []
     const links = []
@@ -140,6 +140,6 @@ export default {
   &[data-state="active"][data-page="lab"],
   &[data-state="active"][data-page="projects"],
   &[data-state="active"][data-page="about"]
-    opacity .25
+    opacity .5
     transform scale(1)
 </style>
