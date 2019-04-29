@@ -43,7 +43,7 @@ export default {
 
     const context = this.$el.getContext('2d')
 
-    const total = Math.floor(Math.sqrt(window.innerWidth * window.innerHeight) / 5)
+    const total = Math.floor(Math.sqrt(window.innerWidth * window.innerHeight) / 10)
     const maxSpeed = 1
     const maxDistance = 100
     const particleSize = 1
