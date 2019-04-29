@@ -1,5 +1,5 @@
 <template lang="pug">
-.page(:data-theme="$store.state.color")
+.page(:data-theme="$store.state.theme")
   particle
   nuxt
 </template>
@@ -11,7 +11,7 @@ export default {
   head() {
     return {
       htmlAttrs: {
-        'data-theme': this.$store.state.color
+        'data-theme': this.$store.state.theme
       }
     }
   },

@@ -4,7 +4,7 @@
     :left="{ title: 'Projects', href: '/projects' }"
     :right="{ title: 'Lab', href: '/lab' }"
   )
-  .about(:data-theme="$store.state.color")
+  .about(:data-theme="$store.state.theme")
     .about_head
       h1.about_title About
     shape(

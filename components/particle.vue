@@ -4,13 +4,35 @@ canvas.particle(:data-page="$route.name")
 
 <script>
 export default {
-  computed: {
-    checkTouchevents() {
-      const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
-      const mq = query => window.matchMedia(query).matches
+  data() {
+    return {
+      brightness: 0
+    }
+  },
+  created() {
+    this.brightness = this.getBrightness
+  },
+  watch: {
+    $route() {
+      if (this.brightness !== this.getBrightness) {
+        this.$el.dataset.state = ''
 
+        setTimeout(() => {
+          this.brightness = this.getBrightness
+          this.$el.dataset.state = 'active'
+        }, 2000)
+      }
+    }
+  },
+  computed: {
+    getBrightness() {
+      return this.$store.state.theme === 'black' ? 93 : 7
+    },
+    checkTouchevents() {
       if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) return true
 
+      const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
+      const mq = query => window.matchMedia(query).matches
       const query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('')
 
       return mq(query)
@@ -33,13 +55,13 @@ export default {
 
     this.$el.width = window.innerWidth
     this.$el.height = window.innerHeight
-    context.fillStyle = 'hsl(0, 0%, 93%)'
+    context.fillStyle = `hsl(0, 0%, ${this.brightness}%)`
     context.lineWidth = .5
 
     window.addEventListener('resize', () => {
       this.$el.width = window.innerWidth
       this.$el.height = window.innerHeight
-      context.fillStyle = 'hsl(0, 0%, 93%)'
+      context.fillStyle = `hsl(0, 0%, ${this.brightness}%)`
       context.lineWidth = 1
     })
 
@@ -85,7 +107,7 @@ export default {
 
           if (opacity > 0) {
             context.beginPath()
-            context.strokeStyle = `hsla(0, 0%, 93%, ${opacity})`
+            context.strokeStyle = `hsla(0, 0%, ${this.brightness}%, ${opacity})`
             context.moveTo(particle.x, particle.y)
             context.lineTo(neighbour.x, neighbour.y)
             context.stroke()
@@ -111,12 +133,13 @@ export default {
   pointer-events none
   opacity 0
   transform scale(.5)
-  transition all 2s $cubic 1s
+  transition all 2s $cubic
   will-change opacity, transform
 
   &[data-state="active"][data-page="index"],
   &[data-state="active"][data-page="lab"],
-  &[data-state="active"][data-page="projects"]
+  &[data-state="active"][data-page="projects"],
+  &[data-state="active"][data-page="about"]
     opacity .25
     transform scale(1)
 </style>
