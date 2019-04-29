@@ -311,9 +311,9 @@ export default {
     > *
       z-index 1
 
-  *::selection
-    color $white
-    background-color $black
+    *::selection
+      color $white
+      background-color $black
 
   &_section
     display flex

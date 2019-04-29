@@ -62,7 +62,7 @@
             :isTexted="false"
             title="linkedin.svg"
             href="https://linkedin.com/in/alain-cao-van-truong/"
-            rel="noopener"
+            rel="noreferrer"
           )
           push.about_link(
             positionValue="relative"
@@ -70,7 +70,7 @@
             :isTexted="false"
             title="twitter.svg"
             href="https://twitter.com/AlainCVT"
-            rel="noopener"
+            rel="noreferrer"
           )
           push.about_link(
             positionValue="relative"
@@ -78,7 +78,7 @@
             :isTexted="false"
             title="github.svg"
             href="https://github.com/KamenSentai"
-            rel="noopener"
+            rel="noreferrer"
           )
           push.about_link(
             positionValue="relative"
@@ -94,7 +94,7 @@
           :isTexted="true"
           title="Designed by Gaëtan Lefebvre"
           href="http://gaetanlefebvre.fr"
-          rel="noopener"
+          rel="noreferrer"
         )
 </template>
 

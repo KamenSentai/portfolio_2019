@@ -14,10 +14,10 @@
         :alt="card.name"
       )
   .jumbotron_buttons
-    button.jumbotron_button.jumbotron_button-up(
+    .jumbotron_button.jumbotron_button-up(
       @click="slideUp"
     )
-    button.jumbotron_button.jumbotron_button-down(
+    .jumbotron_button.jumbotron_button-down(
       @click="slideDown"
     )
   .jumbotron_titles

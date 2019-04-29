@@ -1,6 +1,6 @@
 <template lang="pug">
 .navigation(:data-theme="$store.state.color" :data-touchevents="isTouchEvents ? 'true' : 'false'")
-  nuxt-link.navigation_main(to="/")
+  nuxt-link.navigation_main(to="/" title="Home")
     svg.navigation_logo(
       x="0px"
       y="0px"

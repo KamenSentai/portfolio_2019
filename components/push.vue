@@ -7,6 +7,7 @@ a.push(
   :title="title"
   :href="href"
   target="_blank"
+  rel="noreferrer"
 )
   img.push_text.push_text-image(
     v-if="!isTexted"

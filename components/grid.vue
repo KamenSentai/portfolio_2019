@@ -6,7 +6,7 @@
         :title="card.name"
         :href="card.demo !== '' ? card.demo : card.code"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
       )
         img.grid_image(
           :src="require(`../assets/images/${card.slug}/0.png`)"
