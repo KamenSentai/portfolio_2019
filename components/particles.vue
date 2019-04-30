@@ -1,5 +1,5 @@
 <template lang="pug">
-canvas.particle(:data-page="$route.name")
+canvas.particles(:data-page="$route.name")
 </template>
 
 <script>
@@ -129,7 +129,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~assets/styles/tools/app'
 
-.particle
+.particles
   position fixed
   left 0
   top 0

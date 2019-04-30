@@ -1,11 +1,11 @@
 <template lang="pug">
 .page(:data-theme="$store.state.theme")
-  particle
+  particles
   nuxt
 </template>
 
 <script>
-import Particle from '@/components/particle'
+import Particles from '@/components/particles'
 
 export default {
   head() {
@@ -16,7 +16,7 @@ export default {
     }
   },
   components: {
-    'particle': Particle
+    'particles': Particles
   }
 }
 </script>
