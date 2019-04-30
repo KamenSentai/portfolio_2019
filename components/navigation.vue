@@ -65,6 +65,7 @@ $linkGap = .5em
   flex-direction column
   justify-content center
   align-items center
+  flex-shrink 0
   padding 25px 0
 
   &_main,
