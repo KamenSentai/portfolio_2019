@@ -90,12 +90,12 @@ export default {
       for (let i = 0 ; i < particles.length ; i++) {
         const particle = particles[i]
 
-        if (i > 0) {
-          context.beginPath()
-          context.arc(particle.x, particle.y, particleSize, 0, Math.PI * 2, false)
-          context.fill()
-          context.closePath()
+        context.beginPath()
+        context.arc(particle.x, particle.y, particleSize, 0, Math.PI * 2, false)
+        context.fill()
+        context.closePath()
 
+        if (i > 0) {
           particle.x = mod(particle.x + particle.dx, this.$el.width)
           particle.y = mod(particle.y + particle.dy, this.$el.height)
         } else {
