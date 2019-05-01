@@ -82,6 +82,7 @@ export default {
 
   &_title
     padding .25em 2.5em
+    /* Exception due to font */
     padding-bottom .125em
     padding-right 2.375em
     color $black
