@@ -84,7 +84,7 @@ export default {
       tl.to('.grid_subtitle', 1, { yPercent: -25, opacity: 0 }, .5)
       tl.to('.grid_links', 1, { yPercent: -25, opacity: 0 }, 1)
       tl.to('.grid', 1, { opacity: 0 }, 1)
-      tl.to('.grid_title', 1, { rotationX: '90deg' }, 1)
+      tl.to('.grid_title', .5, { rotationX: '90deg' }, 1)
 
       if (this.$store.state.nextRoute === 'index') {
         tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
