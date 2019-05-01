@@ -141,14 +141,12 @@ export default {
     enter(el, done) {
       const tl = new TimelineMax({
         onComplete: () => {
-          TweenMax.set('.project_body', { clearProps: 'all' })
           TweenMax.set('.navigation_stripe-middle', { clearProps: 'all' })
           done()
         }
       })
 
       tl.to('.project', 0, { pointerEvents: 'none' }, 0)
-      tl.to('.project_body', 0, { pointerEvents: 'none' }, 0)
 
       if (this.$store.state.prevRoute === 'projects-slug') {
         tl.fromTo('.navigation_main', 1, { y: - window.innerHeight / 4 }, { y: 0 }, 0)
