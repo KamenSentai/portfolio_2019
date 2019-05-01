@@ -1,7 +1,7 @@
 <template lang="pug">
 .hero
   h1.hero_title
-    span.hero_text Alain Cao Van Truong
+    span.hero_text Alain CAO VAN TRUONG
   h2.hero_subtitle
     span.hero_text Full-stack developer
 </template>

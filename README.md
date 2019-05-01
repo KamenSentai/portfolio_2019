@@ -1,6 +1,6 @@
 # Portfolio 2019
 
-> [Alain Cao Van Truong](https://www.alain-caovantruong.fr)'s portfolio for 2019
+> [Alain CAO VAN TRUONG](https://www.alain-caovantruong.fr)'s portfolio for 2019
 
 ## Tools
 

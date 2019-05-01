@@ -83,7 +83,7 @@ import { TimelineMax } from 'gsap'
 export default {
   head() {
     return {
-      title: `Alain Cao Van Truong | ${this.project.name}`,
+      title: `Alain CAO VAN TRUONG | ${this.project.name}`,
       meta: [
         { hid: 'description', name: 'description', content: `This is one of my projects named "${this.project.name}".` }
       ],
