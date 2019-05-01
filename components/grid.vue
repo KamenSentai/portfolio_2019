@@ -1,5 +1,7 @@
 <template lang="pug">
 .grid
+  .grid_ribbon
+    h1.grid_title(ref="title") {{ capitalizeString($route.name) }}
   .grid_card(v-for="(card, index) in cards" :key="index")
     .grid_frame
       a.grid_frame_button(
@@ -12,7 +14,7 @@
           :src="require(`../assets/images/${card.slug}/0.png`)"
           :alt="card.name"
         )
-    h2.grid_title {{ card.name }}
+    h2.grid_subtitle {{ card.name }}
     .grid_links
       push.grid_link(
         v-if="card.code !== ''"
@@ -42,6 +44,17 @@ export default {
   ],
   components: {
     'push': Push
+  },
+  methods: {
+    capitalizeString(string) {
+      return `${string.charAt(0).toUpperCase()}${string.slice(1)}`
+    },
+    scrollPage() {
+      if (this.$refs.title) this.$refs.title.style.transform = `translateY(${window.scrollY / 2.5}px)`
+    }
+  },
+  mounted() {
+    window.addEventListener('wheel', this.scrollPage)
   }
 }
 </script>
@@ -53,8 +66,30 @@ export default {
   display flex
   justify-content space-evenly
   flex-wrap wrap
-  margin 0 50px
   width 100%
+  margin 0 50px
+
+  &_ribbon
+    z-index 1
+    display flex
+    justify-content center
+    width 100%
+    perspective 750px
+
+    *::selection
+      color $white
+      background-color $black
+
+  &_title
+    padding .25em 2.5em
+    padding-bottom .125em
+    padding-right 2.375em
+    color $black
+    font-size 3.75rem
+    font-weight 700
+    text-transform uppercase
+    background-color $white
+    box-shadow 0 0 10px rgba($black, .5)
 
   &_card,
   &_image
@@ -67,8 +102,8 @@ export default {
     display flex
     flex-direction column
     align-items center
-    margin 0 25px
-    margin-bottom 100px
+    margin 50px 25px
+    margin-top 75px
 
   &_frame
     display flex
@@ -91,7 +126,7 @@ export default {
       transform scale(1.125)
       filter blur(5px)
 
-  &_title
+  &_subtitle
     margin-top 50px
     margin-bottom 25px
     font-size 5rem

@@ -6,7 +6,7 @@
   )
   .about(:data-theme="$store.state.theme")
     .about_head
-      h1.about_title About
+      h1.about_title Student learning about web
     shape(
       :isReversed="true"
       :left="{ isPushing: false, title: 'Full' }"
@@ -207,6 +207,7 @@ export default {
 
   &_title
     font-weight 700
+    text-align center
     text-transform uppercase
     animation-delay .5s
 

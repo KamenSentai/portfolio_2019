@@ -46,6 +46,7 @@ export default {
           TweenMax.set('.container', { clearProps: 'all' })
           TweenMax.set('.grid_frame', { clearProps: 'all' })
           TweenMax.set('.navigation_stripe-middle', { clearProps: 'all' })
+          TweenMax.set('.grid_title', { clearProps: 'all' })
           done()
         }
       })
@@ -61,7 +62,8 @@ export default {
         }
       }
 
-      tl.fromTo('.grid_title', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1.5)
+      tl.fromTo('.grid_title', 1, { rotationX: '90deg' }, { rotationX: 0 }, 1)
+      tl.fromTo('.grid_subtitle', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 1.5)
       tl.fromTo('.grid_links', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 2)
       tl.fromTo('.grid_frame', 1, { scaleY: 0 }, { scaleY: 1 }, 1)
       tl.fromTo('.grid_frame', 1, { width: 0 }, { width: '100%' }, 2)
@@ -79,9 +81,10 @@ export default {
 
       tl.to('.grid_frame', 1, { width: 0 }, 0)
       tl.to('.grid_frame', 1, { scaleY: 0 }, 1)
-      tl.to('.grid_title', 1, { yPercent: -25, opacity: 0 }, .5)
+      tl.to('.grid_subtitle', 1, { yPercent: -25, opacity: 0 }, .5)
       tl.to('.grid_links', 1, { yPercent: -25, opacity: 0 }, 1)
       tl.to('.grid', 1, { opacity: 0 }, 1)
+      tl.to('.grid_title', 1, { rotationX: '90deg' }, 1)
 
       if (this.$store.state.nextRoute === 'index') {
         tl.to('.navigation_menu', 1, { scaleX: 0 }, 0)
