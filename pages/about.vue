@@ -42,7 +42,7 @@
           span.about_list_item Ruby on Rails
           span.about_list_item React Native
           span.about_list_item ReasonML
-          span.about_list_item Kotlin
+          span.about_list_item GraphQL
     .about_section
       p.about_text.about_text-framed(style="animation-delay: 2.25s")
         push.text-bold(
@@ -180,6 +180,19 @@ export default {
   align-items center
   flex-shrink 0
   padding 50px 0
+  width grid(8)
+  margin auto
+
+  @media (max-width $gridmedia8)
+    width grid(6)
+
+  @media (max-width $gridmedia6)
+    flex-direction column
+    align-items center
+    width grid(4)
+
+  @media (max-width $gridmedia4)
+    width grid(3)
 
   &_title,
   &_subtitle,
@@ -212,19 +225,12 @@ export default {
   &_section
     display flex
     justify-content space-evenly
+    width 100%
     margin 50px 0
-    width grid(8)
-
-    @media (max-width $gridmedia8)
-      width grid(6)
 
     @media (max-width $gridmedia6)
       flex-direction column
       align-items center
-      width grid(4)
-
-    @media (max-width $gridmedia4)
-      width grid(3)
 
   &_paragraph
     font-size 2.5rem
