@@ -125,7 +125,7 @@ $linkGap = .5em
 
       &::before,
       &::after
-        width $shapeSize
+        width $shapeSize + ($borderSize / 2)
         height $borderSize
         top - ($borderSize / 2)
 
@@ -142,8 +142,8 @@ $linkGap = .5em
         animation scale-positive-border .25s linear 1.25s forwards
 
     &-center
-      top 0
-      height 100%
+      top - ($borderSize / 2)
+      height "calc(100% + %s)" % $borderSize
 
       &::before,
       &::after
@@ -164,7 +164,7 @@ $linkGap = .5em
 
       &::before,
       &::after
-        width $shapeSize
+        width $shapeSize + ($borderSize / 2)
         height $borderSize
         top - ($borderSize / 2)
 
@@ -201,7 +201,7 @@ $linkGap = .5em
     &::before
       content ''
       position absolute
-      left - ($borderSize / 2)
+      left 0
       top 0
       full-size()
       transition background-color 1s $cubic 1s
