@@ -4,6 +4,7 @@ a.push(
   :data-position="positionValue"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
+  :data-enlarged="isEnlarged"
   :title="title"
   :href="href"
   target="_blank"
@@ -25,6 +26,7 @@ nuxt-link.push(
   :data-position="positionValue"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
+  :data-enlarged="isEnlarged"
   :title="title"
   :to="href"
 )
@@ -44,6 +46,7 @@ span.push(
   :data-position="positionValue"
   :data-display="isTexted ? 'text' : 'image'"
   :data-title="title"
+  :data-enlarged="isEnlarged"
   @click="scrollClick"
 )
   img.push_text.push_text-image(
@@ -65,6 +68,7 @@ export default {
     'positionValue',
     'isExternal',
     'isTexted',
+    'isEnlarged',
     'title',
     'href',
     'position'
@@ -99,6 +103,11 @@ $imageSize = 50px
 
   &[data-display="text"]::before
     content attr(data-title)
+
+  &[data-enlarged="true"]
+    & ^[-1]_text,
+    &::before
+      padding 1em
 
   &::before
     position absolute

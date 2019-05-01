@@ -49,6 +49,7 @@
           positionValue="relative"
           :isExternal="true"
           :isTexted="true"
+          :isEnlarged="true"
           title="Download my resume"
           href="/pdf/CV-Alain_Cao_Van_Truong.pdf"
         )
@@ -284,7 +285,6 @@ export default {
 
     &-framed
       position relative
-      padding 1em
 
       &::before,
       &::after
