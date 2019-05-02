@@ -183,7 +183,6 @@ $indicatorSize = 50px
 
     &:hover ^[-1]_image
       transform scale(.8125)
-      filter blur(10px)
 
   &_link
     position relative
@@ -210,7 +209,7 @@ $indicatorSize = 50px
     position absolute
     z-index -1
     transform scale(.75)
-    transition all 1s $cubic
+    transition transform 1s $cubic
     will-change transform
 
   &_buttons

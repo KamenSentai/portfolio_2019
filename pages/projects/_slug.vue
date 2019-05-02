@@ -1,12 +1,13 @@
 <template lang="pug">
 .project
   .project_header
-    loader(:theme="$store.state.theme")
-    lazyload.project_cover(
-      ref="cover"
-      :alt="project.name"
-      :src="require(`../../assets/images/${project.cover}`)"
-    )
+    .project_background
+      loader(:theme="$store.state.theme")
+      lazyload.project_cover(
+        ref="cover"
+        :alt="project.name"
+        :src="require(`../../assets/images/${project.cover}`)"
+      )
     navigation(
       :left="{ title: 'Lab', href: '/lab' }"
       :right="{ title: 'About', href: '/about' }"
@@ -195,7 +196,9 @@ export default {
 
       tl.to('.project', 0, { pointerEvents: 'none' }, 0)
 
+      tl.to('.loader', .5, { opacity: 0 }, 0)
       tl.to('.project_cover', 1, { opacity: 0 }, 0)
+      tl.to('.project_background', 1, { opacity: 0 }, .5)
       tl.to('.project_push', 1, { yPercent: 25, opacity: 0 }, .5)
       tl.to('.project_title', 1, { yPercent: 25, opacity: 0 }, 1)
 
@@ -249,15 +252,20 @@ export default {
     height 100vh
     overflow hidden
 
-    &::before
+  &_background
+    position absolute
+    left 0
+    top 0
+    z-index -1
+    full-size()
+
+    &::after
       content ''
       position absolute
       left 0
       top 0
-      z-index -1
       full-size()
-      background-color $black
-      opacity .5
+      background-color rgba($black, .5)
 
   &_cover
     position absolute
@@ -266,7 +274,6 @@ export default {
     z-index -2
     full-size()
     object-fit cover
-    filter blur(10px)
 
   &_scroll
     position absolute
@@ -540,10 +547,9 @@ export default {
 
   &_picture
     height auto
-    transition all 1s $cubic
+    transition transform 1s $cubic
     will-change transform
 
     &:hover
       transform scale(1.125)
-      filter blur(5px)
 </style>

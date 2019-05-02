@@ -68,6 +68,7 @@ export default {
 @import '~assets/styles/tools/app'
 
 .grid
+  z-index 1
   display flex
   justify-content space-evenly
   flex-wrap wrap
@@ -126,12 +127,11 @@ export default {
 
   &_image
     height auto
-    transition all 1s $cubic
+    transition transform 1s $cubic
     will-change transform
 
     &:hover
       transform scale(1.125)
-      filter blur(5px)
 
   &_subtitle
     margin-top 50px
