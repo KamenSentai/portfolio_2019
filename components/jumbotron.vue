@@ -9,7 +9,8 @@
       :to="{ path: `/${$route.name}/${card.slug}` }"
       :data-display="index === page ? 'flex' : 'none'"
     )
-      img.jumbotron_image(
+      loader(:theme="$store.state.theme")
+      lazyload.jumbotron_image(
         :src="require(`../assets/images/${card.cover}`)"
         :alt="card.name"
       )
@@ -34,6 +35,8 @@
 
 <script>
 import Indicator from './indicator'
+import Lazyload from './lazyload'
+import Loader from './loader'
 
 import { TimelineMax } from 'gsap'
 
@@ -56,7 +59,9 @@ export default {
     }
   },
   components: {
-    'indicator': Indicator
+    'indicator': Indicator,
+    'lazyload': Lazyload,
+    'loader': Loader,
   },
   methods: {
     mod(n, m) {
@@ -173,7 +178,6 @@ $indicatorSize = 50px
     width $framSize
     height 100%
     margin 0 50px
-    background-color $black
     border 2px solid white
     overflow hidden
 
@@ -182,6 +186,7 @@ $indicatorSize = 50px
       filter blur(10px)
 
   &_link
+    position relative
     display flex
     justify-content center
     align-items center
@@ -192,9 +197,18 @@ $indicatorSize = 50px
     &[data-display="none"]
       display none
 
+    &::before
+      content ''
+      position absolute
+      left 0
+      top 0
+      full-size()
+      background-color $black
+      opacity .5
+
   &_image
     position absolute
-    opacity .5
+    z-index -1
     transform scale(.75)
     transition all 1s $cubic
     will-change transform

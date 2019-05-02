@@ -1,7 +1,12 @@
 <template lang="pug">
 .project
   .project_header
-    img.project_cover(ref="cover" :alt="project.name" :src="require(`../../assets/images/${project.cover}`)")
+    loader(:theme="$store.state.theme")
+    lazyload.project_cover(
+      ref="cover"
+      :alt="project.name"
+      :src="require(`../../assets/images/${project.cover}`)"
+    )
     navigation(
       :left="{ title: 'Lab', href: '/lab' }"
       :right="{ title: 'About', href: '/about' }"
@@ -55,25 +60,33 @@
       h2.project_subtitle(style="animation-delay: 2.875s") Screenshots
       .project_gallery
         .project_frame(v-for="image in project.images")
-          img.project_image(:alt="image.alt" :src="require(`../../assets/images/${project.slug}/${image.src}`)")
+          loader(theme="white")
+          lazyload.project_image(
+            :alt="image.alt"
+            :src="require(`../../assets/images/${project.slug}/${image.src}`)"
+          )
   .project_footer
     p.project_subtext(style="animation-delay: 3.5s") See more projects
     .project_suggestions
       .project_item
         nuxt-link.project_purchase(:to="{ path: `/projects/${prevProject.slug}` }")
-          img.project_picture(
+          loader(:theme="$store.state.theme")
+          lazyload.project_picture(
             :alt="prevProject.name"
             :src="require(`../../assets/images/${prevProject.cover}`)"
           )
       .project_item
         nuxt-link.project_purchase(:to="{ path: `/projects/${nextProject.slug}` }")
-          img.project_picture(
+          loader(:theme="$store.state.theme")
+          lazyload.project_picture(
             :alt="nextProject.name"
             :src="require(`../../assets/images/${nextProject.cover}`)"
           )
 </template>
 
 <script>
+import Loader from '@/components/loader'
+import Lazyload from '@/components/lazyload'
 import Navigation from '@/components/navigation'
 import Push from '@/components/push'
 import Shape from '@/components/shape'
@@ -101,6 +114,8 @@ export default {
     if (Object.keys(this.project).length === 0) this.$nuxt.error({ statusCode: 404, message: 'Project not found' })
   },
   components: {
+    'loader': Loader,
+    'lazyload': Lazyload,
     'navigation': Navigation,
     'push': Push,
     'shape': Shape
@@ -127,7 +142,7 @@ export default {
       return ((n % m) + m) % m
     },
     translateCover() {
-      if (this.$refs.cover) this.$refs.cover.style.transform = `translateY(${window.scrollY / 5}px)`
+      if (this.$refs.cover) this.$refs.cover.$el.style.transform = `translateY(${window.scrollY / 5}px)`
     }
   },
   mounted() {
@@ -162,14 +177,13 @@ export default {
       }
 
       tl.fromTo('.project_body', 1, { opacity: 0 }, { opacity: 1 }, 0)
-      tl.fromTo('.project_push', 1, { yPercent: -25, opacity: 0 }, { yPercent: 0, opacity: 1 }, .5)
-      tl.fromTo('.project_cover', 1, { yPercent: 12.5, opacity: 0 }, {
+      tl.fromTo('.project_push', 1, { yPercent: -25, opacity: 0 }, {
         yPercent: 0,
-        opacity: .5,
+        opacity: 1,
         onComplete: () => {
           TweenMax.set('.project', { clearProps: 'all' })
         }
-      }, 1)
+      }, .5)
 
       tl.fromTo('.project_frame', 1, { scaleY: 0 }, { scaleY: 1 }, 3)
       tl.fromTo('.project_frame', 1, { width: 0 }, { width: '100%' }, 4)
@@ -233,15 +247,25 @@ export default {
   &_header
     position relative
     height 100vh
+    overflow hidden
+
+    &::before
+      content ''
+      position absolute
+      left 0
+      top 0
+      z-index -1
+      full-size()
+      background-color $black
+      opacity .5
 
   &_cover
     position absolute
     left 0
     top 0
-    z-index -1
+    z-index -2
     full-size()
     object-fit cover
-    opacity .5
     filter blur(10px)
 
   &_scroll
@@ -433,6 +457,7 @@ export default {
     align-items center
 
   &_frame
+    position relative
     display flex
     justify-content center
     align-items center
@@ -507,6 +532,7 @@ export default {
     font-size 0
 
   &_purchase
+    position relative
     width 100%
     border 2px solid $white
     overflow hidden

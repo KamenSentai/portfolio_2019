@@ -10,7 +10,8 @@
         target="_blank"
         rel="noreferrer"
       )
-        img.grid_image(
+        loader(:theme="$store.state.theme")
+        lazyload.grid_image(
           :src="require(`../assets/images/${card.slug}/0.png`)"
           :alt="card.name"
         )
@@ -35,6 +36,8 @@
 </template>
 
 <script>
+import Lazyload from './lazyload'
+import Loader from './loader'
 import Push from './push'
 
 export default {
@@ -43,6 +46,8 @@ export default {
     'cards'
   ],
   components: {
+    'lazyload': Lazyload,
+    'loader': Loader,
     'push': Push
   },
   methods: {
@@ -116,6 +121,7 @@ export default {
     overflow hidden
 
     &_button
+      position relative
       font-size 0
 
   &_image
