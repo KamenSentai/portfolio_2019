@@ -1,6 +1,12 @@
 <template lang="pug">
 .indicator
   .indicator_bar(v-for="(n, index) in total" :data-position="getPosition(index)")
+  .indicator_progress
+    span.indicator_page(
+      v-for="number in total"
+      :data-state="number === page + 1 ? 'current' : mod(number - 1, total) === mod(page + 1, total) ? 'next' : mod(number + 1, total) === mod(page + 1, total) ? 'previous' : 'hidden'"
+      :data-prepared="mod(number - 2, total) === mod(page + 1, total) ? 'next' : mod(number + 2, total) === mod(page + 1, total) ? 'previous' : 'false'"
+    ) {{ number }}
 </template>
 
 <script>
@@ -101,4 +107,39 @@ export default {
       transform scaleX(0)
     to
       transform scaleX(1)
+
+  &_progress
+    position absolute
+    right 100%
+    display flex
+    flex-direction column
+    justify-content center
+    /* Exception due to font */
+    // height 1em
+    height calc(1em - 7.5px)
+    top 50%
+    width 25px
+    font-size 3.75rem
+    font-weight 700
+    transform translateY(-50%)
+    overflow hidden
+
+  &_page
+    position absolute
+    top 0
+    left 50%
+    transform translateX(-50%)
+    transition all 1s $cubic
+    will-change opacity
+
+    &[data-state="hidden"]
+      opacity 0
+
+    &[data-prepared="previous"]
+    &[data-state="previous"]
+      top 100%
+
+    &[data-prepared="next"]
+    &[data-state="next"]
+      top -1em
 </style>

@@ -63,12 +63,14 @@ export default {
       tl.fromTo('.jumbotron_frame', 1, { scaleX: 0 }, { scaleX: 1 }, 1)
       tl.fromTo('.jumbotron_frame', 1, { height: 0 }, { height: '100%' }, 2)
       tl.fromTo('.jumbotron_titles', 1, { opacity: 0 }, { opacity: 1 }, 2.5)
+      tl.fromTo('.indicator_progress', 1, { opacity: 0 }, { opacity: 1 }, 2.5)
     },
     leave(el, done) {
       const tl = new TimelineMax({ onComplete: done })
 
       tl.to('.jumbotron_buttons', 0, { opacity: 0 }, 1)
-      tl.to('.jumbotron_indicator', .5, { scaleX: 0 }, 0)
+      tl.to('.indicator_progress', .5, { opacity: 0 }, 0)
+      tl.to('.jumbotron_indicator', .5, { scaleX: 0 }, .5)
       tl.to('.jumbotron_button', 1, { rotationX: '-90deg' }, 0)
       tl.to('.jumbotron_frame', 1, { height: 0 }, 0)
       tl.to('.jumbotron_frame', 1, { scaleX: 0 }, 1)
