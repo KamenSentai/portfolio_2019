@@ -6,7 +6,7 @@ export const state = () => ([
     role: "Lead developer",
     team: [
       { name: "Alexandre Godde", role: "Project manager & designer" },
-      { name: "Julien Bretecher", role: "Leader designer" },
+      { name: "Julien Bretecher", role: "Lead designer" },
       { name: "Justine Di Meo", role: "UX developer" },
       { name: "Amélie Grosjean", role: "UI developer" }
     ],
