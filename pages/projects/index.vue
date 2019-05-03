@@ -19,7 +19,7 @@ import { TimelineMax } from 'gsap'
 export default {
   head() {
     return {
-      title: 'Alain CAO VAN TRUONG | Projects',
+      title: 'Alain CAO VAN TRUONG - Projects',
       meta: [
         { hid: 'description', name: 'description', content: 'Discover my main projects since I have started web and mobile development.' }
       ],
