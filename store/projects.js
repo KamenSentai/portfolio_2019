@@ -14,7 +14,7 @@ export const state = () => ([
         name: "Julien Bretecher",
         role: "Lead designer",
         links: [
-          { network: 'Website', url: 'http://julienbretecher.fr/' },
+          { network: 'Website', url: 'https://julienbretecher.fr/' },
           { network: 'Twitter', url: 'https://twitter.com/ItSvnth' },
           { network: 'Dribbble', url: 'https://dribbble.com/julienbretecher' }
         ]
@@ -144,7 +144,7 @@ export const state = () => ([
       "Everytime before Florian retrieves Loris' integration, I had to reorganize with components. Then, I worked between front-end and back-end by fetching data in JavaScript."
     ],
     code: "https://github.com/KamenSentai/Green-Tips",
-    demo: "http://green-tips.floriandurand.com/",
+    demo: "https://green-tips.floriandurand.com/",
     mentions: [],
     released: true
   },
@@ -158,7 +158,7 @@ export const state = () => ([
         name: "Jay-min Patel",
         role: "UX/UI designer",
         links: [
-          { network: 'Website', url: 'http://www.jayminpatel.fr/' }
+          { network: 'Website', url: 'https://www.jayminpatel.fr/' }
         ]
       },
       {
