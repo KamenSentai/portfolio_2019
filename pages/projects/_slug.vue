@@ -1,10 +1,9 @@
 <template lang="pug">
 .project
   .project_header
-    .project_background
+    .project_background(ref="background")
       loader(:theme="$store.state.theme")
       lazyload.project_cover(
-        ref="cover"
         :alt="project.name"
         :src="require(`../../assets/images/${project.cover}`)"
       )
@@ -35,7 +34,7 @@
       h2.project_subtitle(style="animation-delay: 1.5s") My role
       span.project_text(style="animation-delay: 1.625s") {{ project.role }}
     .project_section
-      h2.project_subtitle(v-if="project.team.length !== 0" style="animation-delay: 1.75s") The team
+      h2.project_subtitle(v-if="project.team.length !== 0" style="animation-delay: 1.75s") My teammates
       .project_group
         p.project_paragraph.project_paragraph-center(v-for="(person, index) in project.team" :style="`animation-delay: ${index / 4 + 1.875}s`") <span class="project_label">{{ person.name }}</span> <span class="project_tag">{{ person.role }}</span>
     .project_section
@@ -142,15 +141,15 @@ export default {
     mod(n, m) {
       return ((n % m) + m) % m
     },
-    translateCover() {
-      if (this.$refs.cover) this.$refs.cover.$el.style.transform = `translateY(${window.scrollY / 5}px)`
+    translateBackground() {
+      if (this.$refs.background) this.$refs.background.style.transform = `translateY(${window.scrollY / 5}px)`
     }
   },
   mounted() {
     this.windowSize.w = window.innerWidth
     this.windowSize.h = window.innerHeight
 
-    window.addEventListener('wheel', this.translateCover)
+    window.addEventListener('wheel', this.translateBackground)
   },
   transition: {
     mode: 'out-in',
@@ -258,6 +257,7 @@ export default {
     top 0
     z-index -1
     full-size()
+    will-change transform
 
     &::after
       content ''
