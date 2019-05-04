@@ -25,7 +25,7 @@ export default {
 
 .lazyload
   opacity 0
-  transition opacity 1s $cubic
+  transition all 1s $cubic
 
   &.is-loaded
     opacity 1
