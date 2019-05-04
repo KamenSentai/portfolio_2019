@@ -12,12 +12,14 @@ a.push(
 )
   img.push_text.push_text-image(
     v-if="!isTexted"
-    :src="require(`../assets/images/${title}`)"
+    :data-reduced="isReduced"
+    :src="require(`../assets/images/${image}`)"
     :alt="title"
   )
   img.push_text.push_text-sub(
     v-if="!isTexted"
-    :src="require(`../assets/images/${title}`)"
+    :data-reduced="isReduced"
+    :src="require(`../assets/images/${image}`)"
     :alt="title"
   )
   span.push_text(v-else) {{ title }}
@@ -32,12 +34,14 @@ nuxt-link.push(
 )
   img.push_text.push_text-image(
     v-if="!isTexted"
-    :src="require(`../assets/images/${title}`)"
+    :data-reduced="isReduced"
+    :src="require(`../assets/images/${image}`)"
     :alt="title"
   )
   img.push_text.push_text-sub(
     v-if="!isTexted"
-    :src="require(`../assets/images/${title}`)"
+    :data-reduced="isReduced"
+    :src="require(`../assets/images/${image}`)"
     :alt="title"
   )
   span.push_text(v-else) {{ title }}
@@ -51,12 +55,14 @@ span.push(
 )
   img.push_text.push_text-image(
     v-if="!isTexted"
-    :src="require(`../assets/images/${title}`)"
+    :data-reduced="isReduced"
+    :src="require(`../assets/images/${image}`)"
     :alt="title"
   )
   img.push_text.push_text-sub(
     v-if="!isTexted"
-    :src="require(`../assets/images/${title}`)"
+    :data-reduced="isReduced"
+    :src="require(`../assets/images/${image}`)"
     :alt="title"
   )
   span.push_text(v-else @click="scrollClick") {{ title }}
@@ -68,8 +74,10 @@ export default {
     'positionValue',
     'isExternal',
     'isTexted',
+    'isReduced',
     'isEnlarged',
     'title',
+    'image',
     'href',
     'position'
   ],
@@ -136,6 +144,9 @@ $imageSize = 50px
     &-image
       width auto
       height $imageSize
+
+    &[data-reduced="true"]
+      height ($imageSize / 2.5)
 
     &-sub
       position absolute

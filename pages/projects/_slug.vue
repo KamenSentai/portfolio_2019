@@ -36,7 +36,22 @@
     .project_section
       h2.project_subtitle(v-if="project.team.length !== 0" style="animation-delay: 1.75s") My teammates
       .project_group
-        p.project_paragraph.project_paragraph-center(v-for="(person, index) in project.team" :style="`animation-delay: ${index / 4 + 1.875}s`") <span class="project_label">{{ person.name }}</span> <span class="project_tag">{{ person.role }}</span>
+        .project_paragraph.project_paragraph-center(v-for="(teammate, index) in project.team" :style="`animation-delay: ${index / 4 + 1.875}s`")
+          p.project_label
+            span.project_name {{ teammate.name }}
+            span.project_links(v-if="teammate.links.length !== 0")
+              push.project_link(
+                v-for="(link, index) in teammate.links"
+                :key="index"
+                positionValue="relative"
+                :isExternal="true"
+                :isTexted="false"
+                :isReduced="true"
+                :title="link.network"
+                :image="`${link.network.toLowerCase()}.svg`"
+                :href="link.url"
+              )
+          p.project_tag {{ teammate.role }}
     .project_section
       h2.project_subtitle(style="animation-delay: 2s") The project
       .project_group
@@ -423,8 +438,19 @@ export default {
       width grid(3)
 
   &_label
+    display flex
+    flex-direction column
     padding-right 1em
     text-align right
+
+  &_links
+    margin-top 10px
+
+  &_link
+    margin-right 10px
+
+    &:last-child
+      margin-right 0
 
   &_tag
     font-size 1.6rem

@@ -5,10 +5,30 @@ export const state = () => ([
     date: 'December 2017',
     role: "Lead developer",
     team: [
-      { name: "Alexandre Godde", role: "Project manager & designer" },
-      { name: "Julien Bretecher", role: "Lead designer" },
-      { name: "Justine Di Meo", role: "UX developer" },
-      { name: "Amélie Grosjean", role: "UI developer" }
+      {
+        name: "Alexandre Godde",
+        role: "Project manager & designer",
+        links: []
+      },
+      {
+        name: "Julien Bretecher",
+        role: "Lead designer",
+        links: [
+          { network: 'Website', url: 'http://julienbretecher.fr/' },
+          { network: 'Twitter', url: 'https://twitter.com/ItSvnth' },
+          { network: 'Dribbble', url: 'https://dribbble.com/julienbretecher' }
+        ]
+      },
+      {
+        name: "Justine Di Meo",
+        role: "UX developer",
+        links: []
+      },
+      {
+        name: "Amélie Grosjean",
+        role: "UI developer",
+        links: []
+      }
     ],
     tools: [
       'Pug',
@@ -79,10 +99,28 @@ export const state = () => ([
     date: 'December 2018',
     role: "Full-stack developer",
     team: [
-      { name: "Théodore Morio", role: "Project manager" },
-      { name: "Bryan Chung", role: "UX/UI designer" },
-      { name: "Loris Marino", role: "Front-end developer" },
-      { name: "Florian Durand", role: "Back-end developer" }
+      {
+        name: "Théodore Morio",
+        role: "Project manager",
+        links: []
+      },
+      {
+        name: "Bryan Chung",
+        role: "UX/UI designer",
+        links: []
+      },
+      {
+        name: "Loris Marino",
+        role: "Front-end developer",
+        links: []
+      },
+      {
+        name: "Florian Durand",
+        role: "Back-end developer",
+        links: [
+          { network: 'Website', url: 'https://floriandurand.com/' }
+        ]
+      }
     ],
     tools: [
       'WordPress',
@@ -116,10 +154,28 @@ export const state = () => ([
     date: 'February 2019',
     role: "Back-end developer",
     team: [
-      { name: "Jay-min Patel", role: "UX/UI designer" },
-      { name: "Assoïe Louvart de Pontlevoye", role: "UX/UI designer" },
-      { name: "Olivia Monkam", role: "UX/UI designer" },
-      { name: "Loris Marino", role: "Front-end developer" }
+      {
+        name: "Jay-min Patel",
+        role: "UX/UI designer",
+        links: [
+          { network: 'Website', url: 'http://www.jayminpatel.fr/' }
+        ]
+      },
+      {
+        name: "Assoïe Louvart de Pontlevoye",
+        role: "UX/UI designer",
+        links: []
+      },
+      {
+        name: "Olivia Monkam",
+        role: "UX/UI designer",
+        links: []
+      },
+      {
+        name: "Loris Marino",
+        role: "Front-end developer",
+        links: []
+      }
     ],
     tools: [
       'MongoDB',
@@ -150,7 +206,13 @@ export const state = () => ([
     date: 'March 2019',
     role: "Front-end developer",
     team: [
-      { name: "Gaëtan Lefebvre", role: "UX/UI designer" }
+      {
+        name: "Gaëtan Lefebvre",
+        role: "UX/UI designer",
+        links: [
+          { network: 'Website', url: 'https://gaetanlefebvre.fr/' }
+        ]
+      }
     ],
     tools: [
       'Nuxt.js',
@@ -191,10 +253,32 @@ export const state = () => ([
     date: 'April 2019',
     role: "Full-stack developer",
     team: [
-      { name: "Marie-Athénaïs Dussordet", role: "Full-stack developer" },
-      { name: "Arthur Girault", role: "	UX/UI design & marketing" },
-      { name: "Yoel Hanoufa", role: "	UX/UI design & marketing" },
-      { name: "Téo Migdal", role: "	UX/UI design & marketing" }
+      {
+        name: "Marie-Athénaïs Dussordet",
+        role: "Full-stack developer",
+        links: [
+          { network: 'LinkedIn', url: 'https://www.linkedin.com/in/athénaïs-dussordet-639661152/' }
+        ]
+      },
+      {
+        name: "Arthur Girault",
+        role: "	UX/UI design & marketing",
+        links: [
+          { network: 'LinkedIn', url: 'https://www.linkedin.com/in/arthur-girault/' }
+        ]
+      },
+      {
+        name: "Yoel Hanoufa",
+        role: "	UX/UI design & marketing",
+        links: [
+          { network: 'Website', url: 'https://www.yoelhnf.com/' }
+        ]
+      },
+      {
+        name: "Téo Migdal",
+        role: "	UX/UI design & marketing",
+        links: []
+      }
     ],
     tools: [
       'Swift',
