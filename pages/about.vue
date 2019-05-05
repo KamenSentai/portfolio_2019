@@ -24,25 +24,28 @@
           span.about_list_item PHP Slim
           span.about_list_item Swift
           span.about_list_item Three.js
+          span.about_list_item React.js
           span.about_list_item Git
       .about_card
         h2.about_subtitle(style="animation-delay: 1.75s") <span>What I need</span> <span>to improve</span>
         .about_list(style="animation-delay: 2s")
-          span.about_list_item React.js
-          span.about_list_item AngularJS
-          span.about_list_item Node.js
-          span.about_list_item Laravel
           span.about_list_item Typescript
+          span.about_list_item Node.js
+          span.about_list_item AngularJS
+          span.about_list_item Laravel
           span.about_list_item WordPress
-      .about_card
-        h2.about_subtitle(style="animation-delay: 1.75s") <span>What I want</span> <span>to learn</span>
-        .about_list(style="animation-delay: 2s")
-          span.about_list_item Symfony
           span.about_list_item Django
           span.about_list_item Ruby on Rails
-          span.about_list_item React Native
+      .about_card
+        h2.about_subtitle(style="animation-delay: 1.75s") <span>What I intend</span> <span>to discover</span>
+        .about_list(style="animation-delay: 2s")
+          span.about_list_item Lumen
+          span.about_list_item Preact
+          span.about_list_item Symfony
           span.about_list_item ReasonML
-          span.about_list_item GraphQL
+          span.about_list_item React Native
+          span.about_list_item NativeScript
+          span.about_list_item Flutter
     .about_section
       p.about_text.about_text-framed(style="animation-delay: 2.25s")
         push.text-bold(
