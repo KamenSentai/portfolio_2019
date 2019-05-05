@@ -13,13 +13,13 @@ a.push(
   img.push_text.push_text-image(
     v-if="!isTexted"
     :data-reduced="isReduced"
-    :src="require(`../assets/images/${image}`)"
+    :src="require(`~/assets/images/${image}`)"
     :alt="title"
   )
   img.push_text.push_text-sub(
     v-if="!isTexted"
     :data-reduced="isReduced"
-    :src="require(`../assets/images/${image}`)"
+    :src="require(`~/assets/images/${image}`)"
     :alt="title"
   )
   span.push_text(v-else) {{ title }}
@@ -35,13 +35,13 @@ nuxt-link.push(
   img.push_text.push_text-image(
     v-if="!isTexted"
     :data-reduced="isReduced"
-    :src="require(`../assets/images/${image}`)"
+    :src="require(`~/assets/images/${image}`)"
     :alt="title"
   )
   img.push_text.push_text-sub(
     v-if="!isTexted"
     :data-reduced="isReduced"
-    :src="require(`../assets/images/${image}`)"
+    :src="require(`~/assets/images/${image}`)"
     :alt="title"
   )
   span.push_text(v-else) {{ title }}
@@ -56,13 +56,13 @@ span.push(
   img.push_text.push_text-image(
     v-if="!isTexted"
     :data-reduced="isReduced"
-    :src="require(`../assets/images/${image}`)"
+    :src="require(`~/assets/images/${image}`)"
     :alt="title"
   )
   img.push_text.push_text-sub(
     v-if="!isTexted"
     :data-reduced="isReduced"
-    :src="require(`../assets/images/${image}`)"
+    :src="require(`~/assets/images/${image}`)"
     :alt="title"
   )
   span.push_text(v-else @click="scrollClick") {{ title }}

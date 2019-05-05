@@ -5,7 +5,7 @@
       loader(:theme="$store.state.theme")
       lazyload.project_cover(
         :alt="project.name"
-        :src="require(`../../assets/images/${project.cover}`)"
+        :src="require(`~/assets/images/${project.cover}`)"
       )
     navigation(
       :left="{ title: 'Lab', href: '/lab' }"
@@ -79,7 +79,7 @@
             loader(theme="white")
             lazyload.project_image(
               :alt="image.alt"
-              :src="require(`../../assets/images/${project.slug}/${image.src}`)"
+              :src="require(`~/assets/images/${project.slug}/${image.src}`)"
             )
           span.project_label {{ image.alt }}
   .project_footer
@@ -90,14 +90,14 @@
           loader(:theme="$store.state.theme")
           lazyload.project_picture(
             :alt="prevProject.name"
-            :src="require(`../../assets/images/${prevProject.cover}`)"
+            :src="require(`~/assets/images/${prevProject.cover}`)"
           )
       .project_item
         nuxt-link.project_purchase(:to="{ path: `/projects/${nextProject.slug}` }")
           loader(:theme="$store.state.theme")
           lazyload.project_picture(
             :alt="nextProject.name"
-            :src="require(`../../assets/images/${nextProject.cover}`)"
+            :src="require(`~/assets/images/${nextProject.cover}`)"
           )
 </template>
 

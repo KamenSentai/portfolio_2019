@@ -11,7 +11,7 @@
     )
       loader(:theme="$store.state.theme")
       lazyload.jumbotron_image(
-        :src="require(`../assets/images/${card.cover}`)"
+        :src="require(`~/assets/images/${card.cover}`)"
         :alt="card.name"
       )
   .jumbotron_buttons

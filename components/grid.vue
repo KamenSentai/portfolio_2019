@@ -12,7 +12,7 @@
       )
         loader(:theme="$store.state.theme")
         lazyload.grid_image(
-          :src="require(`../assets/images/${card.slug}/0.png`)"
+          :src="require(`~/assets/images/${card.slug}/0.png`)"
           :alt="card.name"
         )
     h2.grid_subtitle {{ card.name }}
