@@ -174,6 +174,7 @@ export default {
       const tl = new TimelineMax({
         onComplete: () => {
           TweenMax.set('.navigation_stripe-middle', { clearProps: 'all' })
+          TweenMax.set('.project_frame', { clearProps: 'all' })
           done()
         }
       })
