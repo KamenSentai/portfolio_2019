@@ -37,7 +37,7 @@
       h2.project_subtitle(v-if="project.team.length !== 0" style="animation-delay: 1.75s") My teammates
       .project_group
         .project_paragraph.project_paragraph-center(v-for="(teammate, index) in project.team" :style="`animation-delay: ${index / 4 + 1.875}s`")
-          p.project_label
+          p.project_teammate
             span.project_name {{ teammate.name }}
             span.project_links(v-if="teammate.links.length !== 0")
               push.project_link(
@@ -74,12 +74,14 @@
     .project_section
       h2.project_subtitle(style="animation-delay: 2.875s") Screenshots
       .project_gallery
-        .project_frame(v-for="image in project.images")
-          loader(theme="white")
-          lazyload.project_image(
-            :alt="image.alt"
-            :src="require(`../../assets/images/${project.slug}/${image.src}`)"
-          )
+        .project_screenshot(v-for="image in project.images")
+          .project_frame
+            loader(theme="white")
+            lazyload.project_image(
+              :alt="image.alt"
+              :src="require(`../../assets/images/${project.slug}/${image.src}`)"
+            )
+          span.project_label {{ image.alt }}
   .project_footer
     p.project_subtext(style="animation-delay: 3.5s") See more projects
     .project_suggestions
@@ -202,6 +204,7 @@ export default {
 
       tl.fromTo('.project_frame', 1, { scaleY: 0 }, { scaleY: 1 }, 3)
       tl.fromTo('.project_frame', 1, { width: 0 }, { width: '100%' }, 4)
+      tl.fromTo('.project_label', 1, { yPercent: 25, opacity: 0 }, { yPercent: 0, opacity: 1 }, 5)
       tl.fromTo('.project_purchase', 1, { scaleY: 0 }, { scaleY: 1 }, 3.5)
       tl.fromTo('.project_purchase', 1, { width: 0 }, { width: '100%' }, 4.5)
     },
@@ -213,13 +216,15 @@ export default {
       tl.to('.loader', .5, { opacity: 0 }, 0)
       tl.to('.project_cover', 1, { opacity: 0 }, 0)
       tl.to('.project_background', 1, { opacity: 0 }, .5)
-      tl.to('.project_push', 1, { yPercent: 25, opacity: 0 }, .5)
+      tl.to('.project_push', 1, { yPercent: -50, opacity: 0 }, .5)
       tl.to('.project_title', 1, { yPercent: 25, opacity: 0 }, 1)
 
       if (this.$store.state.nextRoute === 'projects-slug') {
-        tl.to('.project_frame', 1, { width: 0 }, 0)
-        tl.to('.project_frame', 1, { scaleY: 0 }, 1)
-        tl.to('.project_body', 1, { scaleX: 0 }, 1)
+        tl.to('.project_label', .5, { yPercent: 25, opacity: 0 }, 0)
+        tl.to('.project_frame', 1, { width: 0 }, .5)
+        tl.to('.project_frame', 1, { scaleY: 0 }, 1.5)
+        tl.to('.project_section', .5, { opacity: 0 }, 1.5)
+        tl.to('.project_body', 1, { scaleX: 0 }, 2)
         tl.to('.project_purchase', 1, { width: 0 }, .5)
         tl.to('.project_purchase', 1, { scaleY: 0 }, 1.5)
         tl.to('.project_footer', 1, { opacity: 0 }, 1)
@@ -437,7 +442,7 @@ export default {
     @media (max-width $gridmedia4)
       width grid(3)
 
-  &_label
+  &_teammate
     display flex
     flex-direction column
     padding-right 1em
@@ -489,6 +494,13 @@ export default {
     flex-direction column
     align-items center
 
+  &_screenshot
+    margin-bottom 50px
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+
   &_frame
     position relative
     display flex
@@ -496,13 +508,19 @@ export default {
     align-items center
     width 100%
     font-size 0
-    margin-bottom 50px
     border 2px solid $black
     transform-origin 50% 50%
     overflow hidden
 
     &:last-child
       margin-bottom 0
+
+  &_label
+    margin 25px 0
+    font-family $euclidtriangle
+    font-size 2rem
+    letter-spacing 0
+    text-align center
 
   &_image
     height auto
