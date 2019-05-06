@@ -4,7 +4,7 @@
     :left="{ title: 'Projects', href: '/projects' }"
     :right="{ title: 'Lab', href: '/lab' }"
   )
-  .about(:data-theme="$store.state.theme")
+  .about
     .about_head
       h1.about_title Student learning about web
     shape(
@@ -245,6 +245,7 @@ export default {
       align-items center
 
   &_paragraph
+    color lighten($black, 25%)
     font-size 2.5rem
     font-family $euclidtriangle
     letter-spacing 0
@@ -282,6 +283,7 @@ export default {
     align-items flex-start
 
     &_item
+      color lighten($black, 25%)
       font-family $euclidtriangle
       font-size 2rem
       letter-spacing 0
@@ -295,6 +297,7 @@ export default {
 
     &-framed
       position relative
+      background-color $white
 
       &::before,
       &::after
@@ -308,28 +311,16 @@ export default {
         transform-origin 50% 50%
 
       &::before
+        border-left 4px solid $black
+        border-right 4px solid $black
         transform scaleY(0)
         animation scale-vertical 1s $cubic 2.5s forwards
 
       &::after
+        border-top 4px solid $black
+        border-bottom 4px solid $black
         transform scaleX(0)
         animation scale-horizontal 1s $cubic 2.75s forwards
-
-      ^[-2][data-theme="black"] &
-        &::before
-          border-left 2px solid $white
-          border-right 2px solid $white
-        &::after
-          border-top 2px solid $white
-          border-bottom 2px solid $white
-
-      ^[-2][data-theme="white"] &
-        &::before
-          border-left 2px solid $black
-          border-right 2px solid $black
-        &::after
-          border-top 2px solid $black
-          border-bottom 2px solid $black
 
     &-credit
       font-weight 700

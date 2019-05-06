@@ -2,6 +2,7 @@
 .shape(
   :data-theme="theme || $store.state.theme"
   :data-reversed="isReversed"
+  :data-enlarged="isEnlarged"
 )
   .shape_border.shape_border-top
   .shape_border.shape_border-center
@@ -75,6 +76,7 @@ export default {
   props: [
     'theme',
     'isReversed',
+    'isEnlarged',
     'left',
     'center',
     'right'
@@ -98,6 +100,15 @@ $linkGap = .5em
   height $shapeSize
   margin $shapeSize * 2.5
 
+  &[data-enlarged="true"]
+    transform scale(1.25)
+
+    @media (max-width 700px), (max-height 700px)
+      transform scale(1)
+
+    @media (max-width 500px), (max-height 500px)
+      transform scale(.75)
+
   @media (max-width 500px), (max-height 500px)
     margin $shapeSize * 1.25
     transform scale(.75)
@@ -115,10 +126,10 @@ $linkGap = .5em
       will-change transform
 
       ^[-2][data-theme="black"] &
-        background-color $white
+        background-color darken($white, 50%)
 
       ^[-2][data-theme="white"] &
-        background-color $black
+        background-color lighten($black, 50%)
 
     &-top
       top 0
@@ -211,10 +222,10 @@ $linkGap = .5em
       animation-fill-mode forwards
 
     ^[-1][data-theme="black"] &::before
-      background-color $white
+      background-color darken($white, 50%)
 
     ^[-1][data-theme="white"] &::before
-      background-color $black
+      background-color lighten($black, 50%)
 
     &-bottomleft,
     &-bottomcenter,
@@ -320,6 +331,7 @@ $linkGap = .5em
   &_text
     position absolute
     font-size 2.5rem
+    font-weight 700
     text-transform uppercase
     text-align center
     opacity 0

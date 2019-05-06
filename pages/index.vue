@@ -1,10 +1,11 @@
 <template lang="pug">
 .container
-  .container_section
+  .container_section.container_section--hero
     hero
-  .container_section
+  .container_section.container_section--hero
     shape(
       :isReversed="false"
+      :isEnlarged="true"
       :left="{ isPushing: true, isExternal: false, title: 'Projects', href: '/projects' }"
       :center="{ isPushing: true, isExternal: false, title: 'About', href: '/about' }"
       :right="{ isPushing: true, isExternal: false, title: 'Lab', href: '/lab' }"

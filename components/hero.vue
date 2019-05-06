@@ -27,26 +27,28 @@ export default {
 
   &_title
     font-size 10rem
+    font-weight 700
     text-transform uppercase
     animation-delay .25s
 
     @media (max-width 650px), (max-height 550px)
       font-size 7.5rem
 
-    @media (max-width 550px)
+    @media (max-width 550px), (max-height 450px)
       font-size 5rem
 
     @media (max-width 450px)
       font-size 3.75rem
 
   &_subtitle
+    color darken($white, 25%)
     font-size 7.5rem
     animation-delay .5s
 
     @media (max-width 650px), (max-height 550px)
       font-size 5rem
 
-    @media (max-width 550px)
+    @media (max-width 550px), (max-height 450px)
       font-size 3.75rem
 
     @media (max-width 450px)

@@ -402,6 +402,10 @@ export default {
     font-weight 700
     text-transform uppercase
 
+  &_text,
+  &_group
+    color lighten($black, 25%)
+
   &_text
     font-family $euclidtriangle
     font-size 2rem
