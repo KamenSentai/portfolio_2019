@@ -14,10 +14,10 @@
       :right="{ isPushing: false, title: 'stack' }"
     )
     .about_section
-      p.about_paragraph(style="animation-delay: 1.5s") My name is Alain CAO VAN TRUONG. I am a third-year studend at webschool <push class="text-bold" positionValue="relative" :isExternal="true" :isTexted="true" title="HÉTIC" href="https://www.hetic.net"/>. I mainly experiment front-end, back-end and a little bit mobile development. I am currently looking for a 5-month internship from late June to late November.
+      p.about_paragraph(style="animation-delay: 1.5s") My name is Alain CAO VAN TRUONG. I am a third-year studend at webschool #[push.text-bold(positionValue="relative" :isExternal="true" :isTexted="true" title="HÉTIC" href="https://www.hetic.net")]. I mainly experiment front-end, back-end and a little bit mobile development. I am currently looking for a 5-month internship from late June to late November.
     .about_section
       .about_card
-        h2.about_subtitle(style="animation-delay: 1.75s") <span>What I wish</span> <span>to perfect</span>
+        h2.about_subtitle(style="animation-delay: 1.75s") #[span What I wish] #[span to perfect]
         .about_list(style="animation-delay: 2s")
           span.about_list_item Vue.js
           span.about_list_item Nuxt.js
@@ -28,7 +28,7 @@
           span.about_list_item Stylus
           span.about_list_item Pug
       .about_card
-        h2.about_subtitle(style="animation-delay: 1.75s") <span>What I need</span> <span>to improve</span>
+        h2.about_subtitle(style="animation-delay: 1.75s") #[span What I need] #[span to improve]
         .about_list(style="animation-delay: 2s")
           span.about_list_item Typescript
           span.about_list_item Node.js
@@ -39,7 +39,7 @@
           span.about_list_item Django
           span.about_list_item Ruby on Rails
       .about_card
-        h2.about_subtitle(style="animation-delay: 1.75s") <span>What I intend</span> <span>to discover</span>
+        h2.about_subtitle(style="animation-delay: 1.75s") #[span What I intend] #[span to discover]
         .about_list(style="animation-delay: 2s")
           span.about_list_item Lumen
           span.about_list_item Preact
