@@ -47,7 +47,7 @@ export const state = () => ([
       { src: '7.png', alt: 'The risks - accident' },
       { src: '8.png', alt: 'The risks - gravity  ' },
       { src: '9.png', alt: 'Welcome to Mars - landing' },
-      { src: '10.png', alt: 'Welcome to Mars - colonizartion' }
+      { src: '10.png', alt: 'Welcome to Mars - colonization' }
     ],
     description: [
       "I worked on this project with comrades for a 5-days front-end development project. Our team decided to explain how a space trip works on this website.",
