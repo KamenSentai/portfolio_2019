@@ -298,32 +298,34 @@ export const state = () => ([
     demo: "",
     mentions: [],
     released: true
+  },
+  {
+    name: "Offit",
+    slug: "offit",
+    date: 'June 2019',
+    role: "Front-end developer",
+    team: [
+      { name: "Paul Agostini", role: "Project manager & UX/UI designer" },
+      { name: "Victor Block", role: "UX/UI designer & graphic designer" },
+      { name: "Yoan Halm", role: "UX/UI designer & marketing" },
+      { name: "Charles Bassignot", role: "Back-end developer" }
+    ],
+    tools: [
+      'WordPress',
+      'ACF',
+      'Timber',
+      'Vue.js'
+    ],
+    cover: "offit.png",
+    images: [],
+    description: [
+      "Our third year at HÉTIC is lead by a 6-month project with a client.",
+      "Victor Mertz is the founder of Offit, a BtoB coaching service, and he needs us to develop a website for his company and a webapp to manage his clients' activities.",
+      "The website presents the company, the rate and a blog. All articles are written by Victor Mertz. Unfortunately, we couldn't be able to provide him a webaap."
+    ],
+    code: "",
+    demo: "",
+    mentions: [],
+    released: false
   }
-  // {
-  //   name: "Offit",
-  //   slug: "offit",
-  //   date: 'June 2019',
-  //   role: "Front-end developer",
-  //   team: [
-  //     { name: "Paul Agostini", role: "Project manager & UX/UI designer" },
-  //     { name: "Victor Block", role: "UX/UI designer & graphic designer" },
-  //     { name: "Yoan Halm", role: "UX/UI designer & marketing" },
-  //     { name: "Charles Bassignot", role: "Back-end developer" }
-  //   ],
-  //   tools: [
-  //     'WordPress',
-  //     'ACF',
-  //     'Timber',
-  //     'Vue.js'
-  //   ],
-  //   cover: "offit.png",
-  //   images: [],
-  //   description [
-  //     "Our third year at HÉTIC is lead by a 6-month project with a client. Victor Mertz is the founder of Offit, a BtoB coaching service, and he needs us to develop a website for his company and a webapp to manage his clients' activities."
-  //   ],
-  //   code: "",
-  //   demo: "",
-  //   mentions: [],
-  //   released: false
-  // }
 ])
