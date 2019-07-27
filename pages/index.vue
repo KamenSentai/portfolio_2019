@@ -23,16 +23,16 @@ export default {
     return {
       title: 'Alain CAO VAN TRUONG - Full-stack developer',
       meta: [
-        { hid: 'description', name: 'description', content: 'Full-stack developer and third year student at HETIC looking for a 5-month internship from July to November 2019.' }
+        { hid: 'description', name: 'description', content: 'Full-stack developer and third year student at HETIC looking for a 5-month internship from July to November 2019.' },
       ],
       bodyAttrs: {
-        class: 'is-unscrollable'
+        class: 'is-unscrollable',
       }
     }
   },
   components: {
     'hero': Hero,
-    'shape': Shape
+    'shape': Shape,
   },
   transition: {
     mode: 'out-in',
@@ -47,7 +47,7 @@ export default {
       tl.to('.hero_title span', 0.5, { opacity: 0, y: '12.5%' }, 0.25)
       tl.to('.shape_branch', 0.5, { opacity: 0 }, .5)
       tl.to('.shape', 0.5, { opacity: 0, y: '12.5%' }, .75)
-    }
-  }
+    },
+  },
 }
 </script>

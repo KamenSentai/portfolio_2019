@@ -115,16 +115,16 @@ export default {
     return {
       title: `Alain CAO VAN TRUONG - ${this.project.name}`,
       meta: [
-        { hid: 'description', name: 'description', content: `This is one of my projects named "${this.project.name}".` }
+        { hid: 'description', name: 'description', content: `This is one of my projects named "${this.project.name}".` },
       ],
       bodyAttrs: {
-        class: 'is-scrollable'
+        class: 'is-scrollable',
       }
     }
   },
   data() {
     return {
-      windowSize: { w: 0, h: 0 }
+      windowSize: { w: 0, h: 0 },
     }
   },
   created() {
@@ -135,7 +135,7 @@ export default {
     'lazyload': Lazyload,
     'navigation': Navigation,
     'push': Push,
-    'shape': Shape
+    'shape': Shape,
   },
   computed: {
     projects() {
@@ -152,7 +152,7 @@ export default {
     },
     nextProject() {
       return this.projects[this.mod(this.index + 1, this.projects.length)]
-    }
+    },
   },
   methods: {
     mod(n, m) {
@@ -160,7 +160,7 @@ export default {
     },
     translateBackground() {
       if (this.$refs.background) this.$refs.background.style.transform = `translateY(${window.scrollY / 5}px)`
-    }
+    },
   },
   mounted() {
     this.windowSize.w = window.innerWidth
@@ -245,8 +245,8 @@ export default {
           tl.to('.navigation_stripe-middle', 1, { width: 0, opacity: 0 }, 0)
         }
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

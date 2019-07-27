@@ -6,8 +6,8 @@
 <script>
 export default {
   props: [
-    'theme'
-  ]
+    'theme',
+  ],
 }
 </script>
 

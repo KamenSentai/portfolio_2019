@@ -11,12 +11,12 @@ export default {
   head() {
     return {
       htmlAttrs: {
-        'data-theme': this.$store.state.theme
+        'data-theme': this.$store.state.theme,
       }
     }
   },
   components: {
-    'filaments': Filaments
-  }
+    'filaments': Filaments,
+  },
 }
 </script>

@@ -43,12 +43,12 @@ import Push from './push'
 export default {
   props: [
     'url',
-    'cards'
+    'cards',
   ],
   components: {
     'lazyload': Lazyload,
     'loader': Loader,
-    'push': Push
+    'push': Push,
   },
   methods: {
     capitalizeString(string) {
@@ -56,11 +56,11 @@ export default {
     },
     scrollPage() {
       if (this.$refs.title) this.$refs.title.style.transform = `translateY(${window.scrollY / 2.5}px)`
-    }
+    },
   },
   mounted() {
     window.addEventListener('wheel', this.scrollPage)
-  }
+  },
 }
 </script>
 

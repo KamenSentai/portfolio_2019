@@ -46,17 +46,17 @@ export default {
       page: 0,
       isSliding: false,
       initialX: null,
-      initialY: null
+      initialY: null,
     }
   },
   props: [
     'url',
-    'cards'
+    'cards',
   ],
   computed: {
     subtitle() {
       return this.$refs.subtitle[this.page]
-    }
+    },
   },
   components: {
     'indicator': Indicator,
@@ -148,7 +148,7 @@ export default {
   mounted() {
     window.addEventListener('keydown', this.keyPress)
     window.addEventListener('wheel', this.wheel)
-  }
+  },
 }
 </script>
 

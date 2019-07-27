@@ -6,7 +6,7 @@ img.lazyload(:src="src" :alt="alt")
 export default {
   props: [
     'src',
-    'alt'
+    'alt',
   ],
   mounted() {
     this.$el.removeAttribute('src')
@@ -16,7 +16,7 @@ export default {
     })
 
     this.$el.setAttribute('src', this.src)
-  }
+  },
 }
 </script>
 

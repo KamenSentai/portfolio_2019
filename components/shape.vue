@@ -79,11 +79,11 @@ export default {
     'isEnlarged',
     'left',
     'center',
-    'right'
+    'right',
   ],
   components: {
-    'push': Push
-  }
+    'push': Push,
+  },
 }
 </script>
 

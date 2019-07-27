@@ -19,13 +19,13 @@ export default {
         '+0',
         '-0.5',
         '-1',
-        '-0'
+        '-0',
       ]
     }
   },
   props: [
     'total',
-    'page'
+    'page',
   ],
   methods: {
     mod(n, m) {
@@ -34,7 +34,7 @@ export default {
     getPosition(index) {
       return this.page >= this.positions.lenght ? '-0' : this.positions[this.mod(index + this.page, this.positions.length)]
     }
-  }
+  },
 }
 </script>
 

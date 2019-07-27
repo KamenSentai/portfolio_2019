@@ -12,7 +12,7 @@ export default {
       maxDistance: 250,
       vertexes: [],
       brightness: 0,
-      mousePosition: { x: 0, y: 0 }
+      mousePosition: { x: 0, y: 0 },
     }
   },
   created() {
@@ -28,7 +28,7 @@ export default {
           this.$el.dataset.state = 'active'
         }, 2000)
       }
-    }
+    },
   },
   computed: {
     getBrightness() {
@@ -85,7 +85,7 @@ export default {
       }
 
       window.requestAnimationFrame(this.loopAnimation)
-    }
+    },
   },
   beforeMount() {
     this.$el.dataset.state = 'active'
@@ -114,7 +114,7 @@ export default {
   },
   mounted() {
     this.loopAnimation()
-  }
+  },
 }
 </script>
 

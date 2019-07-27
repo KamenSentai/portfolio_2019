@@ -22,21 +22,21 @@ export default {
     return {
       title: 'Alain CAO VAN TRUONG - Lab',
       meta: [
-        { hid: 'description', name: 'description', content: 'Check out my little works and tests.' }
+        { hid: 'description', name: 'description', content: 'Check out my little works and tests.' },
       ],
       bodyAttrs: {
-        class: 'is-scrollable'
+        class: 'is-scrollable',
       }
     }
   },
   components: {
     'grid': Grid,
-    'navigation': Navigation
+    'navigation': Navigation,
   },
   computed: {
     lab() {
       return this.$store.state.lab
-    }
+    },
   },
   transition: {
     mode: 'out-in',
@@ -94,7 +94,7 @@ export default {
           tl.to('.navigation_stripe-middle', 1, { width: 0, opacity: 0 }, 0)
         }
       }
-    }
-  }
+    },
+  },
 }
 </script>

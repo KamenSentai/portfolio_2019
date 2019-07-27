@@ -36,19 +36,19 @@ import Push from './push'
 export default {
   data() {
     return {
-      isTouchEvents: false
+      isTouchEvents: false,
     }
   },
   props: [
     'left',
-    'right'
+    'right',
   ],
   components: {
-    'push': Push
+    'push': Push,
   },
   mounted() {
     this.isTouchEvents = this.$store.state.isTouchevents
-  }
+  },
 }
 </script>
 

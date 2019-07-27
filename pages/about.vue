@@ -121,17 +121,17 @@ export default {
     return {
       title: 'Alain CAO VAN TRUONG - About',
       meta: [
-        { hid: 'description', name: 'description', content: 'Take a look of my portrait, my education, my experiences, my skills and my interests.' }
+        { hid: 'description', name: 'description', content: 'Take a look of my portrait, my education, my experiences, my skills and my interests.' },
       ],
       bodyAttrs: {
-        class: 'is-scrollable'
+        class: 'is-scrollable',
       }
     }
   },
   components: {
     'navigation': Navigation,
     'push': Push,
-    'shape': Shape
+    'shape': Shape,
   },
   transition: {
     mode: 'out-in',
@@ -177,8 +177,8 @@ export default {
           tl.to('.navigation_stripe-middle', 1, { width: 0, opacity: 0 }, 0)
         }
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

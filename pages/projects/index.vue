@@ -21,21 +21,21 @@ export default {
     return {
       title: 'Alain CAO VAN TRUONG - Projects',
       meta: [
-        { hid: 'description', name: 'description', content: 'Discover my main projects since I have started web and mobile development.' }
+        { hid: 'description', name: 'description', content: 'Discover my main projects since I have started web and mobile development.' },
       ],
       bodyAttrs: {
-        class: 'is-unscrollable'
+        class: 'is-unscrollable',
       }
     }
   },
   components: {
     'jumbotron': Jumbotron,
-    'navigation': Navigation
+    'navigation': Navigation,
   },
   computed: {
     projects() {
       return this.$store.state.projects
-    }
+    },
   },
   transition: {
     mode: 'out-in',
@@ -88,7 +88,7 @@ export default {
           tl.to('.navigation_stripe-middle', 1, { width: 0, opacity: 0 }, 0)
         }
       }
-    }
-  }
+    },
+  },
 }
 </script>

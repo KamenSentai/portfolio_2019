@@ -79,16 +79,16 @@ export default {
     'title',
     'image',
     'href',
-    'position'
+    'position',
   ],
   methods: {
     scrollClick() {
       scrollTo({
         left: this.position.x,
         top: this.position.y,
-        behavior: 'smooth'
+        behavior: 'smooth',
       })
-    }
+    },
   }
 }
 </script>
