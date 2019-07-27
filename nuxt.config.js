@@ -1,8 +1,11 @@
-const PACKAGE = require('./package.json')
+const {
+  author,
+  config,
+} = require('./package.json')
 
-const config = {
-  BASE_URL: process.env.NODE_ENV === 'production' ? 'https://www.alain-caovantruong.fr' : `http://localhost:${PACKAGE.config.nuxt.port}`
-}
+const BASE_URL = process.env.NODE_ENV === 'production'
+  ? author.url
+  : `http://localhost:${config.nuxt.port}`
 
 module.exports = {
   head: {
@@ -18,22 +21,22 @@ module.exports = {
       { name: 'og:title', content: 'Alain CAO VAN TRUONG - Full-stack developer' },
       { name: 'og:description', content: 'Full-stack developer and third year student at HETIC looking for a 5-month internship from July to November 2019.' },
       { name: 'og:type', content: 'website' },
-      { name: 'og:url', content: config.BASE_URL },
-      { name: 'og:image', content: `${config.BASE_URL}/favicons/acvt.png` },
+      { name: 'og:url', content: BASE_URL },
+      { name: 'og:image', content: `${BASE_URL}/favicons/acvt.png` },
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:site', content: '@AlainCVT' },
       { name: 'twitter:title', content: 'Alain CAO VAN TRUONG - Full-stack developer' },
       { name: 'twitter:description', content: 'Full-stack developer and third year student at HETIC looking for a 5-month internship from July to November 2019.' },
-      { name: 'twitter:image', content: `${config.BASE_URL}/favicons/acvt.png` },
+      { name: 'twitter:image', content: `${BASE_URL}/favicons/acvt.png` },
       { name: 'twitter:image:alt', content: 'Alain CAO VAN TRUONG' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: `${config.BASE_URL}/favicons/favicon.ico` },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: `${config.BASE_URL}/favicons/apple-touch-icon.png` },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: `${config.BASE_URL}/favicons/favicon-32x32.png` },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: `${config.BASE_URL}/favicons/favicon-16x16.png` },
-      { rel: 'manifest', href: `${config.BASE_URL}/favicons/site.webmanifest` },
-      { rel: 'mask-icon', href: `${config.BASE_URL}/favicons/safari-pinned-tab.svg`, color: '#111111' },
+      { rel: 'icon', type: 'image/x-icon', href: `${BASE_URL}/favicons/favicon.ico` },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: `${BASE_URL}/favicons/apple-touch-icon.png` },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: `${BASE_URL}/favicons/favicon-32x32.png` },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: `${BASE_URL}/favicons/favicon-16x16.png` },
+      { rel: 'manifest', href: `${BASE_URL}/favicons/site.webmanifest` },
+      { rel: 'mask-icon', href: `${BASE_URL}/favicons/safari-pinned-tab.svg`, color: '#111111' },
     ]
   },
 

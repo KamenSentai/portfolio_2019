@@ -2,7 +2,11 @@
   "name": "portfolio_2019",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "KamenSentai <cvt.alain@gmail.com>",
+  "author": {
+    "name": "Alain Cao Van Truong",
+    "email": "contact@alain-caovantruong.fr",
+    "url": "https://www.alain-caovantruong.fr"
+  },
   "private": true,
   "config": {
     "nuxt": {
