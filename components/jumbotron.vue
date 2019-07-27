@@ -208,6 +208,8 @@ $indicatorSize = 50px
   &_image
     position absolute
     z-index -1
+    min-width (4 / 3) * 100%
+    min-height (4 / 3) * 100%
     transform scale(.75)
     transition transform 1s $cubic
     will-change transform
