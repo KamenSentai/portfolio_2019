@@ -8,9 +8,6 @@ export const state = () => ([
   {
     name: "Clock",
     slug: "clock",
-    images: [
-      { src: '0.png', alt: 'Clock' }
-    ],
     code: "https://github.com/KamenSentai/Clock",
     demo: "https://clock.alain-caovantruong.fr/",
   },
