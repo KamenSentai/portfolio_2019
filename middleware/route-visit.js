@@ -1,6 +1,6 @@
 export default ({ store, route }) => {
-  store.commit('UPDATE_VISIT', route.name)
+  const color = route.path === '/about' ? 'white' : 'black'
 
-  if (route.path === '/about') store.commit('CHANGE_COLOR', 'white')
-  else store.commit('CHANGE_COLOR', 'black')
+  store.commit('UPDATE_VISIT', route.name)
+  store.commit('CHANGE_COLOR', color)
 }

@@ -25,7 +25,7 @@ module.exports = {
       { name: 'twitter:title', content: 'Alain CAO VAN TRUONG - Full-stack developer' },
       { name: 'twitter:description', content: 'Full-stack developer and third year student at HETIC looking for a 5-month internship from July to November 2019.' },
       { name: 'twitter:image', content: `${config.BASE_URL}/favicons/acvt.png` },
-      { name: 'twitter:image:alt', content: 'Alain CAO VAN TRUONG' }
+      { name: 'twitter:image:alt', content: 'Alain CAO VAN TRUONG' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: `${config.BASE_URL}/favicons/favicon.ico` },
@@ -33,27 +33,27 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: `${config.BASE_URL}/favicons/favicon-32x32.png` },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: `${config.BASE_URL}/favicons/favicon-16x16.png` },
       { rel: 'manifest', href: `${config.BASE_URL}/favicons/site.webmanifest` },
-      { rel: 'mask-icon', href: `${config.BASE_URL}/favicons/safari-pinned-tab.svg`, color: '#111111' }
+      { rel: 'mask-icon', href: `${config.BASE_URL}/favicons/safari-pinned-tab.svg`, color: '#111111' },
     ]
   },
 
   loading: {
     color: '#111111',
-    background: '#EEEEEE'
+    background: '#EEEEEE',
   },
 
   router: {
     middleware: [
-      'route-visit'
-    ]
+      'route-visit',
+    ],
   },
 
   plugins: [
-    { src: '~/plugins/vue-analytics.js', ssr: false }
+    { src: '~/plugins/vue-analytics.js', ssr: false },
   ],
 
 	css: [
-    '~/assets/styles/app.styl'
+    '~/assets/styles/app.styl',
   ],
 
   generate: {
@@ -63,8 +63,9 @@ module.exports = {
       '/projects/green-tips',
       '/projects/chat-mean',
       '/projects/gaetan-lefebvre',
-      '/projects/scaneat'
-    ]
+      '/projects/scaneat',
+      '/projects/offit',
+    ],
   },
 
   build: {
@@ -74,9 +75,9 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
-    }
+    },
   }
 }

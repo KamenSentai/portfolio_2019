@@ -2,7 +2,7 @@ export const state = () => ({
   prevRoute: '',
   nextRoute: '',
   theme: '',
-  isTouchevents: false
+  isTouchevents: false,
 })
 
 export const mutations = {
@@ -15,5 +15,5 @@ export const mutations = {
   },
   CHECK_TOUCHEVENTS(state, value) {
     state.isTouchevents = value
-  }
+  },
 }
