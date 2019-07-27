@@ -213,7 +213,6 @@ export default {
   &_title
     font-weight 700
     text-align center
-    text-transform uppercase
     animation-delay .5s
 
   &_subtitle
@@ -223,7 +222,6 @@ export default {
     text-align center
     font-size 5rem
     font-weight 700
-    text-transform uppercase
 
     @media (max-width $gridmedia8)
       font-size 3.75rem
@@ -319,7 +317,6 @@ export default {
     &-credit
       font-weight 700
       text-align center
-      text-transform uppercase
 
   &_array
     display flex

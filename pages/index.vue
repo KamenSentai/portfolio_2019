@@ -21,7 +21,7 @@ import { TimelineMax } from 'gsap'
 export default {
   head() {
     return {
-      title: 'Alain CAO VAN TRUONG - Full-stack developer',
+      title: 'Alain Cao Van Truong - Full-stack developer',
       meta: [
         { hid: 'description', name: 'description', content: 'Full-stack developer and third year student at HETIC looking for a 5-month internship from July to November 2019.' },
       ],

@@ -20,7 +20,7 @@ import { TimelineMax } from 'gsap'
 export default {
   head() {
     return {
-      title: 'Alain CAO VAN TRUONG - Lab',
+      title: 'Alain Cao Van Truong - Lab',
       meta: [
         { hid: 'description', name: 'description', content: 'Check out my little works and tests.' },
       ],

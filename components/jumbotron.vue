@@ -291,7 +291,6 @@ $indicatorSize = 50px
     padding 0 100px
     font-size 10rem
     font-weight 700
-    text-transform uppercase
     text-align center
     text-shadow 0 0 10px rgba($black, .25)
     transition opacity .5s $cubic, transform .5s $cubic

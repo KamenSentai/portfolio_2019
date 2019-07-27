@@ -94,7 +94,6 @@ export default {
     color $black
     font-size 3.75rem
     font-weight 700
-    text-transform uppercase
     background-color $white
     box-shadow 0 0 10px rgba($black, .5)
 
@@ -139,7 +138,6 @@ export default {
     font-size 5rem
     font-weight 700
     text-align center
-    text-transform uppercase
 
     @media (max-width $gridmedia10)
       font-size 3.75rem
@@ -153,6 +151,5 @@ export default {
 
   &_link
     font-size 2.5rem
-    text-transform uppercase
     line-height 1.25em
 </style>

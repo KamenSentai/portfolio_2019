@@ -1,7 +1,7 @@
 <template lang="pug">
 .hero
   h1.hero_title
-    span.hero_text Alain CAO VAN TRUONG
+    span.hero_text Alain Cao Van Truong
   h2.hero_subtitle
     span.hero_text Full-stack developer
 </template>
@@ -28,7 +28,6 @@ export default {
   &_title
     font-size 10rem
     font-weight 700
-    text-transform uppercase
     animation-delay .25s
 
     @media (max-width 650px), (max-height 550px)

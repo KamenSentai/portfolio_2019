@@ -142,7 +142,7 @@ $linkGap = .5em
     position absolute
     top 50%
     font-size 2.5rem
-    text-transform uppercase
+    font-weight 700
     opacity 0
     transition opacity .5s $cubic, transform .5s $cubic
 

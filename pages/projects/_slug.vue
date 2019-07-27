@@ -113,7 +113,7 @@ import { TimelineMax } from 'gsap'
 export default {
   head() {
     return {
-      title: `Alain CAO VAN TRUONG - ${this.project.name}`,
+      title: `Alain Cao Van Truong - ${this.project.name}`,
       meta: [
         { hid: 'description', name: 'description', content: `This is one of my projects named "${this.project.name}".` },
       ],
@@ -331,7 +331,6 @@ export default {
         top calc(100% + 20px)
 
   &_button
-    text-transform uppercase
     font-size 2.5rem
     font-weight 700
 
@@ -342,7 +341,6 @@ export default {
     padding 0 100px
     font-size 10rem
     font-weight 700
-    text-transform uppercase
     text-align center
 
     @media (max-width 650px), (max-height 400px)
@@ -400,7 +398,6 @@ export default {
     margin-bottom 25px
     font-size 5rem
     font-weight 700
-    text-transform uppercase
 
   &_text,
   &_group
@@ -473,7 +470,6 @@ export default {
     align-items center
     margin-top 50px
     font-weight 700
-    text-transform uppercase
 
     > *
       line-height 1.5em
@@ -542,7 +538,6 @@ export default {
     font-family $euclidtriangle
     font-size 2.5rem
     letter-spacing 0
-    text-transform uppercase
     text-align center
 
   &_suggestions
