@@ -6,9 +6,9 @@
     shape(
       :isReversed="false"
       :isEnlarged="true"
-      :left="{ isPushing: true, isExternal: false, title: 'Projects', href: '/projects' }"
-      :center="{ isPushing: true, isExternal: false, title: 'About', href: '/about' }"
-      :right="{ isPushing: true, isExternal: false, title: 'Lab', href: '/lab' }"
+      :left="leftLink"
+      :center="centerLink"
+      :right="rightLink"
     )
 </template>
 
@@ -30,9 +30,40 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      shapeProps: {
+        isPushing: true,
+        isExternal: false,
+      },
+    }
+  },
   components: {
     'hero': Hero,
     'shape': Shape,
+  },
+  computed: {
+    leftLink() {
+      return {
+        ...this.shapeProps,
+        title: 'Projects',
+        href: '/projects',
+      }
+    },
+    centerLink() {
+      return {
+        ...this.shapeProps,
+        title: 'About',
+        href: '/about',
+      }
+    },
+    rightLink() {
+      return {
+        ...this.shapeProps,
+        title: 'Lab',
+        href: '/lab',
+      }
+    },
   },
   transition: {
     mode: 'out-in',
